@@ -10,6 +10,16 @@ An app for the people
 2. If NVM is installed, type `nvm install 16.19.0`
 3. If NVM isn't installed, go to https://github.com/nvm-sh/nvm and follow the instructions. then do step 2.
 
+### Database
+
+1. Copy `.env.example` to `.env` and change
+
+- DB_USER: `Your database name`
+- DB_PASS: `Your database password`
+- DB_NAME: `AICV`
+
+2. Run `npm run db:reset` to seed database
+
 ### Run API
 
 1. cd to `api`
@@ -22,8 +32,9 @@ An app for the people
 2. Type `npm i` for dependencies
 3. Type `npm start`
 
+- nodemon is used so no need to restart server
+
 ## Information
 
 - This project uses react-bootstrap, information can be found [here](https://react-bootstrap.github.io/getting-started/introduction/)
 - React talks to backend with Axios
-

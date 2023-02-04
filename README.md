@@ -17,7 +17,7 @@ An app for the people
 
 - DB_USER: `Your database name`
 - DB_PASS: `Your database password`
-- DB_NAME: `AICV`
+- DB_NAME: `jobscript`
 
 3. CD to `api` and type `npm run db:reset` to seed database
 

@@ -42,7 +42,7 @@ const runResetDB = async () => {
       );
 
     await runSchemaFiles();
-    // await runSeedFiles();
+    await runSeedFiles();
     process.exit();
   } catch (err) {
     console.error(chalk.red(`Failed due to error: ${err}`));

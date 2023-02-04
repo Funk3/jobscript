@@ -5,5 +5,6 @@ CREATE TABLE job_description (
   cover_letter_text VARCHAR(25) NOT NULL,
   keywords VARCHAR(25) NOT NULL,
   interview_questions TEXT NOT NULL,
-  company_summary TEXT NOT NULL
+  company_summary TEXT NOT NULL,
+  ts TIMESTAMP
 );

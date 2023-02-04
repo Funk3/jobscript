@@ -12,13 +12,14 @@ An app for the people
 
 ### Database
 
-1. Copy `.env.example` to `.env` and change
+1. Enter psql by typing `psql` and type `CREATE DATABASE jobscript;` and exit by typing `\q`
+2. Copy `.env.example` to `.env` and change
 
 - DB_USER: `Your database name`
 - DB_PASS: `Your database password`
 - DB_NAME: `AICV`
 
-2. Run `npm run db:reset` to seed database
+3. CD to `api` and type `npm run db:reset` to seed database
 
 ### Run API
 

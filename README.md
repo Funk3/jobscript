@@ -24,4 +24,6 @@ An app for the people
 
 ## Information
 
-- This project uses react-boostrap, information can be found [here](https://react-bootstrap.github.io/getting-started/introduction/)
+- This project uses react-bootstrap, information can be found [here](https://react-bootstrap.github.io/getting-started/introduction/)
+- React talks to backend with Axios
+

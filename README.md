@@ -10,6 +10,12 @@ An app for the people
 2. If NVM is installed, type `nvm install 16.19.0`
 3. If NVM isn't installed, go to https://github.com/nvm-sh/nvm and follow the instructions. then do step 2.
 
+### Run API
+
+1. cd to `api`
+2. Type `npm i` for dependencies
+3. Type `npm start`
+
 ### Database
 
 1. Enter psql by typing `psql` and type `CREATE DATABASE jobscript;` and exit by typing `\q`
@@ -20,12 +26,6 @@ An app for the people
 - DB_NAME: `jobscript`
 
 3. CD to `api` and type `npm run db:reset` to seed database
-
-### Run API
-
-1. cd to `api`
-2. Type `npm i` for dependencies
-3. Type `npm start`
 
 ### Run Client
 

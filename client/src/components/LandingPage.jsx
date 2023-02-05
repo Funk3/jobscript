@@ -4,7 +4,7 @@ export default function LandingPage() {
 
   return(
     <section>
-        Landing page
+        Landing page only visible if user exists
     </section>
   )
 }

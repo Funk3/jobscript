@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+aside {
+  float: left;
+}
+
+.rhs-input-sections{
+display: flex;
+flex-direction: column;
+}

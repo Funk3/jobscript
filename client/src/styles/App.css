@@ -41,7 +41,7 @@ aside {
   float: left;
 }
 
-.rhs-input-sections{
+.rhs-sections{
 display: flex;
 flex-direction: column;
 }

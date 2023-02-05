@@ -7,8 +7,8 @@ export default function JobListItem() {
     <section
     /* onClick = render cover letter on the right hand side.  */
     >
-      <h2> props.jobTitle</h2>
-      <h3> props.companyName</h3>
+      <h3> props.jobTitle</h3>
+      <h4> props.companyName</h4>
 
     </section>
   );

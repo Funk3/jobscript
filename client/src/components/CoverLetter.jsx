@@ -9,9 +9,9 @@ export default function CoverLetter() {
   //edit buttons might need to be their own components as they do different things? or helpers to direct onClick
   return (
     <div className="rhs-cover-letter">
-      <textarea> value = returnedCoverLetterText </textarea>
+      <textarea defaultValue="returnedCoverLetterText"></textarea>
 
-      <section classNames="manage-cl-buttons">
+      <section className="manage-cl-buttons">
       <button> Edit</button>
       <button> Save</button>
       <button> Regenerate</button>

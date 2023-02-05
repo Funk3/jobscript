@@ -7,6 +7,10 @@ import JobList from "./JobList";
 import CoverLetter from "./CoverLetter";
 import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
+import CustomTone from "./CustomTone";
+import CustomLength from "./CustomLength";
+import CustomCreativity from "./CustomCreativity";
+import Button from "./Button";
 
 //Styles
 import "../styles/App.css";
@@ -25,25 +29,23 @@ export default function App() {
         {/* eg !currentUser && */} <LandingPage />
       </section>
 
-      <container>
+      <main>
         <JobList />
         <div className="rhs-sections">
           <div className="rhs-user-inputs">
             <InputResume />
             <InputJobDesc />
-            <section>Tone customisation</section>
-            <section>Length Customisation</section>
-            <section>Creativity Customistion</section>
+            <CustomTone />
+            <CustomLength />
+            {/* stretch <CustomCreativity /> */}
           </div>
 
-          <button> Generate Cover Letter </button>
-
+          <Button> Generate Cover Letter</Button>
           
-            {/* coverLetterExists && */}
-            <CoverLetter />
-
+                {/* coverLetterExists && */}
+          <CoverLetter />
         </div>
-      </container>
+      </main>
     </main>
   );
 }

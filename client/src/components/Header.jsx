@@ -6,7 +6,7 @@ export default function Header() {
 //props will contain currentUser which is current user object
 
   return(
-    <header>
+    <header className="main-header">
       <nav className="nav-bar">
       <a className="nav-logo">Jobscript logo.</a>
       <a className="nav-link">Login</a>

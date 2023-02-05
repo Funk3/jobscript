@@ -1,5 +1,6 @@
 import React from "react"
 import JobListItem from "./JobListItem"
+import Button from "./Button"
 
 
 export default function JobList(){
@@ -16,8 +17,11 @@ export default function JobList(){
 
   return (
     <aside>
+      <header className="aside-header">
       <h3>Job List</h3>
-      <article>render individualJobListItems here
+      <Button>+</Button>
+      </header>
+      <article>{/*render individualJobListItems here */}
         <JobListItem />
       </article>
     </aside>

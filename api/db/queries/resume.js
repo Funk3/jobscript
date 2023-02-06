@@ -17,10 +17,23 @@ return db.query(`INSERT INTO resume (user_id, text) VALUES ($1, $2) RETURNING * 
 })
 }
 
+/**
+ * To fetch resume text to be inputted into API query string
+ * @param {*} userID from req.session
+ * @returns A string of resume text
+ */
+const getResumeByUser = userID => {
+  //Maybe SELECT text FROM resume instead?
+  return db.query( 'SELECT * FROM resume WHERE user_id = $1', [userID])
+  .then(response => {
+    console.log(response.rows[0]);
+    return response.rows[0];
+  })
+}
 
 
 
 
 
 
-module.exports = { addResumeByUser}
+module.exports = { addResumeByUser, getResumeByUser}

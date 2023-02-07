@@ -24,7 +24,6 @@ An app for the people
 - DB_USER: `Your database name`
 - DB_PASS: `Your database password`
 - DB_NAME: `jobscript`
-- OPENAI_API_KEY: `Secret key given to you`
 
 3. CD to `api` and type `npm run db:reset` to seed database
 

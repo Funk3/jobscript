@@ -30,12 +30,6 @@ export default function LandingPage() {
         <div>Fake reviews?</div>
       </section>
 
-      <footer className="landing-page-footer">
-        <a>FAQ</a>
-        <a>Contact</a>
-        <a>Other footer things</a>
-      </footer>
-
     </main>
   );
 }

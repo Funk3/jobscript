@@ -10,6 +10,7 @@ import InputJobDesc from './InputJobDesc';
 import CustomTone from './CustomTone';
 import CustomLength from './CustomLength';
 import Button from './Button';
+import Footer from './Footer';
 
 //Styles
 import '../styles/App.css';
@@ -44,6 +45,7 @@ export default function App() {
           <CoverLetter />
         </div>
       </main>
+      <Footer />
     </main>
   );
 }

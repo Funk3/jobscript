@@ -17,7 +17,7 @@ return db.query(`INSERT INTO resume (user_id, text) VALUES ($1, $2) RETURNING * 
 })
 }
 
-addResumeByUser(2, 'This is users 2 adding resume'); //works
+//addResumeByUser(2, 'This is users 2 adding resume'); //works
 
 /**
  * To fetch resume text to be inputted into API query string
@@ -33,7 +33,7 @@ const getResumeByUser = userID => {
   })
 }
 
-getResumeByUser(3); //works
+//getResumeByUser(3); //works
 
 
 

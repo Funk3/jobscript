@@ -12,12 +12,12 @@ export default function InputResume() {
     setFilename(e.target.files[0].name);
   };
 
+  // user submits then axios post req is sent to backend
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
 
-    // user submits then post req is sent to backend
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/upload`,

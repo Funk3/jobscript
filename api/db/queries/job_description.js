@@ -1,12 +1,10 @@
 // All queries relating to Job Description
-
-const db = require('./connection')
-
-
-
+//require('dotenv').config();
+const db = require('../connection')
+//console.log(process.env.DB_NAME);
 //////////////////////ADDING
 
-/**
+/*
  * To add fields from job description component into job_description table, by userID
  * @param {*} userID from req.session
  * @param {*} jobTitle from input field
@@ -15,16 +13,15 @@ const db = require('./connection')
  * @returns  Returns a promise, but shouldnt need to access res. Mosty just for debugging at this stage?!
  */
 const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionText) => {
-  return db.query(`INSERT INTO job_description(user_id, job_title, company_name, description) 
-  VALUES ($1, $2, $3, $4) RETURNING *`, 
-  [userID, jobTitle, companyName, jobDescriptionText])
-  //As we are adding, we shouldnt need this function to return anything. Added the .then to check response is correct.
+  return db.query(`INSERT INTO job_description (user_id, company_name, job_title, description) 
+  VALUES ($1, $2, $3, $4) RETURNING *`, [userID, companyName, jobTitle, jobDescriptionText])
   .then(result => {
-    console.log(result.rows[0]);
+    console.log("addJobDescriptionByUser =", result.rows[0]);
     return result.rows[0];
   })
 }
 
+addJobDescriptionByUser(1, 'Google', 'Web Dev', 'Jr Web dev role at google'); //work
 
 
 //////////////////////UPDATING
@@ -39,29 +36,30 @@ const addCoverLetterByJobDescription = (jobDescID, coverLetterText) => {
   return db.query(`UPDATE job_description SET cover_letter_text = $1 WHERE job_description.id = $2`, 
   [coverLetterText, jobDescID])
   .then(result => {
-    console.log(result.rows[0]);
-    return result.rows[0];
+    console.log("addCoverLetterByJobDescription = ", result.rowCount);
+    return result.rowCount;
   })
 }
 
+addCoverLetterByJobDescription(1, 'This is the incoming cover letter for job desc 1'); //works, overwrites the existing value
 
 
-
-//////////////////////GETTING
+// //////////////////////GETTING
 
 /**
  * To access all previous job descriptions instances per user for JobList and JobListItem
  * @param {*} user_id from req.session
- * @returns an array of objects, hopefully
+ * @returns an array of objects
  */
 const getAllJobDescByUser = (user_id) => {
   return db.query('SELECT * FROM job_description WHERE user_id = $1', [user_id])
   .then(result => {
-    console.log(result.rows[0]);
-    return result.rows[0];
+    console.log("getAllJobDescByUser =", result.rows);
+    return result.rows;
   });
 };
 
+getAllJobDescByUser(1); //works, returns array of objects
 
 /**
  * Returns an object of the job_desc for the specific job_desc ID.
@@ -72,15 +70,16 @@ const getAllJobDescByUser = (user_id) => {
 const getJobDescByJobDescID = (jobDescID)=> {
   return db.query('SELECT * FROM job_description WHERE id = $1',[jobDescID] )
   .then(result => {
-    console.log(result.rows[0]);
+    console.log("getJobDescByJobDescID =", result.rows[0]);
     return result.rows[0];
   });
   
 }
 
+getJobDescByJobDescID(3);//works, an object of jobDesc values.
 
 
 
 
 
-module.exports = {addJobDescriptionByUser, addCoverLetterByJobDescription, getAllJobDescByUser, getJobDescByJobDescID}
+// module.exports = {addJobDescriptionByUser, addCoverLetterByJobDescription, getAllJobDescByUser, getJobDescByJobDescID}

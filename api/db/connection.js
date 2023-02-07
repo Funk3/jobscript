@@ -11,7 +11,8 @@ const dbParams = {
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
 };
-console.log('test', dbParams);
+
+console.log('.env parameter check', dbParams);
 
 const db = new Pool(dbParams);
 

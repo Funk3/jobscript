@@ -72,14 +72,14 @@ export default function InputResume() {
           {/* if file is uploaded then file is placed in text area if no file then sets empty text area  */}
           {uploadedFile ? (
             <textarea
-              id="uploadedResume"
+              id="uploaded-resume"
               defaultValue={uploadedFile}
               rows="5"
               cols="33"
             ></textarea>
           ) : 
           <textarea
-          id="pastedResume"
+          id="pasted-resume"
           placeholder="Or Copy and paste the contents of your resume here"
           rows="5"
           cols="33"

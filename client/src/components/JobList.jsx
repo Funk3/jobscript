@@ -2,7 +2,6 @@ import React from "react"
 import JobListItem from "./JobListItem"
 import Button from "./Button"
 
-
 export default function JobList(){
 
 //Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}

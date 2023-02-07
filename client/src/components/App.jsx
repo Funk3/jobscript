@@ -1,33 +1,28 @@
-import React from "react";
+import React from 'react';
 
 //Components
-import Header from "./Header";
-import LandingPage from "./LandingPage";
-import JobList from "./JobList";
-import CoverLetter from "./CoverLetter";
-import InputResume from "./InputResume";
-import InputJobDesc from "./InputJobDesc";
-import CustomTone from "./CustomTone";
-import CustomLength from "./CustomLength";
-import CustomCreativity from "./CustomCreativity";
-import Button from "./Button";
+import Header from './Header';
+import LandingPage from './LandingPage';
+import JobList from './JobList';
+import CoverLetter from './CoverLetter';
+import InputResume from './InputResume';
+import InputJobDesc from './InputJobDesc';
+import CustomTone from './CustomTone';
+import CustomLength from './CustomLength';
+//import CustomCreativity from './CustomCreativity';
+import Button from './Button';
 
 //Styles
-import "../styles/App.css";
+import '../styles/App.css';
+
+//axios request
+// import aiRequest from '../__helpers__/aiapi';
 
 export default function App() {
   //If we get user auth done:
   //Helper function here to find out if user exists eg currentUser takes in req.session and returns user object
   //if currentUser, render LandingPage, else render dashboard
   //pass currentUser into <Header/> component to render login/logout
-
-  //promise function that axios request the ai api and express backend database query
-  const aiRequest = new Promise(function(resolve, reject) {
-    
-  })
-
-  }
-
   return (
     <main>
       <Header />
@@ -38,8 +33,8 @@ export default function App() {
 
       <main>
         <JobList />
-        <div className="rhs-sections">
-          <div className="rhs-user-inputs">
+        <div className='rhs-sections'>
+          <div className='rhs-user-inputs'>
             <InputResume />
             <InputJobDesc />
             <CustomTone />
@@ -47,9 +42,9 @@ export default function App() {
             {/* stretch <CustomCreativity /> */}
           </div>
 
-          <Button onclick="aiRequest">Generate Cover Letter</Button>
-          
-                {/* coverLetterExists && */}
+          <Button>Generate Cover Letter</Button>
+
+          {/* coverLetterExists && */}
           <CoverLetter />
         </div>
       </main>

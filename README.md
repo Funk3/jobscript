@@ -30,8 +30,9 @@ An app for the people
 ### Run Client
 
 1. cd to `client`
-2. Type `npm i` for dependencies
-3. Type `npm start`
+2. add given OpenAPI key to .env in client/ folder
+3. Type `npm i` for dependencies
+4. Type `npm start`
 
 - nodemon is used so no need to restart server
 

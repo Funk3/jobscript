@@ -1,48 +1,50 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+
+import { ResumeContext } from "../providers/ResumeProvider";
 
 export default function InputResume() {
-  const [file, setFile] = useState("");
-  const [filename, setFilename] = useState("Choose File");
-  const [uploadedFile, setUploadedFile] = useState();
+  const { file, filename, uploadedFile, onChange, onSubmit } =
+    useContext(ResumeContext);
+  // const [file, setFile] = useState("");
+  // const [filename, setFilename] = useState("Choose File");
+  // const [uploadedFile, setUploadedFile] = useState();
 
-  // user selects file state for setFile & setFilename are updated with file name
-  const onChange = (e) => {
-    setFile(e.target.files[0]);
-    setFilename(e.target.files[0].name);
-  };
+  // // user selects file state for setFile & setFilename are updated with file name
+  // const onChange = (e) => {
+  //   setFile(e.target.files[0]);
+  //   setFilename(e.target.files[0].name);
+  // };
 
-  // user submits then axios post req is sent to backend
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("file", file);
+  // // user submits then axios post req is sent to backend
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("file", file);
 
-    try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+  //   try {
+  //     const res = await axios.post(
+  //       `${process.env.REACT_APP_SERVER_URL}/upload`,
+  //       formData,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       }
+  //     );
 
-      // returned data is saved as resume & update uploadedFile state
-      const resume = res.data;
-      setUploadedFile(resume.trim());
+  //     // returned data is saved as resume & update uploadedFile state
+  //     const resume = res.data;
+  //     setUploadedFile(resume.trim());
 
-      console.log("File Uploaded");
-    } catch (err) {
-      if (err.response.status === 500) {
-        console.log("There was a problem with the server");
-      } else {
-        console.log(err.response.data.msg);
-      }
-    }
-  };
-  console.log(uploadedFile);
+  //     console.log("File Uploaded");
+  //   } catch (err) {
+  //     if (err.response.status === 500) {
+  //       console.log("There was a problem with the server");
+  //     } else {
+  //       console.log(err.response.data.msg);
+  //     }
+  //   }
+  // };
 
   return (
     <section className="rhs-input-resume-section">
@@ -77,13 +79,14 @@ export default function InputResume() {
               rows="5"
               cols="33"
             ></textarea>
-          ) : 
-          <textarea
-          id="pasted-resume"
-          placeholder="Or Copy and paste the contents of your resume here"
-          rows="5"
-          cols="33"
-        ></textarea>}
+          ) : (
+            <textarea
+              id="pasted-resume"
+              placeholder="Or Copy and paste the contents of your resume here"
+              rows="5"
+              cols="33"
+            ></textarea>
+          )}
         </form>
       </div>
     </section>

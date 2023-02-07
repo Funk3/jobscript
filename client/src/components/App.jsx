@@ -10,6 +10,7 @@ import Button from "./Button";
 import Footer from "./Footer";
 import CustomLengthProvider from "../providers/CustomLengthProvider";
 import CustomToneProvider from "../providers/CustomToneProvider";
+import ResumeProvider from "../providers/ResumeProvider";
 
 //Styles
 import "../styles/App.css";
@@ -32,10 +33,13 @@ export default function App() {
         <div className="rhs-sections">
           <div className="rhs-user-inputs">
             <InputJobDesc />
-            <InputResume />
-            
+
+            <ResumeProvider>
+              <InputResume />
+            </ResumeProvider>
+
             <CustomToneProvider>
-            <CustomTone />
+              <CustomTone />
             </CustomToneProvider>
 
             <CustomLengthProvider>

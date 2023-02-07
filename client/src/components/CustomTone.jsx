@@ -1,14 +1,9 @@
-import React, {useState} from "react";
+import React, { useContext } from "react";
 
+import { CustomToneContext } from "../providers/CustomToneProvider";
 export default function CustomTone() {
-  //deconstruct provider data here
 
-  //move this logic into the provider
-  const [customTone, setCustomLength] = useState("Default");
-
-  const handleChange = (newLength) => {
-    setCustomLength(newLength);
-  };
+  const { customTone, handleChange } = useContext(CustomToneContext)
 
   return (
     <section className="custom-tone">

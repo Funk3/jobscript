@@ -14,9 +14,6 @@ import Button from './Button';
 //Styles
 import '../styles/App.css';
 
-//axios request
-// import aiRequest from '../__helpers__/aiapi';
-
 export default function App() {
   //If we get user auth done:
   //Helper function here to find out if user exists eg currentUser takes in req.session and returns user object

@@ -1,9 +1,8 @@
 // All queries relating to Job Description
-//require('dotenv').config();
-const db = require('../connection')
-//console.log(process.env.DB_NAME);
-//////////////////////ADDING
 
+const db = require('../connection')
+
+//////////////////////ADDING
 /*
  * To add fields from job description component into job_description table, by userID
  * @param {*} userID from req.session
@@ -21,7 +20,7 @@ const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionTe
   })
 }
 
-addJobDescriptionByUser(1, 'Google', 'Web Dev', 'Jr Web dev role at google'); //work
+//addJobDescriptionByUser(1, 'Google', 'Web Dev', 'Jr Web dev role at google'); //work
 
 
 //////////////////////UPDATING
@@ -41,7 +40,7 @@ const addCoverLetterByJobDescription = (jobDescID, coverLetterText) => {
   })
 }
 
-addCoverLetterByJobDescription(1, 'This is the incoming cover letter for job desc 1'); //works, overwrites the existing value
+//addCoverLetterByJobDescription(1, 'This is the incoming cover letter for job desc 1'); //works, overwrites the existing value
 
 
 // //////////////////////GETTING
@@ -59,7 +58,7 @@ const getAllJobDescByUser = (user_id) => {
   });
 };
 
-getAllJobDescByUser(1); //works, returns array of objects
+//getAllJobDescByUser(1); //works, returns array of objects
 
 /**
  * Returns an object of the job_desc for the specific job_desc ID.
@@ -76,10 +75,10 @@ const getJobDescByJobDescID = (jobDescID)=> {
   
 }
 
-getJobDescByJobDescID(3);//works, an object of jobDesc values.
+//getJobDescByJobDescID(3);//works, an object of jobDesc values.
 
 
 
 
 
-// module.exports = {addJobDescriptionByUser, addCoverLetterByJobDescription, getAllJobDescByUser, getJobDescByJobDescID}
+module.exports = {addJobDescriptionByUser, addCoverLetterByJobDescription, getAllJobDescByUser, getJobDescByJobDescID}

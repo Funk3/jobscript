@@ -37,7 +37,7 @@ export default function App() {
             <ResumeProvider>
               <InputResume />
             </ResumeProvider>
-            
+
             <CustomToneProvider>
               <CustomTone />
             </CustomToneProvider>

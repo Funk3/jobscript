@@ -69,6 +69,7 @@ export default function InputResume() {
 
       <div>
         <form>
+          {/* if file is uploaded then file is placed in text area if no file then sets empty text area  */}
           {uploadedFile ? (
             <textarea
               id="uploadedResume"

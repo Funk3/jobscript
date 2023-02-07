@@ -4,9 +4,8 @@ const bcrypy = require('bcrypt');
 
 const { getUserByEmail, addUser } = require('../db/queries/users');
 
-// Login with userID
-router.get('/user', (req, res) => {
-  res.send(console.log(getUserByID(1)));
+// Login with route
+router.post('/', (req, res) => {
+  const { email, password } = req;
 });
-
 module.exports = router;

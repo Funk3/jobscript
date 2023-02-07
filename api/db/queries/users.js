@@ -1,6 +1,5 @@
 //Queries relating to users
-
-const db = require('./connection');
+const db = require('../connection');
 
 const getUserByID = (id) => {
   return db
@@ -19,5 +18,7 @@ const getUserByEmail = (email) => {
     })
     .catch((error) => console.log(error));
 };
+
+getUserByEmail('zak@zak.com');
 
 module.exports = { getUserByID, getUserByEmail };

@@ -1,0 +1,1 @@
+// to be able to access user_id in database queries

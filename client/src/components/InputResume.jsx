@@ -4,7 +4,7 @@ import axios from "axios";
 export default function InputResume() {
   const [file, setFile] = useState("");
   const [filename, setFilename] = useState("Choose File");
-  const [uploadedFile, setUploadedFile] = useState("Or Copy and paste the contents of your resume here");
+  const [uploadedFile, setUploadedFile] = useState();
 
   // user selects file state for setFile & setFilename are updated with file name
   const onChange = (e) => {
@@ -32,7 +32,7 @@ export default function InputResume() {
       // returned data is saved as resume & update uploadedFile state
       const resume = res.data;
       setUploadedFile(resume.trim());
-      
+
       console.log("File Uploaded");
     } catch (err) {
       if (err.response.status === 500) {
@@ -41,8 +41,8 @@ export default function InputResume() {
         console.log(err.response.data.msg);
       }
     }
-    console.log(`${uploadedFile}`);
   };
+  console.log(uploadedFile);
 
   return (
     <section className="rhs-input-resume-section">
@@ -69,12 +69,20 @@ export default function InputResume() {
 
       <div>
         <form>
-          <textarea
-            id="uploadedResume"
-            placeholder={uploadedFile}
-            rows="5"
-            cols="33"
+          {uploadedFile ? (
+            <textarea
+              id="uploadedResume"
+              defaultValue={uploadedFile}
+              rows="5"
+              cols="33"
             ></textarea>
+          ) : 
+          <textarea
+          id="pastedResume"
+          placeholder="Or Copy and paste the contents of your resume here"
+          rows="5"
+          cols="33"
+        ></textarea>}
         </form>
       </div>
     </section>

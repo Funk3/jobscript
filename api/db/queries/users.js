@@ -19,6 +19,20 @@ const getUserByEmail = (email) => {
     .catch((error) => console.log(error));
 };
 
-getUserByEmail('zak@zak.com');
+const addUser = (name, email, password) => {
+  return db
+    .query(
+      `
+  INSERT INTO users (name, email, password)
+  VALUES ($1, $2, $3)
+  RETURNING *
+  `,
+      [name, email, password]
+    )
+    .then((user) => {
+      return user.rows[0];
+    })
+    .catch((error) => console.log(error));
+};
 
-module.exports = { getUserByID, getUserByEmail };
+module.exports = { getUserByID, getUserByEmail, addUser };

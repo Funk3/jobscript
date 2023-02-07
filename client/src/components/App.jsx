@@ -21,6 +21,13 @@ export default function App() {
   //if currentUser, render LandingPage, else render dashboard
   //pass currentUser into <Header/> component to render login/logout
 
+  //promise function that axios request the ai api and express backend database query
+  const aiRequest = new Promise(function(resolve, reject) {
+    
+  })
+
+  }
+
   return (
     <main>
       <Header />
@@ -40,7 +47,7 @@ export default function App() {
             {/* stretch <CustomCreativity /> */}
           </div>
 
-          <Button> Generate Cover Letter</Button>
+          <Button onclick="aiRequest">Generate Cover Letter</Button>
           
                 {/* coverLetterExists && */}
           <CoverLetter />

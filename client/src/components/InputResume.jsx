@@ -62,7 +62,9 @@ export default function InputResume() {
       </form>
 
       <div>
-        <textarea placeholder="Or Copy and paste the contents of your resume here"></textarea>
+       <form>
+        <textarea placeholder="Or Copy and paste the contents of your resume here" rows="5" cols="33"></textarea>
+       </form>
       </div>
     </section>
   );

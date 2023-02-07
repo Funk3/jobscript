@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Components
 import Header from "./Header";
@@ -9,7 +9,6 @@ import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
 import CustomLength from "./CustomLength";
-import CustomCreativity from "./CustomCreativity";
 import Button from "./Button";
 
 //Styles
@@ -49,3 +48,4 @@ export default function App() {
     </main>
   );
 }
+

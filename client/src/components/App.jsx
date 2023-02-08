@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-
-//Components
-import Header from './Header';
-import LandingPage from './LandingPage';
-import JobList from './JobList';
-import CoverLetter from './CoverLetter';
-import InputResume from './InputResume';
-import InputJobDesc from './InputJobDesc';
-import CustomTone from './CustomTone';
-import CustomLength from './CustomLength';
-import Button from './Button';
-import Footer from './Footer';
+import Header from "./Header";
+import LandingPage from "./LandingPage";
+import JobList from "./JobList";
+import CoverLetter from "./CoverLetter";
+import InputResume from "./InputResume";
+import InputJobDesc from "./InputJobDesc";
+import CustomTone from "./CustomTone";
+import CustomLength from "./CustomLength";
+import Button from "./Button";
+import Footer from "./Footer";
+import CustomLengthProvider from "../providers/CustomLengthProvider";
+import CustomToneProvider from "../providers/CustomToneProvider";
+import ResumeProvider from "../providers/ResumeProvider";
 
 //Styles
-import '../styles/App.css';
+import "../styles/App.css";
 
 export default function App() {
   //If we get user auth done:
@@ -30,12 +30,21 @@ export default function App() {
 
       <main>
         <JobList />
-        <div className='rhs-sections'>
-          <div className='rhs-user-inputs'>
-            <InputResume />
+        <div className="rhs-sections">
+          <div className="rhs-user-inputs">
             <InputJobDesc />
-            <CustomTone />
-            <CustomLength />
+
+            <ResumeProvider>
+              <InputResume />
+            </ResumeProvider>
+
+            <CustomToneProvider>
+              <CustomTone />
+            </CustomToneProvider>
+
+            <CustomLengthProvider>
+              <CustomLength />
+            </CustomLengthProvider>
             {/* stretch <CustomCreativity /> */}
           </div>
 

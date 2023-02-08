@@ -16,9 +16,9 @@ router.post("/", (req, res) => {
 
   pdfParse(file).then(result => {
     console.log(result.text);
+    res.send(result.text)
   })
 
-  res.json({ fileName : file.name})
 });
 
 module.exports = router;

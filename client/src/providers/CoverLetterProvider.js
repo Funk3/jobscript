@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const CoverLetterContext = createContext();
 
@@ -20,3 +20,5 @@ export function CoverLetterProvider(props) {
     </CoverLetterContext.Provider>
   );
 }
+
+export const useCoverLetterContext = () => useContext(CoverLetterContext);

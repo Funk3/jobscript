@@ -1,13 +1,11 @@
 import React from 'react';
-import Cookie from '../providers/AuthProvider';
-import { login } from '../__helpers__/routes/loginroute';
+import { DeleteCookie } from '../providers/AuthProvider';
 
 export default function LoginButton(props) {
   return (
     <button
       onClick={() => {
-        login();
-        Cookie();
+        DeleteCookie();
       }}
     >
       {props.children}

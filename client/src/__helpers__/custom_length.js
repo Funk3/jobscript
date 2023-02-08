@@ -5,8 +5,8 @@
  * @param {*} lengthSelected from state
  * @returns a string to be used in API call.
  */
-const createCustomLengthAPIQuery = (lengthSelected) => {
+export default function createCustomLengthAPIQuery (lengthSelected){
   //might not need falsy check at all??
-  !lengthSelected || lengthSelected === "Default" ? false :`The Cover Letter length should be ${lengthSelected}.`
+  return !lengthSelected || lengthSelected === "Default" ? false :`The Cover Letter length should be ${lengthSelected}.`
 }
 

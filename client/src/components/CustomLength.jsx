@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import { useCustomLengthContext } from "../providers/CustomLengthProvider";
 
-import { CustomLengthContext } from "../providers/CustomLengthProvider";
+
 
 export default function CustomLength() {
   
   //decontruct the providerData
-  const { customLength, handleChange } = useContext(CustomLengthContext);
+  const { customLength, handleChange } = useCustomLengthContext();
 
   return (
     <section className="custom-length">

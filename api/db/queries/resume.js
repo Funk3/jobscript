@@ -36,8 +36,4 @@ const getResumeByUser = userID => {
 //getResumeByUser(3); //works
 
 
-
-
-
-
-// module.exports = { addResumeByUser, getResumeByUser}
+module.exports = { addResumeByUser, getResumeByUser}

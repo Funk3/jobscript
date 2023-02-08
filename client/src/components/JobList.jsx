@@ -1,6 +1,6 @@
-import React from "react"
+import React , { useContext } from "react"
 import JobListItem from "./JobListItem"
-import Button from "./Button"
+import Button from "./GenerateCoverLetter"
 
 export default function JobList(){
 
@@ -18,7 +18,7 @@ export default function JobList(){
     <aside>
       <header className="aside-header">
       <h3>Job List</h3>
-      <Button>+</Button>
+      <button>+</button>
       </header>
       <article>{/*render individualJobListItems here */}
         <JobListItem />

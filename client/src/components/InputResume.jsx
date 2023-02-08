@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { ResumeContext } from "../providers/ResumeProvider";
+import { useResumeContext } from "../providers/ResumeProvider";
 
 export default function InputResume() {
-  const { file, filename, uploadedFile, onChange, onSubmit } =
-    useContext(ResumeContext);
+
+  const { file, filename, uploadedFile, onChange, onSubmit } = useResumeContext();
 
   return (
     <section className="rhs-input-resume-section">

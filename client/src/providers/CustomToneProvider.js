@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const CustomToneContext = createContext();
 
-export default function CustomToneProvider(props) {
-  const [customTone, setCustomTone] = useState("Default");
+export function CustomToneProvider(props) {
+  const [customTone, setCustomTone] = useState();
 
   const handleChange = (newTone) => {
     setCustomTone(newTone);
@@ -17,3 +17,5 @@ export default function CustomToneProvider(props) {
     </CustomToneContext.Provider>
   );
 }
+
+export const useCustomToneContext = () => useContext(CustomToneContext);

@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 import axios from "axios";
 
 export const ResumeContext = createContext();
 
-export default function ResumeProvider(props) {
+export function ResumeProvider(props) {
   const [file, setFile] = useState("");
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState();
@@ -53,3 +53,5 @@ export default function ResumeProvider(props) {
     </ResumeContext.Provider>
   );
 }
+
+export const useResumeContext = () => useContext(ResumeContext);

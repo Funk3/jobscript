@@ -6,20 +6,22 @@ import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
 import CustomLength from "./CustomLength";
-import Button from "./Button";
+import GenerateCoverLetter from "./GenerateCoverLetter";
 import Footer from "./Footer";
 
 //Providers
-import CustomLengthProvider from "../providers/CustomLengthProvider";
-import CustomToneProvider from "../providers/CustomToneProvider";
-import ResumeProvider from "../providers/ResumeProvider";
-import CoverLetterProvider from "../providers/CoverLetterProvider";
-import JobDescContextProvider from "../providers/JobDescProvider";
+import {CustomLengthProvider} from "../providers/CustomLengthProvider";
+import {CustomToneProvider} from "../providers/CustomToneProvider";
+import {ResumeProvider} from "../providers/ResumeProvider";
+import {CoverLetterProvider} from "../providers/CoverLetterProvider";
+import {JobDescProvider} from "../providers/JobDescProvider";
 
 //Styles
 import "../styles/App.css";
 
 export default function App() {
+  //determine if coverLetterTextExists, if it does, render the section. If not, hide the section
+
   //If we get user auth done:
   //Helper function here to find out if user exists eg currentUser takes in req.session and returns user object
   //if currentUser, render LandingPage, else render dashboard
@@ -32,37 +34,35 @@ export default function App() {
         {/* eg !currentUser && */} <LandingPage />
       </section>
 
-      <main>
-        <JobList />
-        <div className="rhs-sections">
-          <div className="rhs-user-inputs">
+      <CoverLetterProvider>
+        <CustomLengthProvider>
+          <CustomToneProvider>
+            <JobDescProvider>
+              <ResumeProvider>
+                <main>
+                  <JobList />
+                  <div className="rhs-sections">
+                    <div className="rhs-user-inputs">
+                      <InputResume />
 
-            <ResumeProvider>
-              <InputResume />
-            </ResumeProvider>
+                      <InputJobDesc />
 
-  
-            <JobDescContextProvider>
-              <InputJobDesc />
-            </JobDescContextProvider>
+                      <CustomTone />
 
-            <CustomToneProvider>
-            <CustomTone />
-            </CustomToneProvider>
+                      <CustomLength />
+                    </div>
 
-            <CustomLengthProvider>
-              <CustomLength />
-            </CustomLengthProvider>
-            {/* stretch <CustomCreativity /> */}
-          </div>
+                    <GenerateCoverLetter/>
 
-          <Button>Generate Cover Letter</Button>
+                    <CoverLetter />
+                  </div>
+                </main>
+              </ResumeProvider>
+            </JobDescProvider>
+          </CustomToneProvider>
+        </CustomLengthProvider>
+      </CoverLetterProvider>
 
-          <CoverLetterProvider>
-            <CoverLetter />
-          </CoverLetterProvider>
-        </div>
-      </main>
       <Footer />
     </main>
   );

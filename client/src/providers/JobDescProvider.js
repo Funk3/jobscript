@@ -1,11 +1,11 @@
 // ??job title, company name
 //definitely for description which will form part of query string
 
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
 export const JobDescContext = createContext();
 
-export default function JobDescProvider(props) {
+export function JobDescProvider(props) {
   
   
   const [jobTitle, setJobTitle] = useState();
@@ -32,3 +32,5 @@ export default function JobDescProvider(props) {
     </JobDescContext.Provider>
   );
 }
+
+export const useJobDescContext = () => useContext(JobDescContext);

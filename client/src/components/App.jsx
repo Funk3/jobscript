@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-
-//Components
 import Header from "./Header";
 import LandingPage from "./LandingPage";
 import JobList from "./JobList";
@@ -14,6 +11,8 @@ import Footer from "./Footer";
 
 //Providers
 import CustomLengthProvider from "../providers/CustomLengthProvider";
+import CustomToneProvider from "../providers/CustomToneProvider";
+import ResumeProvider from "../providers/ResumeProvider";
 import CoverLetterProvider from "../providers/CoverLetterProvider";
 import JobDescContextProvider from "../providers/JobDescProvider";
 
@@ -37,13 +36,19 @@ export default function App() {
         <JobList />
         <div className="rhs-sections">
           <div className="rhs-user-inputs">
-            <InputResume />
 
+            <ResumeProvider>
+              <InputResume />
+            </ResumeProvider>
+
+  
             <JobDescContextProvider>
               <InputJobDesc />
             </JobDescContextProvider>
 
+            <CustomToneProvider>
             <CustomTone />
+            </CustomToneProvider>
 
             <CustomLengthProvider>
               <CustomLength />

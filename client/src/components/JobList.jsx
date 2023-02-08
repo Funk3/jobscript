@@ -1,23 +1,29 @@
 import React from "react"
 import JobListItem from "./JobListItem"
+import { useAuthContext } from 'providers/AuthProvider'
 
-export default function JobList(){
+export default function JobList() {
 
-//Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}
-// listOfExistingJobApps = getExistingJobApps()
+  const { user } = useAuthContext();
 
-/* const individualJobListItem = listOfExistingJobApps.map((jobApp) => (
-  <JobListItem
-    jobTitle={jobApp.title}
-    companyName={jobApp.company_name}
-    />
-)); */
+  //Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}
+  // listOfExistingJobApps = getExistingJobApps()
+
+  //  const individualJobListItem = listOfExistingJobApps.map((jobApp) => (
+  //   <JobListItem
+  //     jobTitle={jobApp.title}
+  //     companyName={jobApp.company_name}
+  //     />
+  // ));
+
+
 
   return (
     <aside>
       <header className="aside-header">
-      <h3>Job List</h3>
-      <button>+</button>
+        <h3>Job List</h3>
+        <button>+</button>
+        <p>userid = {user.id}</p>
       </header>
       <article>{/*render individualJobListItems here */}
         <JobListItem />

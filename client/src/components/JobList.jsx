@@ -1,6 +1,5 @@
-import React , { useContext } from "react"
+import React from "react"
 import JobListItem from "./JobListItem"
-import Button from "./GenerateCoverLetter"
 
 export default function JobList(){
 

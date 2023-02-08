@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-
+import React from "react";
+import Save from "./Save";
 import {useCoverLetterContext} from "../providers/CoverLetterProvider";
 
 export default function CoverLetter() {
@@ -7,6 +7,9 @@ export default function CoverLetter() {
   const {coverLetterText, handleChange} = useCoverLetterContext()
 
   //edit buttons might need to be their own components as they do different things? or helpers to direct onClick
+
+
+
   return (
     <div className="rhs-cover-letter">
       {coverLetterText && 
@@ -19,8 +22,7 @@ export default function CoverLetter() {
           ></textarea>
 
           <section className="manage-cl-buttons">
-            <button> Save</button>
-            <button> Regenerate</button>
+            <Save/>
             <button> Copy</button>
             <button> Download/Save to FS </button>
           </section>

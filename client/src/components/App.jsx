@@ -11,7 +11,11 @@ import CustomTone from "./CustomTone";
 import CustomLength from "./CustomLength";
 import Button from "./Button";
 import Footer from "./Footer";
+
+//Providers
 import CustomLengthProvider from "../providers/CustomLengthProvider";
+import CoverLetterProvider from "../providers/CoverLetterProvider";
+import JobDescContextProvider from "../providers/JobDescProvider";
 
 //Styles
 import "../styles/App.css";
@@ -33,8 +37,12 @@ export default function App() {
         <JobList />
         <div className="rhs-sections">
           <div className="rhs-user-inputs">
-            <InputJobDesc />
             <InputResume />
+
+            <JobDescContextProvider>
+              <InputJobDesc />
+            </JobDescContextProvider>
+
             <CustomTone />
 
             <CustomLengthProvider>
@@ -45,8 +53,9 @@ export default function App() {
 
           <Button>Generate Cover Letter</Button>
 
-          {/* coverLetterExists && */}
-          <CoverLetter />
+          <CoverLetterProvider>
+            <CoverLetter />
+          </CoverLetterProvider>
         </div>
       </main>
       <Footer />

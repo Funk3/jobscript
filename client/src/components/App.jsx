@@ -1,31 +1,13 @@
-import Header from "./Header";
-import LandingPage from "./LandingPage";
-import JobList from "./JobList";
-import CoverLetter from "./CoverLetter";
-import InputResume from "./InputResume";
-import InputJobDesc from "./InputJobDesc";
-import CustomTone from "./CustomTone";
-import CustomLength from "./CustomLength";
-import GenerateCoverLetter from "./GenerateCoverLetter";
-import Footer from "./Footer";
-
-//Providers
-import { CustomLengthProvider } from "../providers/CustomLengthProvider";
-import { CustomToneProvider } from "../providers/CustomToneProvider";
-import { ResumeProvider } from "../providers/ResumeProvider";
-import { CoverLetterProvider } from "../providers/CoverLetterProvider";
-import { JobDescProvider } from "../providers/JobDescProvider";
-
 //Accessing context
-import { useAuthContext } from "../providers/AuthProvider";
-
+import LoginPage from 'pages/LoginPage';
+import { useAuthContext } from '../providers/AuthProvider';
 
 //Styles
-import "../styles/App.css";
+import '../styles/App.css';
+import AppPage from './AppPage';
 
 export default function App() {
-
-  const {user} = useAuthContext();
+  const { user } = useAuthContext();
 
   //determine if coverLetterTextExists, if it does, render the section. If not, hide the section
 
@@ -35,43 +17,12 @@ export default function App() {
   //pass currentUser into <Header/> component to render login/logout
   return (
     <main>
-      <Header />
-      <section>
-        {/* render landing page if user is not logged in */}
-        {/* eg !currentUser && */} <LandingPage />
-      </section>
-
-      <CoverLetterProvider>
-        <CustomLengthProvider>
-          <CustomToneProvider>
-            <JobDescProvider>
-              <ResumeProvider>
-                <main>
-                  <JobList />
-                  <div className="rhs-sections">
-                    <div className="rhs-user-inputs">
-                      <p>user = {user} </p>
-                      <InputResume />
-
-                      <InputJobDesc />
-
-                      <CustomTone />
-
-                      <CustomLength />
-                    </div>
-
-                    <GenerateCoverLetter />
-
-                    <CoverLetter />
-                  </div>
-                </main>
-              </ResumeProvider>
-            </JobDescProvider>
-          </CustomToneProvider>
-        </CustomLengthProvider>
-      </CoverLetterProvider>
-
-      <Footer />
+      {!user &&
+        <LoginPage />
+      }
+      {user != null && (
+        <AppPage />
+      )}
     </main>
   );
 }

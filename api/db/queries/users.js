@@ -14,6 +14,7 @@ const getUserByEmail = (email) => {
   return db
     .query(`SELECT * FROM users WHERE email = $1;`, [email])
     .then((user) => {
+      console.log(user.rows[0]);
       return user.rows[0] || null;
     })
     .catch((error) => console.log(error));

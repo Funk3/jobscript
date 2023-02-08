@@ -22,7 +22,7 @@ export function ResumeProvider(props) {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/upload`,
+        `api/pdf/upload`,
         formData,
         {
           headers: {

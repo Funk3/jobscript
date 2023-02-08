@@ -1,33 +1,32 @@
 // to be able to access user_id in database queries
-import Cookies from 'js-cookie';
+import axios from 'axios';
 import { createContext, useContext, useState } from "react";
 
-export const AuthContext = createContext();
-
-export function Cookie() {
-  Cookies.set('Zak', 'Zak');
-}
+export const authContext = createContext();
 
 export function AuthProvider(props) {
 
-  const [user, setUser] = useState("kirsten");
+  const [user, setUser] = useState();
 
-  const login = (newUser) => {
-    setUser(newUser)
+  const login = (email, password) => {
+    axios.post(`/api/users/login`, { email, password })
+      .then(res => {
+        console.log(res.data)
+        setUser(res.data)
+      })
   }
 
   const logout = () => {
-    setUser();
-    //clear cookies
+    setUser(null);
   }
 
-  const providerData = {user, login, logout}
+  const providerData = { user, login, logout }
 
   return (
-    <AuthContext.Provider value={providerData}>
+    <authContext.Provider value={providerData}>
       {props.children}
-    </AuthContext.Provider>
+    </authContext.Provider>
   );
 }
 
-export const useAuthContext = () => useContext(AuthContext);
+export const useAuthContext = () => useContext(authContext);

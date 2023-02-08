@@ -12,12 +12,12 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const user = require('./routes/userLogin');
+const users = require('./routes/users');
 const pdfRoute = require('./routes/pdfRoute');
 
 console.log('connected');
-app.use('/account', user);
-app.use('/upload', pdfRoute);
+app.use('/api/users', users);
+app.use('/api/pdf', pdfRoute);
 
 app.listen(PORT, () => {
   console.log(`Jobscript Server is listening on port ${PORT}`);

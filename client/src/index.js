@@ -3,16 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { CookiesProvider } from 'react-cookie';
 
 //Strict mode will help identify bugs/warnings in development stage. Remove for deployment as it can affect performance KH 02/04/23
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CookiesProvider>
-      <App />
-    </CookiesProvider>
+    <App />
   </React.StrictMode>
 );
 

@@ -1,23 +1,23 @@
-import Header from "./Header";
-import LandingPage from "./LandingPage";
-import JobList from "./JobList";
-import CoverLetter from "./CoverLetter";
-import InputResume from "./InputResume";
-import InputJobDesc from "./InputJobDesc";
-import CustomTone from "./CustomTone";
-import CustomLength from "./CustomLength";
-import GenerateCoverLetter from "./GenerateCoverLetter";
-import Footer from "./Footer";
+import Header from './Header';
+import LandingPage from './LandingPage';
+import JobList from './JobList';
+import CoverLetter from './CoverLetter';
+import InputResume from './InputResume';
+import InputJobDesc from './InputJobDesc';
+import CustomTone from './CustomTone';
+import CustomLength from './CustomLength';
+import GenerateCoverLetter from './GenerateCoverLetter';
+import Footer from './Footer';
 
 //Providers
-import {CustomLengthProvider} from "../providers/CustomLengthProvider";
-import {CustomToneProvider} from "../providers/CustomToneProvider";
-import {ResumeProvider} from "../providers/ResumeProvider";
-import {CoverLetterProvider} from "../providers/CoverLetterProvider";
-import {JobDescProvider} from "../providers/JobDescProvider";
+import {CustomLengthProvider} from '../providers/CustomLengthProvider';
+import {CustomToneProvider} from '../providers/CustomToneProvider';
+import {ResumeProvider} from '../providers/ResumeProvider';
+import {CoverLetterProvider} from '../providers/CoverLetterProvider';
+import {JobDescProvider} from '../providers/JobDescProvider';
 
 //Styles
-import "../styles/App.css";
+import '../styles/App.css';
 
 export default function App() {
   //determine if coverLetterTextExists, if it does, render the section. If not, hide the section
@@ -41,8 +41,8 @@ export default function App() {
               <ResumeProvider>
                 <main>
                   <JobList />
-                  <div className="rhs-sections">
-                    <div className="rhs-user-inputs">
+                  <div className='rhs-sections'>
+                    <div className='rhs-user-inputs'>
                       <InputResume />
 
                       <InputJobDesc />

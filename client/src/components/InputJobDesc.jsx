@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React from "react";
 
-import { JobDescContext } from "../providers/JobDescProvider";
+import { useJobDescContext } from "../providers/JobDescProvider";
 
 export default function InputJobDesc() {
 
-  const {jobTitle, handleChangeJobTitle, companyName, handleChangeCompanyName, jobDescText, handleChangeJobDescText} = useContext(JobDescContext);
+  const {handleChangeJobTitle, handleChangeCompanyName, handleChangeJobDescText} = useJobDescContext();
 
   return (
     <section>

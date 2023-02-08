@@ -2,10 +2,11 @@ import { createContext, useState } from "react";
 
 export const CoverLetterContext = createContext();
 
-export default function CoverLetterProvider(props) {
+export function CoverLetterProvider(props) {
+
+  //call openAI request here and get result back. Set useState(default to response from API)
   
-  
-  const [coverLetterText, setCoverLetterText] = useState("Default");
+  const [coverLetterText, setCoverLetterText] = useState("responseFromAPI");
 
   const handleChange = (newCoverLetterText) => {
     setCoverLetterText(newCoverLetterText);

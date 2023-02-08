@@ -12,11 +12,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const user = require('./routes/userLogin');
+const users = require('./routes/users');
 const pdfRoute = require('./routes/pdfRoute');
 
 console.log('connected');
-app.use('/account', user);
+app.use('/api/users', users);
 app.use('/upload', pdfRoute);
 
 app.listen(PORT, () => {

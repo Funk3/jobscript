@@ -1,5 +1,5 @@
 import React from 'react';
-import login from '../__helpers__/loginroute';
+import { login } from '../__helpers__/routes/loginroute';
 
 export default function LoginButton(props) {
   return <button onClick={login}>{props.children}</button>;

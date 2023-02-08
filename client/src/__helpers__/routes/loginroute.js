@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default function login() {
+export function login() {
   axios({
     method: 'post',
     url: `${process.env.REACT_APP_SERVER_URL}/account/login`,

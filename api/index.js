@@ -17,7 +17,7 @@ const pdfRoute = require('./routes/pdfRoute');
 
 console.log('connected');
 app.use('/api/users', users);
-app.use('/upload', pdfRoute);
+app.use('/api/pdf', pdfRoute);
 
 app.listen(PORT, () => {
   console.log(`Jobscript Server is listening on port ${PORT}`);

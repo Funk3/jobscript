@@ -16,10 +16,17 @@ import { ResumeProvider } from "../providers/ResumeProvider";
 import { CoverLetterProvider } from "../providers/CoverLetterProvider";
 import { JobDescProvider } from "../providers/JobDescProvider";
 
+//Accessing context
+import { useAuthContext } from "../providers/AuthProvider";
+
+
 //Styles
 import "../styles/App.css";
 
 export default function App() {
+
+  const {user} = useAuthContext();
+
   //determine if coverLetterTextExists, if it does, render the section. If not, hide the section
 
   //If we get user auth done:
@@ -43,6 +50,7 @@ export default function App() {
                   <JobList />
                   <div className="rhs-sections">
                     <div className="rhs-user-inputs">
+                      <p>user = {user} </p>
                       <InputResume />
 
                       <InputJobDesc />

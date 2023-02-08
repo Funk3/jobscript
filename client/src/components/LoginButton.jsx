@@ -1,5 +1,5 @@
 import React from 'react';
-import Cookie from '../providers/AuthProvider';
+import { Cookie } from '../providers/AuthProvider';
 import { login } from '../__helpers__/routes/loginroute';
 
 export default function LoginButton(props) {

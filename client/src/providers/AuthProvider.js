@@ -11,7 +11,6 @@ export function AuthProvider(props) {
   const login = (email, password) => {
     axios.post(`/api/users/login`, { email, password })
       .then(res => {
-        console.log(res.data)
         setUser(res.data)
       })
 
@@ -21,7 +20,7 @@ export function AuthProvider(props) {
     setUser(null);
   }
 
-///To track login/logout button clicks
+  ///To track login/logout button clicks
   const [isClicked, setIsClicked] = useState(false);
 
   const handleLoginLogoutClick = (event) => {

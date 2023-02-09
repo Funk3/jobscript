@@ -11,13 +11,10 @@ export default function JobList() {
 
   useEffect(() => {
     axios.post(`api/joblist/pullJob`, user).then((res) => {
-      console.log("res.data", res.data)
       //const data = res.data;
       setJobData(res.data)
     });
   }, [])
-
-  console.log("jobData", jobData);
 
   const individualJobListItem = jobData.map((jobApp) => (
     <JobListItem

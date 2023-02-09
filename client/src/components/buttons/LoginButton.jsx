@@ -1,14 +1,14 @@
 import LoginPage from 'components/pages/LoginPage';
 import React, {useState} from 'react';
-import { useLoginButtonContext } from 'providers/LoginButtonProvider';
+import { useAuthContext } from 'providers/AuthProvider';
 
 export default function LoginButton() {
 
-  const {handleClick} = useLoginButtonContext();
+  const {handleLoginLogoutClick} = useAuthContext();
 
   return (
     <>
-    <button onClick={handleClick}> Login </button>
+    <button onClick={handleLoginLogoutClick}> Login </button>
     </>
   );
 }

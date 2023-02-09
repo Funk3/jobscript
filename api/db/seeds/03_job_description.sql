@@ -1,5 +1,5 @@
-INSERT INTO job_description (user_id, description, cover_letter_text)
-VALUES (1, 'Full Job Description
+INSERT INTO job_description (user_id, company_name, job_title, description, cover_letter_text)
+VALUES (1, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 Be the Change Group is a women-led, B Corp looking for a skilled nerd with a drive to help make an impact through coding!
 
 Web Developer position:
@@ -78,7 +78,7 @@ Language:
 
 English (required)
 Work Location: One location', 'cover letter for user 1 job desc 1'),
-(1, 'Full Job Description
+(1, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 About Us
 
 AlphaPay is a FinTech company that delivers payment technology services around the world. As a group of cross-border commerce professionals, we help businesses globally to bridge the gap with 1.4 billion Chinese consumers through our cross-border payment technology.
@@ -129,7 +129,7 @@ Schedule:
 
 8 hour shift
 ', 'cover letter for user 1 job desc 2'),
-(2, 'Full Job Description
+(2, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 James Evans and Associates, Ltd. is a Victoria-based company that has been doing business in Canada and the United States for over 40 years. We have an excellent, well-established reputation in the Canadian and US pension industry. JEA offers SaaS and on-premises pension system administration solutions, along with pension system consulting services to a variety of clients with a diversity of needs. With over 40 years of history, JEA has proven we are both adaptable and reliable - and that, above all, we strive to form true partnerships with our clients, ensuring we develop, implement and support the best in class pension solutions for their organizations and members.
 
 Position Description
@@ -214,7 +214,7 @@ Work Location: One location
 ','cover letter for user 2 job desc 3'),
 
 
-(2, 'Full Job Description
+(2, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 At RIMEX we operate under one simple premise: Provide our customers with the best products and services, period. We have the finest engineers, a state of the art manufacturing facility and a focus on quality that is second to none.
 
 We currently have a fulltime opening for an Front End Web Developer to join our team in Victoria BC working on our TyreSense product line.
@@ -254,7 +254,10 @@ Dental & Vision care
 Travel Medical insurance
 Employee assistance program
 Life Insurance / Accidental Death', 'cover letter for user 2 job desc 4'),
-(3, 'Full Job Description
+
+
+
+(3, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 FORM (formswim.com) is a sports technology company with a mission to break down the barriers between what swimming is and what it could be. We’re looking for a Web Developer to join our rapidly growing team.
 
 At FORM, you’ll be part of a close team that’s redefining the sport of swimming. You’ll have the freedom to shape your role, how you own it, and how you grow with us. And you’ll be part of an amazing and diverse group of people who love to work and have fun together.
@@ -339,7 +342,7 @@ Work Location: One location', 'cover letter for user 3 job desc 5'),
 
 
 
-(3, 'Full Job Description
+(3, 'Lighthouse Labs', 'Junior Web Developer', 'Full Job Description
 Position Title: Jr. Full Stack JavaScript developer
 
 Reports to: Director, R&D

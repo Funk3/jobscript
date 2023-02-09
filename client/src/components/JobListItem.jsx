@@ -1,15 +1,17 @@
 import React from "react";
+import { useCoverLetterContext } from "providers/CoverLetterProvider";
+export default function JobListItem(props) {
 
-export default function JobListItem() {
+  const { coverLetterText} = props;
+  const {handleChange} = useCoverLetterContext();
+
+  //console.log("job list item props", props);
   //incomong props = jobTitle and companyName
 
   return (
-    <section
-    /* onClick = render cover letter on the right hand side.  */
-    >
-      <h3> props.jobTitle</h3>
-      <h4> props.companyName</h4>
-
-    </section>
+    <button onClick={()=> handleChange(coverLetterText)}>
+      <h3> {props.jobTitle}</h3>
+      <h4> {props.companyName}</h4>
+    </button>
   );
 }

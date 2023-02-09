@@ -15,7 +15,7 @@ export default function CoverLetter() {
       {coverLetterText && 
         <form>
           <textarea
-            defaultValue={coverLetterText}
+            value={coverLetterText}
             onChange={(event) => handleChange(event.target.value)}
             rows="5"
             cols="33"

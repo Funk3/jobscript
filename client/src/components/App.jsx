@@ -6,29 +6,28 @@ import Footer from "./navigation/Footer";
 
 //Accessing context
 import { useAuthContext } from "providers/AuthProvider";
-import { useLoginButtonContext } from "providers/LoginButtonProvider";
+
 //Styles
 import "../styles/App.css";
 import AppPage from "./AppPage";
 
 export default function App() {
-  const { user } = useAuthContext();
-  const { isShown} = useLoginButtonContext();
+  const { user, isClicked } = useAuthContext();
 
   return (
     <main>
   
         <Header />
 
-        {!user && !isShown && (
+        {!user && !isClicked && (
           <>
             <LandingPage />
           </>
         )}
 
-        {isShown && <LoginPage />}
+        {isClicked && !user && <LoginPage />}
 
-        {user && isShown && <AppPage />}
+        {user && <AppPage />}
 
         <Footer />
     </main>

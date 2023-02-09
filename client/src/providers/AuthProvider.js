@@ -14,13 +14,21 @@ export function AuthProvider(props) {
         console.log(res.data)
         setUser(res.data)
       })
+
   }
 
   const logout = () => {
     setUser(null);
   }
 
-  const providerData = { user, login, logout }
+///To track login/logout button clicks
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleLoginLogoutClick = (event) => {
+    setIsClicked((current) => !current);
+  };
+
+  const providerData = { user, login, logout, isClicked, handleLoginLogoutClick }
 
   return (
     <authContext.Provider value={providerData}>

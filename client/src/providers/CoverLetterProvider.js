@@ -6,9 +6,10 @@ export function CoverLetterProvider(props) {
 
   //call openAI request here and get result back. Set useState(default to response from API)
   
-  const [coverLetterText, setCoverLetterText] = useState("responseFromAPI");
+  const [coverLetterText, setCoverLetterText] = useState();
 
   const handleChange = (newCoverLetterText) => {
+    console.log("incoming new cover lterr text", newCoverLetterText);
     setCoverLetterText(newCoverLetterText);
   };
 

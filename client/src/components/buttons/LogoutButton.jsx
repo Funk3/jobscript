@@ -1,16 +1,17 @@
 import React, {useContext} from 'react';
-import { authContext } from '../../providers/AuthProvider';
+import { useAuthContext } from '../../providers/AuthProvider';
 
 //import { DeleteCookie } from '../../providers/AuthProvider';
 
 export default function LogoutButton() {
 
-  const { logout } = useContext(authContext);
+  const { logout, handleLoginLogoutClick} = useAuthContext();
 
   return (
     <button
       onClick={() => {
         logout();
+        handleLoginLogoutClick();
       }}
     >
       Logout

@@ -1,33 +1,30 @@
-import React from "react"
-import axios from 'axios'
-import JobListItem from "./JobListItem"
-import { useAuthContext } from 'providers/AuthProvider'
+import React, { useState , useEffect} from "react";
+import axios from "axios";
+import JobListItem from "./JobListItem";
+import { useAuthContext } from "providers/AuthProvider";
 
 export default function JobList() {
-
   const { user } = useAuthContext();
 
-  //Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}
+  const [ jobData, setJobData] = useState([]);
+  //const responseFromAPI = [];
 
-  // const individualJobListItem = listOfExistingJobApps.map((jobApp) => (
-  //   <JobListItem
-  //     jobTitle={jobApp.title}
-  //     companyName={jobApp.company_name}
-  //   />
-  // ));
-  const stuff = [];
+  useEffect(() => {
+    axios.post(`api/joblist/pull`, user).then((res) => {
+      console.log("res.data", res.data)
+      //const data = res.data;
+      setJobData(res.data)
+    });
+  }, [])
+  
+  console.log("jobData", jobData);
 
-  axios.post(`api/joblist/pull`, user).then(res => {
-    console.log(res.data)
-    const data = res.data
-    stuff.push(data);
-  })
-  console.log('stuff', stuff)
-
-  const individualJobListItem = stuff.map((jobApp) => (
+  const individualJobListItem = jobData.map((jobApp) => (
     <JobListItem
-      jobTitle={jobApp.title}
+      key={jobApp.id}
+      jobTitle={jobApp.job_title}
       companyName={jobApp.company_name}
+      coverLetterText={jobApp.cover_letter_text}
     />
   ));
   return (
@@ -35,11 +32,10 @@ export default function JobList() {
       <header className="aside-header">
         <h3>Job List</h3>
         <button>+</button>
-        <p>userid = {user.id}</p>
       </header>
-      <article>{individualJobListItem}
-
-      </article>
+      <section>
+       {individualJobListItem}
+      </section>
     </aside>
   );
 }

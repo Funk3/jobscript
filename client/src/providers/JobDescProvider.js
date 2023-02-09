@@ -8,17 +8,17 @@ export const JobDescContext = createContext();
 export function JobDescProvider(props) {
   
   
-  const [jobTitle, setJobTitle] = useState();
+  const [jobTitle, setJobTitle] = useState("");
   const handleChangeJobTitle = (newJobTitle) => {
     setJobTitle(newJobTitle);
   };
 
-  const [companyName, setCompanyName] = useState();
+  const [companyName, setCompanyName] = useState("");
   const handleChangeCompanyName = (newCompanyName) => {
     setCompanyName(newCompanyName);
   };
 
-  const [jobDescText, setJobDescText] = useState();
+  const [jobDescText, setJobDescText] = useState("");
 
   const handleChangeJobDescText = (newjobDescText) => {
     setJobDescText(newjobDescText);

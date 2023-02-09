@@ -9,6 +9,7 @@ export default function LogoutButton() {
 
   return (
     <button
+      className='log-btn'
       onClick={() => {
         logout();
         handleLoginLogoutClick();

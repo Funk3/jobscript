@@ -8,7 +8,7 @@ export default function LoginButton() {
 
   return (
     <>
-    <button onClick={handleLoginLogoutClick}> Login </button>
+    <button className='log-btn' onClick={handleLoginLogoutClick}> Login </button>
     </>
   );
 }

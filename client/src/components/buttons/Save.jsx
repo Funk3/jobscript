@@ -12,10 +12,10 @@ export default function Save() {
 
   //save needs to access user id, resume, job title, company name, job text, coverletter text,
   // db/queries/resume
-  addResumeByUser(user.id, uploadedFile)
+  //addResumeByUser(user.id, uploadedFile)
 
   //db/queries/job_description
-  addjobDescByUser(user.id, jobTitle, companyName, jobDescText, coverLetterText)
+  //addjobDescByUser(user.id, jobTitle, companyName, jobDescText, coverLetterText)
    
 
   return <button>Save</button>;

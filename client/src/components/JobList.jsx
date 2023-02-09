@@ -8,7 +8,6 @@ export default function JobList() {
   const { user } = useAuthContext();
 
   //Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}
-  // const listOfExistingJobApps = getExistingJobApps()
 
   // const individualJobListItem = listOfExistingJobApps.map((jobApp) => (
   //   <JobListItem
@@ -16,17 +15,21 @@ export default function JobList() {
   //     companyName={jobApp.company_name}
   //   />
   // ));
+  const stuff = [];
 
   axios.post(`api/joblist/pull`, user).then(res => {
     console.log(res.data)
-    // const listOfExistingJobApps = res.data
-    // const individualJobListItem = listOfExistingJobApps.map((jobApp) => (
-    //   <JobListItem
-    //     jobTitle={jobApp.title}
-    //     companyName={jobApp.company_name}
-    //   />
-    // ));
+    const data = res.data
+    stuff.push(data);
   })
+  console.log('stuff', stuff)
+
+  const individualJobListItem = stuff.map((jobApp) => (
+    <JobListItem
+      jobTitle={jobApp.title}
+      companyName={jobApp.company_name}
+    />
+  ));
   return (
     <aside>
       <header className="aside-header">
@@ -34,8 +37,8 @@ export default function JobList() {
         <button>+</button>
         <p>userid = {user.id}</p>
       </header>
-      <article>{/*render individualJobListItems here */}
-        <JobListItem />
+      <article>{individualJobListItem}
+
       </article>
     </aside>
   );

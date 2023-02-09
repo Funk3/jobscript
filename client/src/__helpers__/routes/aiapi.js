@@ -18,10 +18,10 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
   };
 
   const headers = {
-    Authorization: 'Bearer ' + apiKey,
+    Authorization: 'Bearer ' + apiKey
   };
 
-  axios
+  return axios
     .post('https://api.openai.com/v1/completions', params, {
       headers: headers,
     })
@@ -29,9 +29,4 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
       console.log("API response = ", result.data.choices[0].text)
       return result.data.choices[0].text;
     })
-    .catch((err) => {
-      console.log(err.request.response);
-      console.log(err.config.data);
-      console.log(err);
-    });
 }

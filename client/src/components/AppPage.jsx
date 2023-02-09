@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 //Components
 import JobList from './JobList';
@@ -18,6 +18,8 @@ import { JobDescProvider } from '../providers/JobDescProvider';
 
 export default function AppPage() {
 
+  const [loading, setLoading] = useState(false)
+
   return (
     <>
     
@@ -33,7 +35,10 @@ export default function AppPage() {
               <ResumeProvider>
                 <main className='cards'>
                   <JobList />
-                  <div className='rhs-sections'>
+                  {
+                    loading
+                    ? <img src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" alt="loading"/> 
+                    : <div className='rhs-sections'>
                     <div className='rhs-user-inputs'>
               
                       <InputResume />
@@ -45,10 +50,12 @@ export default function AppPage() {
                       <CustomLength />
                     </div>
 
-                    <GenerateCoverLetter />
+                    <GenerateCoverLetter setLoading={setLoading}/>
 
                     <CoverLetter />
                   </div>
+                    
+                  }
                 </main>
               </ResumeProvider>
             </JobDescProvider>

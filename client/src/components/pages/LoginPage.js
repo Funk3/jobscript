@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { authContext } from 'providers/AuthProvider';
-import { useContext } from 'react';
+
 
 
 export default function LoginPage() {
@@ -18,7 +18,7 @@ export default function LoginPage() {
       <form onSubmit={onSubmit}>
         <p>
           <input type="text" name="username"
-            value={email} placeholder="Enter Username or email"
+            value={email} placeholder="Enter Email"
             onChange={event => setEmail(event.target.value)} />
         </p>
         <p>

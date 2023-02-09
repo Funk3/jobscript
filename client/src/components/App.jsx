@@ -1,28 +1,36 @@
-//Accessing context
-import LoginPage from 'pages/LoginPage';
-import { useAuthContext } from '../providers/AuthProvider';
+//Components
+import Header from "./navigation/Header";
+import LoginPage from "components/pages/LoginPage";
+import LandingPage from "./pages/LandingPage";
+import Footer from "./navigation/Footer";
 
+//Accessing context
+import { useAuthContext } from "providers/AuthProvider";
+import { useLoginButtonContext } from "providers/LoginButtonProvider";
 //Styles
-import '../styles/App.css';
-import AppPage from './AppPage';
+import "../styles/App.css";
+import AppPage from "./AppPage";
 
 export default function App() {
   const { user } = useAuthContext();
+  const { isShown} = useLoginButtonContext();
 
-  //determine if coverLetterTextExists, if it does, render the section. If not, hide the section
-
-  //If we get user auth done:
-  //Helper function here to find out if user exists eg currentUser takes in req.session and returns user object
-  //if currentUser, render LandingPage, else render dashboard
-  //pass currentUser into <Header/> component to render login/logout
   return (
     <main>
-      {!user &&
-        <LoginPage />
-      }
-      {user != null && (
-        <AppPage />
-      )}
+  
+        <Header />
+
+        {!user && !isShown && (
+          <>
+            <LandingPage />
+          </>
+        )}
+
+        {isShown && <LoginPage />}
+
+        {user && isShown && <AppPage />}
+
+        <Footer />
     </main>
   );
 }

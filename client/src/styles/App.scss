@@ -13,6 +13,14 @@ body {
   font-family: Inter,sans-serif;
 }
 
+.cards {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .log-btn {
   background-color: $main-colour;
   border: 2px solid black;
@@ -55,6 +63,8 @@ textarea {
 
 /* Top Nav Bar*/
 .nav-bar {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -72,7 +82,7 @@ textarea {
 /* Job List and Job List Item */
 aside {
   background-color: white;
-  margin-left: 40px;
+  // margin-left: 40px;
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
@@ -89,6 +99,7 @@ aside {
   border-radius: 50%;
   margin-top: 8px;
   margin-right: 20px;
+  border: 2px solid black;
 }
 .aside-header {
   border-color: black;
@@ -102,16 +113,15 @@ aside {
 
 .rhs-sections {
   height: 100%;
+  width: 70%;
   background-color: white;
   display: flex;
-  margin-left: 35rem;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
   padding: 10px;
-  margin-right: 40px;
 }
 
 /* Landing page */

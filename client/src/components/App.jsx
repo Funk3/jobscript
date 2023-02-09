@@ -3,7 +3,7 @@ import LoginPage from 'pages/LoginPage';
 import { useAuthContext } from '../providers/AuthProvider';
 
 //Styles
-import '../styles/App.css';
+import '../styles/App.scss';
 import AppPage from './AppPage';
 
 export default function App() {

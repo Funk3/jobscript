@@ -17,7 +17,7 @@ export default function JobList(){
     <aside>
       <header className="aside-header">
       <h3>Job List</h3>
-      <button>+</button>
+      <button className="new-btn">+</button>
       </header>
       <article>{/*render individualJobListItems here */}
         <JobListItem />

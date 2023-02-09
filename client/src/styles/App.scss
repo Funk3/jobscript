@@ -1,0 +1,101 @@
+$main-colour: #dfddd7;
+// $card-styling: d
+
+
+/* Whole page */
+main {
+  background-color: $main-colour;
+  height: 100%;
+  width: 100%;
+}
+body {
+  margin: 0;
+  margin-bottom: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Top Nav Bar*/
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: $main-colour;
+  height: 75px;
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.nav-logo {
+  font-size: 35px;
+  flex-grow: 0.7;
+}
+
+/* Job List and Job List Item */
+aside {
+  background-color: white;
+  margin-left: 40px;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: black;
+  padding: 10px;
+  float: left;
+  width: 20%;
+  padding-left: 60px;
+  height: 100%;
+}
+
+.new-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-right: 20px;
+}
+.aside-header {
+  border-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // justify-items: center;
+}
+
+/* RHS User Input area */
+
+.rhs-sections {
+  display: flex;
+  margin-left: 35rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: black;
+  padding: 10px;
+  margin-right: 40px;
+}
+
+/* Landing page */
+
+.landing-page-header {
+  text-align: center;
+  margin-top: 5rem;
+}
+.landing-page-instructional {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  margin: 2rem 0rem;
+  align-items: baseline;
+}
+
+.landing-page-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

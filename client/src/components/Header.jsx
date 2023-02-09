@@ -8,9 +8,8 @@ export default function Header() {
     <header className='main-header'>
       <nav className='nav-bar'>
         <a className='nav-logo'>Jobscript logo.</a>
-        <a className='nav-link'>Register</a>
-        {/*currentUser &&*/}
         Currently logged in as:k@k.com
+        {/*currentUser &&*/}
         <a className='nav-link'>Logout</a>
       </nav>
     </header>

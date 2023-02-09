@@ -27,7 +27,7 @@ export default function AppPage(props) {
       <Header />
       <section>
         {/* render landing page if user is not logged in */}
-        {/* eg !currentUser && */} <LandingPage />
+        {/* eg !currentUser && <LandingPage /> */}
       </section>
 
       <CoverLetterProvider>

@@ -33,8 +33,8 @@ export default function AppPage() {
               <ResumeProvider>
                 <main className='cards'>
                   <JobList />
-                  <div className='rhs-sections'>
-                    <div className='rhs-user-inputs'>
+                  <div className='center-sections'>
+                    <div className='cemter-user-inputs'>
               
                       <InputResume />
 
@@ -44,6 +44,8 @@ export default function AppPage() {
 
                       <CustomLength />
                     </div>
+                  </div>
+                  <div className='rhs-sections'>
 
                     <GenerateCoverLetter />
 

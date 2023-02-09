@@ -33,9 +33,9 @@ export default function JobList() {
   return (
     <aside>
       <header className="aside-header">
-        <h3>Job List</h3>
-        <button>+</button>
-        <p>userid = {user.id}</p>
+      <h3>Job List</h3>
+      <button className="new-btn">+</button>
+      <p>userid = {user.id}</p>
       </header>
       <article>{individualJobListItem}
 

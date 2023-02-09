@@ -23,7 +23,7 @@ export default function AppPage() {
     
       <section>
         {/* render landing page if user is not logged in */}
-        {/* eg !currentUser && */} 
+        {/* eg !currentUser && <LandingPage /> */}
       </section>
 
       <CoverLetterProvider>

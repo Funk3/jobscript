@@ -8,8 +8,8 @@ import Footer from "./navigation/Footer";
 import { useAuthContext } from "providers/AuthProvider";
 
 //Styles
-import "../styles/App.css";
-import AppPage from "./AppPage";
+import '../styles/App.scss';
+import AppPage from './AppPage';
 
 export default function App() {
   const { user, isClicked } = useAuthContext();

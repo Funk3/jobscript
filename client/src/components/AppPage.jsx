@@ -31,7 +31,7 @@ export default function AppPage() {
           <CustomToneProvider>
             <JobDescProvider>
               <ResumeProvider>
-                <main>
+                <main className='cards'>
                   <JobList />
                   <div className='rhs-sections'>
                     <div className='rhs-user-inputs'>

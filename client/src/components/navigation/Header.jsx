@@ -14,7 +14,7 @@ export default function Header() {
         <img className='logo' src='../../JobScript.png' />
         {!user && 
         <>
-        <a className='nav-link'>Register</a>
+        <button className='log-btn'> Register </button>
         <LoginButton/>
         </>}
         

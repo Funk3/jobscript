@@ -1,4 +1,4 @@
-$main-colour: #dfddd7;
+@import 'Variables';
 
 /* Whole page */
 html {
@@ -18,29 +18,23 @@ body {
   margin-right: 40px;
   margin-top: 140px;
   display: flex;
+  flex: wrap;
   justify-content: space-between;
 }
 
 .log-btn {
-  // position: bloc;
-  // top: 20px;
-  // right: 20px;
   background-color: $main-colour;
-  border: 2px solid black;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
   border-radius: 10px;
-  box-shadow: black 4px 4px 0 0;
-  color: black;
-  cursor: pointer;
+  height: 40px;
   display: block;
+  text-align: center;
   font-weight: 600;
   font-size: 18px;
-  padding: 0 18px;
-  text-align: center;
-  height: 40px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin-right: 20px;
+  padding: 0 18px;
 }
 
 .log-btn:hover {
@@ -50,20 +44,6 @@ body {
 .log-btn:active {
   box-shadow: black 2px 2px 0 0;
   transform: translate(2px, 2px);
-}
-
-textarea {
-  background-color: #dddddd;
-  padding: 1em;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  outline: none;
-  font-family: Inter, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  width: 200px;
-  height: 100px;
 }
 
 /* Top Nav Bar*/
@@ -76,26 +56,29 @@ textarea {
   background-color: $main-colour;
   height: 75px;
   width: 100%;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px;
   margin-bottom: 30px;
 }
 
 .logo {
   display: block;
-  // margin-right: 75vh;
 }
 
-.nav-btns {
+.nav-rhs {
   display: flex;
   justify-content: space-between;
+  padding-right: 20px;
+}
+
+.crr-user {
+  margin-right: 10px;
 }
 
 /* Job List and Job List Item */
 aside {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  // margin-left: 40px;
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
@@ -103,17 +86,32 @@ aside {
   float: left;
   width: 20%;
   padding-left: 40px;
-  height: 65vh;
+  height: 100%;
 }
 
 .new-btn {
+  background-color: $main-colour;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
   height: 40px;
   width: 40px;
-  border-radius: 50%;
-  margin-top: 8px;
+  font-weight: 400;
+  font-size: 25px;
   margin-right: 20px;
-  border: 2px solid black;
+  margin-top: 8px;
+  border-radius: 50%;
 }
+
+.new-btn:hover {
+  background-color: #fff;
+}
+
+.new-btn:active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
 .aside-header {
   border-color: black;
   display: flex;
@@ -129,12 +127,25 @@ aside {
   width: 70%;
   background-color: white;
   display: flex;
-  display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
   padding: 10px;
+}
+
+textarea {
+  background-color: #dddddd;
+  padding: 1em;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 65%;
+  height: 40vh;
 }
 
 /* Landing page */
@@ -153,7 +164,8 @@ aside {
 }
 
 .landing-page-footer {
-  position: fixed;
+  margin-top: 10vh;
+  position: relative;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -165,5 +177,5 @@ aside {
 /* Login */
 
 .login {
-  margin-top: 10vh;
+  margin-top: 20vh;
 }

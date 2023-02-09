@@ -8,7 +8,8 @@ import aiRequest from "../../__helpers__/routes/aiapi";
 import createCustomToneAPIQuery from "../../__helpers__/custom_tone";
 import createCustomLengthAPIQuery from "../../__helpers__/custom_length";
 
-export default function GenerateCoverLetter() {
+export default function GenerateCoverLetter(props) {
+  const {setLoading} = props;
   //needs resumeText, Job Description Text, customTone, Custom Length
   const { uploadedFile } = useResumeContext();
   const { jobDescText } = useJobDescContext();
@@ -19,22 +20,21 @@ export default function GenerateCoverLetter() {
   const toneAPIString = createCustomToneAPIQuery(customTone);
   const lengthAPIString = createCustomLengthAPIQuery(customLength);
 
-  function onClick() { 
-    let aiAPI = new Promise(function(resolve, reject){
-      resolve(aiRequest(uploadedFile, jobDescText, toneAPIString, lengthAPIString))
-      reject(console.log("Sorry bud"))
-     })
-
-    aiAPI.then(function(response){
-      setCoverLetterText(response)
+  function handleGenerateCoverLetter() { 
+    setLoading(true);
+    aiRequest(uploadedFile, jobDescText, toneAPIString, lengthAPIString)
+    .then(function(response){
+      setCoverLetterText(response);
+      setLoading(false);
     }).catch(function(error){
-      console.log(error)
+      console.log(error);
+      //set state to error here
     });}
    
 
   return (
     <div>
-      <button onClick={() => onClick()}>Generate Cover Letter</button>
+      <button onClick={handleGenerateCoverLetter}>Generate Cover Letter</button>
     </div>
   );
 }

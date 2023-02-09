@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header className='main-header'>
       <nav className='nav-bar'>
-        <a className='nav-logo'>Jobscript logo.</a>
+        <img className='logo' src='../../JobScript.png' />
         {!user && 
         <>
         <a className='nav-link'>Register</a>

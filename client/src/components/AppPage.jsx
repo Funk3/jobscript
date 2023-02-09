@@ -6,11 +6,9 @@ import CoverLetter from './CoverLetter';
 import InputResume from './InputResume';
 import InputJobDesc from './InputJobDesc';
 import CustomTone from './CustomTone';
-import CustomLength from './CustomLength';
 import GenerateCoverLetter from './buttons/GenerateCoverLetter';
 
 //Providers
-import { CustomLengthProvider } from '../providers/CustomLengthProvider';
 import { CustomToneProvider } from '../providers/CustomToneProvider';
 import { ResumeProvider } from '../providers/ResumeProvider';
 import { CoverLetterProvider } from '../providers/CoverLetterProvider';
@@ -29,7 +27,6 @@ export default function AppPage() {
       </section>
 
       <CoverLetterProvider>
-        <CustomLengthProvider>
           <CustomToneProvider>
             <JobDescProvider>
               <ResumeProvider>
@@ -46,8 +43,7 @@ export default function AppPage() {
                       <InputJobDesc />
 
                       <CustomTone />
-
-                      <CustomLength />
+                      
                     </div>
 
                     <GenerateCoverLetter setLoading={setLoading}/>
@@ -60,7 +56,6 @@ export default function AppPage() {
               </ResumeProvider>
             </JobDescProvider>
           </CustomToneProvider>
-        </CustomLengthProvider>
       </CoverLetterProvider>
 
      

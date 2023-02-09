@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./providers/AuthProvider";
+import { LoginButtonProvider } from "providers/LoginButtonProvider";
 
 //Strict mode will help identify bugs/warnings in development stage. Remove for deployment as it can affect performance KH 02/04/23
 
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthProvider>
+      <LoginButtonProvider>
       <App />
+      </LoginButtonProvider>
     </AuthProvider>
   </React.StrictMode>
 );

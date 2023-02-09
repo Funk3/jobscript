@@ -1,16 +1,13 @@
 import React from 'react';
-import { useAuthContext } from '../providers/AuthProvider';
 
-import Header from './Header';
-import LandingPage from './LandingPage';
+//Components
 import JobList from './JobList';
 import CoverLetter from './CoverLetter';
 import InputResume from './InputResume';
 import InputJobDesc from './InputJobDesc';
 import CustomTone from './CustomTone';
 import CustomLength from './CustomLength';
-import GenerateCoverLetter from './GenerateCoverLetter';
-import Footer from './Footer';
+import GenerateCoverLetter from './buttons/GenerateCoverLetter';
 
 //Providers
 import { CustomLengthProvider } from '../providers/CustomLengthProvider';
@@ -19,12 +16,11 @@ import { ResumeProvider } from '../providers/ResumeProvider';
 import { CoverLetterProvider } from '../providers/CoverLetterProvider';
 import { JobDescProvider } from '../providers/JobDescProvider';
 
-export default function AppPage(props) {
-  const { user } = useAuthContext();
+export default function AppPage() {
 
   return (
     <>
-      <Header />
+    
       <section>
         {/* render landing page if user is not logged in */}
         {/* eg !currentUser && <LandingPage /> */}
@@ -39,7 +35,7 @@ export default function AppPage(props) {
                   <JobList />
                   <div className='rhs-sections'>
                     <div className='rhs-user-inputs'>
-                      <p>user = {user.email} </p>
+              
                       <InputResume />
 
                       <InputJobDesc />
@@ -60,7 +56,7 @@ export default function AppPage(props) {
         </CustomLengthProvider>
       </CoverLetterProvider>
 
-      <Footer />
+     
     </>
   );
 }

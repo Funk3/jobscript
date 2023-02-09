@@ -7,7 +7,7 @@ export default function LandingPage() {
       <section className="landing-page-instructional">
         <div>
           <h3>Text describing how to use</h3>
-          <button>Sign Up!</button>
+          <button>Log in!</button>
         </div>
         <div>Screen grab/video</div>
       </section>

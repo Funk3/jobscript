@@ -1,4 +1,4 @@
-$main-colour: #dfddd7;
+@import 'Variables';
 
 /* Whole page */
 html {
@@ -24,21 +24,17 @@ body {
 
 .log-btn {
   background-color: $main-colour;
-  cursor: pointer;
-  height: 40px;
-  border: 2px solid black;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
   border-radius: 10px;
-  box-shadow: black 4px 4px 0 0;
-  color: black;
+  height: 40px;
   display: block;
+  text-align: center;
   font-weight: 600;
   font-size: 18px;
-  padding: 0 18px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin-right: 20px;
+  padding: 0 18px;
 }
 
 .log-btn:hover {
@@ -61,9 +57,6 @@ body {
   height: 75px;
   width: 100%;
   padding: 20px;
-  // padding-top: 20px;
-  // padding-left: 10px;
-  // padding-right: 10px;
   margin-bottom: 30px;
 }
 
@@ -74,6 +67,7 @@ body {
 .nav-rhs {
   display: flex;
   justify-content: space-between;
+  padding-right: 20px;
 }
 
 .crr-user {
@@ -97,16 +91,16 @@ aside {
 
 .new-btn {
   background-color: $main-colour;
-  cursor: pointer;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
   height: 40px;
   width: 40px;
   font-weight: 400;
   font-size: 25px;
   margin-right: 20px;
-  border: 2px solid black;
-  border-radius: 50%;
   margin-top: 8px;
-  box-shadow: black 2px 2px 0 0;
+  border-radius: 50%;
 }
 
 .new-btn:hover {
@@ -183,5 +177,5 @@ textarea {
 /* Login */
 
 .login {
-  margin-top: 10vh;
+  margin-top: 20vh;
 }

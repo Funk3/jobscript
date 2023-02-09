@@ -1,5 +1,5 @@
 import React from "react";
-import Save from "./Save";
+import Save from "./buttons/Save";
 import {useCoverLetterContext} from "../providers/CoverLetterProvider";
 
 export default function CoverLetter() {

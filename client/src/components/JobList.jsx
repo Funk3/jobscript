@@ -1,7 +1,10 @@
 import React from "react"
 import JobListItem from "./JobListItem"
+import { useAuthContext } from '../providers/AuthProvider';
 
 export default function JobList(){
+
+  const {user} = useAuthContext();
 
 //Need helper function getExistingJobApps that returns and array of job_app objects {title: "Jr Web Dev", company_name:"Google"}
 // listOfExistingJobApps = getExistingJobApps()

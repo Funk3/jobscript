@@ -9,23 +9,24 @@ export default function Header() {
   const { user } = useAuthContext();
 
   return (
-    <header className='main-header'>
+      <header className='main-header'>
       <nav className='nav-bar'>
-        <img className='logo' src='../../JobScript.png' />
+        <img className='logo' src='../../JobScript.png' alt="jobscript-logo"/>
         {!user && 
         <>
         <button className='log-btn'> Register </button>
         <LoginButton/>
-        </>}
+        </>
+        }
         
         {user && 
         <>
         Currently logged in as:{user.email}
         <LogoutButton/>
         </>}
-        
-        
+                
       </nav>
     </header>
+    
   );
 }

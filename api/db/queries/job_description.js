@@ -11,9 +11,9 @@ const db = require('../connection')
  * @param {*} jobDescriptionText from input field
  * @returns  Returns a promise, but shouldnt need to access res. Mosty just for debugging at this stage?!
  */
-const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionText) => {
-  return db.query(`INSERT INTO job_description (user_id, company_name, job_title, description) 
-  VALUES ($1, $2, $3, $4) RETURNING *`, [userID, companyName, jobTitle, jobDescriptionText])
+const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionText, coverLetterText) => {
+  return db.query(`INSERT INTO job_description (user_id, company_name, job_title, description, cover_letter_text) 
+  VALUES ($1, $2, $3, $4, $5) RETURNING *`, [userID, companyName, jobTitle, jobDescriptionText, coverLetterText])
   .then(result => {
     console.log("addJobDescriptionByUser =", result.rows[0]);
     return result.rows[0];
@@ -31,14 +31,14 @@ const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionTe
  * @param {*} coverLetterText string response from OpenAPI
  * @returns nothing for now, .then added for debugging
  */
-const addCoverLetterByJobDescription = (jobDescID, coverLetterText) => {
-  return db.query(`UPDATE job_description SET cover_letter_text = $1 WHERE job_description.id = $2`, 
-  [coverLetterText, jobDescID])
-  .then(result => {
-    console.log("addCoverLetterByJobDescription = ", result.rowCount);
-    return result.rowCount;
-  })
-}
+// const addCoverLetterByJobDescription = (jobDescID, coverLetterText) => {
+//   return db.query(`UPDATE job_description SET cover_letter_text = $1 WHERE job_description.id = $2`, 
+//   [coverLetterText, jobDescID])
+//   .then(result => {
+//     console.log("addCoverLetterByJobDescription = ", result.rowCount);
+//     return result.rowCount;
+//   })
+// }
 
 //addCoverLetterByJobDescription(1, 'This is the incoming cover letter for job desc 1'); //works, overwrites the existing value
 
@@ -81,4 +81,4 @@ const getJobDescByJobDescID = (jobDescID)=> {
 
 
 
-module.exports = {addJobDescriptionByUser, addCoverLetterByJobDescription, getAllJobDescByUser, getJobDescByJobDescID}
+module.exports = {addJobDescriptionByUser, getAllJobDescByUser, getJobDescByJobDescID}

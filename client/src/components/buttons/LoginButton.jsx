@@ -1,5 +1,4 @@
-import LoginPage from 'components/pages/LoginPage';
-import React, {useState} from 'react';
+import React from 'react';
 import { useAuthContext } from 'providers/AuthProvider';
 
 export default function LoginButton() {

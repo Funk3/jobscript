@@ -11,7 +11,7 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
   
   const apiKey = process.env.REACT_APP_TOKEN;
   const params = {
-    prompt: `Write a cover letter for the following job: "${jobDescInput}". Use this resume : "${resumeInput}". ${toneInput} ${lengthInput}`,
+    prompt: `Write a cover letter for the following job: "${jobDescInput}". Use this resume : "${resumeInput}". ${toneInput} ${lengthInput} Only use the skills and qualifications from my resume.`,
     model: 'text-davinci-003',
     max_tokens: 2000,
     temperature: 0,
@@ -27,7 +27,7 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
     })
     .then((result) => {
       console.log("API response = ", result.data.choices[0].text)
-      //handleChange(result.data.choices[0].text);
+      return result.data.choices[0].text;
     })
     .catch((err) => {
       console.log(err.request.response);

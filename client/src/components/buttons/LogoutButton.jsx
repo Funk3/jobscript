@@ -1,7 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { useAuthContext } from '../../providers/AuthProvider';
-
-//import { DeleteCookie } from '../../providers/AuthProvider';
 
 export default function LogoutButton() {
 

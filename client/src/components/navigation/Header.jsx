@@ -11,12 +11,11 @@ export default function Header() {
   return (
     <header className='main-header'>
       <nav className='nav-bar'>
-        <img className='logo' src='../../JobScript.png' />
+        <img className='logo' src='../../JobScript.png' alt="jobscript-logo"/>
         {!user && 
-        <>
-        <a className='nav-link'>Register</a>
+     
         <LoginButton/>
-        </>}
+        }
         
         {user && 
         <>

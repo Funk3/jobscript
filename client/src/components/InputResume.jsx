@@ -4,7 +4,7 @@ import { useResumeContext } from "../providers/ResumeProvider";
 
 export default function InputResume() {
 
-  const { file, filename, uploadedFile, onChange, onSubmit } = useResumeContext();
+  const { filename, uploadedFile, onChange, onSubmit } = useResumeContext();
 
   return (
     <section className="rhs-input-resume-section">

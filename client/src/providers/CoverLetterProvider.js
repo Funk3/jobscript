@@ -13,7 +13,7 @@ export function CoverLetterProvider(props) {
     setCoverLetterText(newCoverLetterText);
   };
 
-  const providerData = { coverLetterText, handleChange};
+  const providerData = { coverLetterText, handleChange, setCoverLetterText};
 
   return (
     <CoverLetterContext.Provider value={providerData}>

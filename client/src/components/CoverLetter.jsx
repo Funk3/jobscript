@@ -6,10 +6,6 @@ export default function CoverLetter() {
 
   const {coverLetterText, handleChange} = useCoverLetterContext()
 
-  //edit buttons might need to be their own components as they do different things? or helpers to direct onClick
-
-
-
   return (
     <div className="rhs-cover-letter">
       {coverLetterText && 
@@ -23,6 +19,7 @@ export default function CoverLetter() {
 
           <section className="manage-cl-buttons">
             <Save/>
+            <button> Edit </button>
             <button> Copy</button>
             <button> Download/Save to FS </button>
           </section>

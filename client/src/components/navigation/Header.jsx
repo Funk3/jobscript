@@ -12,21 +12,22 @@ export default function Header() {
         <img className="logo" src="../../JobScript.png" />
         {!user && (
           <>
-            <div className="nav-btns">
+            <div className="nav-rhs">
               <button className="log-btn"> Register </button>
-            <LoginButton />
+              <LoginButton />
             </div>
           </>
         )}
 
         {user && (
           <>
-            <p className="curr">Currently logged in as:{user.email}</p>
-            <LogoutButton />
+            <div className="nav-rhs">
+              <p className="crr-user">Currently logged in as:{user.email}</p>
+              <LogoutButton />
+            </div>
           </>
         )}
       </nav>
     </header>
-    
   );
 }

@@ -14,10 +14,9 @@ const db = require('../connection')
 const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionText, coverLetterText) => {
   return db.query(`INSERT INTO job_description (user_id, company_name, job_title, description, cover_letter_text) 
   VALUES ($1, $2, $3, $4, $5) RETURNING *`, [userID, companyName, jobTitle, jobDescriptionText, coverLetterText])
-  .then(result => {
-    console.log("addJobDescriptionByUser =", result.rows[0]);
-    return result.rows[0];
-  })
+    .then(result => {
+      return result.rows[0];
+    })
 }
 
 //addJobDescriptionByUser(1, 'Google', 'Web Dev', 'Jr Web dev role at google'); //work
@@ -52,10 +51,10 @@ const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionTe
  */
 const getAllJobDescByUser = (user_id) => {
   return db.query('SELECT * FROM job_description WHERE user_id = $1', [user_id])
-  .then(result => {
-    console.log("getAllJobDescByUser =", result.rows);
-    return result.rows;
-  });
+    .then(result => {
+      console.log("getAllJobDescByUser =", result.rows);
+      return result.rows;
+    });
 };
 
 //getAllJobDescByUser(1); //works, returns array of objects
@@ -66,13 +65,13 @@ const getAllJobDescByUser = (user_id) => {
  * @param {*} jobDescID from state?
  * @returns An object containing all job_description fields
  */
-const getJobDescByJobDescID = (jobDescID)=> {
-  return db.query('SELECT * FROM job_description WHERE id = $1',[jobDescID] )
-  .then(result => {
-    console.log("getJobDescByJobDescID =", result.rows[0]);
-    return result.rows[0];
-  });
-  
+const getJobDescByJobDescID = (jobDescID) => {
+  return db.query('SELECT * FROM job_description WHERE id = $1', [jobDescID])
+    .then(result => {
+      console.log("getJobDescByJobDescID =", result.rows[0]);
+      return result.rows[0];
+    });
+
 }
 
 //getJobDescByJobDescID(3);//works, an object of jobDesc values.
@@ -81,4 +80,4 @@ const getJobDescByJobDescID = (jobDescID)=> {
 
 
 
-module.exports = {addJobDescriptionByUser, getAllJobDescByUser, getJobDescByJobDescID}
+module.exports = { addJobDescriptionByUser, getAllJobDescByUser, getJobDescByJobDescID }

@@ -8,7 +8,7 @@ export default function InputResume() {
 
   return (
     <section className="rhs-input-resume-section">
-      <h3>Upload your resume here</h3>
+      <h1>Upload your resume here</h1>
       <form onSubmit={onSubmit}>
         <div className="custom-file">
           <input
@@ -20,17 +20,16 @@ export default function InputResume() {
           <label className="custom-file-label" htmlFor="customFile">
             {filename}
           </label>
-        </div>
 
         <input
           type="submit"
           value="Upload"
-          className="btn btn-primary btn-block"
-        />
+          className="upload"
+          />
+          </div>
       </form>
 
       <div>
-        <form>
           {/* if file is uploaded then file is placed in text area if no file then sets empty text area  */}
           {uploadedFile ? (
             <textarea
@@ -47,7 +46,6 @@ export default function InputResume() {
               cols="33"
             ></textarea>
           )}
-        </form>
       </div>
     </section>
   );

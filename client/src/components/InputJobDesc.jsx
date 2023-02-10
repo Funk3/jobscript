@@ -14,8 +14,8 @@ export default function InputJobDesc() {
 
   return (
     <section>
-      <h3>Job Description</h3>
-      <form>
+      <h1>Job Description</h1>
+      <form className="job-desc">
         <input
           onChange={(event) => handleChangeJobTitle(event.target.value)}
           value={jobTitle}
@@ -31,7 +31,7 @@ export default function InputJobDesc() {
           type="text"
           name="company-name"
         ></input>
-        <br></br>
+        </form>
         <textarea
           onChange={(event) => handleChangeJobDescText(event.target.value)}
           defaultValue={jobDescText}
@@ -39,7 +39,6 @@ export default function InputJobDesc() {
           rows="5"
           cols="33"
         ></textarea>
-      </form>
     </section>
   );
 }

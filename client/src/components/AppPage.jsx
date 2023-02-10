@@ -41,8 +41,9 @@ export default function AppPage() {
                 </div>
                 {loading ? (
                   <div className="rhs-sections">
+                    <h1>Loading...</h1>
                     <img
-                      src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif"
+                      src="../../loading.gif"
                       alt="loading"
                     />
                   </div>

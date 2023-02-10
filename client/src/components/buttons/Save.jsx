@@ -12,18 +12,17 @@ export default function Save() {
   const { jobTitle, companyName, jobDescText } = useJobDescContext();
   const { coverLetterText } = useCoverLetterContext();
 
-  //save needs to access user id, resume, job title, company name, job text, coverletter text,
-  // db/queries/resume
+  const handleSave = (e) => {
+    e.preventDefault();
+    //not rerendering page.
 
-  //db/queries/job_description
-
-  const handleSave = () => {
     const jobData = {
       id: user.id,
       jobTitle,
       companyName,
       jobDescText,
       coverLetterText,
+      uploadedFile,
     };
     axios.post('api/joblist/addJobDesc', jobData).then((result) => {
       //Create an alert of save confirmation

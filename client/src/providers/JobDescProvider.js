@@ -24,7 +24,7 @@ export function JobDescProvider(props) {
     setJobDescText(newjobDescText);
   };
 
-  const providerData = { jobTitle, handleChangeJobTitle, companyName, handleChangeCompanyName, jobDescText, handleChangeJobDescText};
+  const providerData = { jobTitle, handleChangeJobTitle, companyName, handleChangeCompanyName, jobDescText, handleChangeJobDescText, setJobDescText, setJobTitle, setCompanyName};
 
   return (
     <JobDescContext.Provider value={providerData}>

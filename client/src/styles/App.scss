@@ -113,7 +113,6 @@ aside {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  // justify-items: center;
 }
 
 /* Center User Input area */
@@ -160,7 +159,6 @@ textarea {
 
 .custom-file label, .upload {
   display: block;
-  position: relative;
   align-items: center;
   background-color: $main-colour;
   cursor: $btn-cursor;
@@ -195,14 +193,14 @@ textarea {
 
 .job-desc {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   margin-right: 90px;
   margin-bottom: 10px;
   justify-content: space-evenly;
   
   input {
-    display: block;
-    position: relative;
+    display: flex;
     align-items: center;
     background-color: #dddddd;
     border: $btn-border;
@@ -211,8 +209,38 @@ textarea {
     font-size: 18px;
   }
 }
+
 input:focus {
   outline-width: 0;
+}
+
+/* Tone selection */
+.tone-btns {
+  display: flex;
+}
+
+.tone-select-btns {
+  background-color: $main-colour;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
+  border-radius: 10px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 20px;
+  padding: 0 18px;
+}
+
+.tone-select-btns:hover {
+  background-color: #fff;
+}
+
+.tone-select-btns:focus {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }
 
 /* RHS User Input area */

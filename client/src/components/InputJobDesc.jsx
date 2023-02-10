@@ -28,7 +28,6 @@ export default function InputJobDesc() {
           ></input>
         </label>
         <br></br>
-        <br></br>
         <label>
           <strong>Company Name</strong>
           <br></br>
@@ -41,7 +40,6 @@ export default function InputJobDesc() {
         ></input>
         </label>
         </form>
-        <br></br>
         <br></br>
         <label>
           <strong>Job Description</strong>

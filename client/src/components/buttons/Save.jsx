@@ -24,6 +24,7 @@ export default function Save() {
       companyName,
       jobDescText,
       coverLetterText,
+      uploadedFile,
     };
     axios.post('api/joblist/addJobDesc', jobData).then((result) => {
       //Create an alert of save confirmation

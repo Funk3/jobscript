@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="main-header">
       <nav className="nav-bar">
-        <img className="logo" src="../../JobScript.png" />
+        <img className="logo" src="../../logo.png" />
         {!user && (
           <>
             <div className="nav-rhs">

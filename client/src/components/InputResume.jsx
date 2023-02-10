@@ -41,6 +41,7 @@ export default function InputResume() {
           ) : (
             <textarea
               id="pasted-resume"
+              defaultValue=""
               placeholder="Or Copy and paste the contents of your resume here"
               rows="5"
               cols="33"

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //import {useCoverLetterContext} from '../../providers/CoverLetterProvider';
 
-export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthInput) {
+export default function aiRequest(resumeInput, jobDescInput, toneInput) {
   //console.log(resumeInput, jobDescInput, toneInput, lengthInput);
 
   //const {handleChange} = useCoverLetterContext();
@@ -11,17 +11,17 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
   
   const apiKey = process.env.REACT_APP_TOKEN;
   const params = {
-    prompt: `Write a cover letter for the following job: "${jobDescInput}". Use this resume : "${resumeInput}". ${toneInput} ${lengthInput} Only use the skills and qualifications from my resume.`,
+    prompt: `RESUME = "${resumeInput}". JOB DESCRIPTION = "${jobDescInput}". Use only the information from the RESUME to write a Cover Letter based on the JOB DESCRIPTION. ${toneInput}`,
     model: 'text-davinci-003',
     max_tokens: 2000,
     temperature: 0,
   };
 
   const headers = {
-    Authorization: 'Bearer ' + apiKey,
+    Authorization: 'Bearer ' + apiKey
   };
 
-  axios
+  return axios
     .post('https://api.openai.com/v1/completions', params, {
       headers: headers,
     })
@@ -29,9 +29,4 @@ export default function aiRequest(resumeInput, jobDescInput, toneInput, lengthIn
       console.log("API response = ", result.data.choices[0].text)
       return result.data.choices[0].text;
     })
-    .catch((err) => {
-      console.log(err.request.response);
-      console.log(err.config.data);
-      console.log(err);
-    });
 }

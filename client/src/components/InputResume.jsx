@@ -35,7 +35,7 @@ export default function InputResume() {
           {uploadedFile ? (
             <textarea
               id="uploaded-resume"
-              value={uploadedFile}
+              defaultValue={uploadedFile}
               rows="5"
               cols="33"
             ></textarea>

@@ -25,7 +25,10 @@ export default function Save() {
       jobDescText,
       coverLetterText
     }
-    axios.post('api/joblist/addJobDesc', jobData)
+    axios.post('api/joblist/addJobDesc', jobData).then(result => {
+      //Create an alert of save confirmation
+      console.log("Data Sent")
+    })
   }
   return <button onClick={handleSave} >Save</button>;
 }

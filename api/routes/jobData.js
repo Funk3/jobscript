@@ -14,4 +14,5 @@ router.post('/addJobDesc', (req, res) => {
     console.log("result", result)
   })
 })
+
 module.exports = router

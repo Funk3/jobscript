@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import JobListItem from "./JobListItem";
 import { useAuthContext } from "providers/AuthProvider";
@@ -6,18 +6,15 @@ import { useAuthContext } from "providers/AuthProvider";
 export default function JobList() {
   const { user } = useAuthContext();
 
-  const [ jobData, setJobData] = useState([]);
+  const [jobData, setJobData] = useState([]);
   //const responseFromAPI = [];
 
   useEffect(() => {
-    axios.post(`api/joblist/pull`, user).then((res) => {
-      console.log("res.data", res.data)
+    axios.post(`api/joblist/pullJob`, user).then((res) => {
       //const data = res.data;
       setJobData(res.data)
     });
   }, [])
-  
-  console.log("jobData", jobData);
 
   const individualJobListItem = jobData.map((jobApp) => (
     <JobListItem
@@ -34,7 +31,7 @@ export default function JobList() {
         <button className="new-btn" >+</button>
       </header>
       <section>
-       {individualJobListItem}
+        {individualJobListItem}
       </section>
     </aside>
   );

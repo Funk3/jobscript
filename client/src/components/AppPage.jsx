@@ -41,6 +41,7 @@ export default function AppPage() {
                 </div>
                 {loading ? (
                   <div className="rhs-sections">
+                    <h1>Loading...</h1>
                     <img
                       src="../../loading.gif"
                       alt="loading"

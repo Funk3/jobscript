@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useCustomToneContext } from '../../providers/CustomToneProvider';
-import { useJobDescContext } from '../../providers/JobDescProvider';
-import { useResumeContext } from '../../providers/ResumeProvider';
-import { useCoverLetterContext } from '../../providers/CoverLetterProvider';
-import createCustomToneAPIQuery from '../../__helpers__/custom_tone';
+import React, { useState } from "react";
+import axios from "axios";
+import { useCustomToneContext } from "../../providers/CustomToneProvider";
+import { useJobDescContext } from "../../providers/JobDescProvider";
+import { useResumeContext } from "../../providers/ResumeProvider";
+import { useCoverLetterContext } from "../../providers/CoverLetterProvider";
+import createCustomToneAPIQuery from "../../__helpers__/custom_tone";
 
 export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
@@ -25,7 +25,6 @@ export default function GenerateCoverLetter(props) {
     }
   };
 
-  
   const handleGenerateCoverLetter = () => {
     const promptParams = {
       uploadedFile,
@@ -34,7 +33,7 @@ export default function GenerateCoverLetter(props) {
     };
     setLoading(true);
     axios
-      .post('api/ai/openai', promptParams)
+      .post("api/ai/openai", promptParams)
       .then((result) => {
         setCoverLetterText(result.data);
         setLoading(false);
@@ -49,7 +48,10 @@ export default function GenerateCoverLetter(props) {
     <>
       {errorValidation && <p>{errorValidation}</p>}
       <div>
-        <button onClick={() => checkValidStates(handleGenerateCoverLetter)}>
+        <button
+          className="generate-btn"
+          onClick={() => checkValidStates(handleGenerateCoverLetter)}
+        >
           <h2>Generate Cover Letter</h2>
         </button>
       </div>

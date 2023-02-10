@@ -243,6 +243,22 @@ input:focus {
   transform: translate(2px, 2px);
 }
 
+/* Generate button */
+
+.generate-btn {
+  background-color: $main-colour;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
+  border-radius: 10px;
+  height: auto;
+  width: 80%;
+  display: block;
+  text-align: center;
+  margin: 0 0px 0 20px;
+}
+
+
 /* RHS User Input area */
 
 .rhs-sections {

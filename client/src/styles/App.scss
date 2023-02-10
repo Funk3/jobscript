@@ -158,7 +158,7 @@ textarea {
   position: absolute;
 }
 
-.custom-file label {
+.custom-file label, .upload {
   display: block;
   position: relative;
   align-items: center;
@@ -177,19 +177,11 @@ textarea {
 }
 
 .upload {
-  background-color: $main-colour;
-  cursor: $btn-cursor;
-  border: $btn-border;
-  box-shadow: $btn-box-shadow;
-  border-radius: 10px;
-  width: 140px;
-  height: 40px;
-  display: block;
-  text-align: center;
-  font-weight: 600;
-  font-size: 18px;
+  height: auto;
   margin-left: 20px;
+  padding-top: 2px;
 }
+
 .custom-file label:hover, .upload:hover {
   background-color: #fff;
 }

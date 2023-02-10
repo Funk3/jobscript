@@ -8,7 +8,7 @@ export function login() {
 
   return axios.post(`/api/users/login`, login)
     .then(res => {
-      console.log(res.data)
+      //console.log(res.data)
       return res.data
     });
 }

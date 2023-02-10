@@ -5,11 +5,12 @@ export const CustomToneContext = createContext();
 export function CustomToneProvider(props) {
   const [customTone, setCustomTone] = useState();
 
-  const handleChange = (newTone) => {
+  const handleClick = (newTone) => {
+    
     setCustomTone(newTone);
   };
 
-  const providerData = { customTone, handleChange };
+  const providerData = { customTone, handleClick };
 
   return (
     <CustomToneContext.Provider value={providerData}>

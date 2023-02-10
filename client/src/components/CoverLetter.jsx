@@ -8,7 +8,9 @@ export default function CoverLetter() {
 
   return (
     <div className="rhs-cover-letter">
-      {coverLetterText && 
+      {coverLetterText ?
+      <>
+      <h3> Your AI Cover Letter: </h3>
         <form>
           <textarea
             className="rhs-textarea"
@@ -20,11 +22,24 @@ export default function CoverLetter() {
 
           <section className="manage-cl-buttons">
             <Save/>
-            <button> Edit </button>
             <button> Copy</button>
             <button> Download/Save to FS </button>
           </section>
         </form>
+      </> 
+        :
+        <>
+        <h3>Your Cover Letter will appear here:</h3>
+        <form>
+          <textarea
+            className="rhs-textarea"
+            value=""
+            onChange={(event) => handleChange(event.target.value)}
+            rows="5"
+            cols="33"
+          ></textarea>
+        </form>
+        </>
         }
     </div>
   );

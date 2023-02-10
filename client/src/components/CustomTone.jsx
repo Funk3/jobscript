@@ -5,23 +5,20 @@ import { useCustomToneContext } from "../providers/CustomToneProvider";
 
 export default function CustomTone() {
 
-  //const { customTone, handleChange } = useContext(CustomToneContext)
-  const { customTone, handleChange } = useCustomToneContext()
+  //const { customTone, handleClick } = useContext(CustomToneContext)
+  const { customTone, handleClick } = useCustomToneContext()
 
   return (
     <section className="custom-tone">
-      <h3>What should the tone be? </h3>
-      <form>
-        <select
-          onChange={(event) => handleChange(event.target.value)}
-          defaultValue={customTone}
-        >
-          <option value="Default">Default</option>
-          <option value="Friendly">Friendly</option>
-          <option value="Professional">Professional</option>
-        </select>
-        <h4> Selected Tone: {customTone}</h4>
-      </form>
+      <h3>3. What tone would you like the Cover Letter to have? </h3>
+
+      <button value="Friendly" onClick={(event) => handleClick(event.target.value)}>
+        Friendly
+      </button>
+      <button value="Professional" onClick={(event) => handleClick(event.target.value)}>
+        Professional
+      </button>
+      <h5> Selected Tone: {customTone}</h5>
     </section>
   );
 }

@@ -8,7 +8,7 @@ export default function InputResume() {
 
   return (
     <section className="rhs-input-resume-section">
-      <h1>Upload your resume here</h1>
+      <h3>1. Upload your resume</h3>
       <form onSubmit={onSubmit}>
         <div className="custom-file">
           <input

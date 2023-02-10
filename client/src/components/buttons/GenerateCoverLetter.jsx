@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useCustomToneContext } from '../../providers/CustomToneProvider';
 import { useJobDescContext } from '../../providers/JobDescProvider';
@@ -10,12 +10,22 @@ export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
   //needs resumeText, Job Description Text, customTone, Custom Length
   const { uploadedFile } = useResumeContext();
-  const { jobDescText } = useJobDescContext();
+  const { jobTitle, companyName, jobDescText } = useJobDescContext();
   const { customTone } = useCustomToneContext();
-  const { setCoverLetterText } = useCoverLetterContext();
+  const { setCoverLetterText } = useCoverLetterContext("");
+
+  const [errorValidation, setErrorValidation] = useState(false);
 
   const toneAPIString = createCustomToneAPIQuery(customTone);
+  const checkValidStates = (fnToExecute) => {
+    if (uploadedFile && jobTitle && companyName && jobDescText && customTone) {
+      fnToExecute();
+    } else {
+      setErrorValidation("! All fields must be filled in.");
+    }
+  };
 
+  
   const handleGenerateCoverLetter = () => {
     const promptParams = {
       uploadedFile,
@@ -36,8 +46,13 @@ export default function GenerateCoverLetter(props) {
   };
 
   return (
-    <div>
-      <button onClick={handleGenerateCoverLetter}>Generate Cover Letter</button>
-    </div>
+    <>
+      {errorValidation && <p>{errorValidation}</p>}
+      <div>
+        <button onClick={() => checkValidStates(handleGenerateCoverLetter)}>
+          <h2>Generate Cover Letter</h2>
+        </button>
+      </div>
+    </>
   );
 }

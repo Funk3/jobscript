@@ -8,8 +8,9 @@ export function CoverLetterProvider(props) {
   
   const [coverLetterText, setCoverLetterText] = useState();
 
+  const [coverLetterError, setCoverLetterError] = useState(false);
+
   const handleChange = (newCoverLetterText) => {
-    console.log("incoming new cover lterr text", newCoverLetterText);
     setCoverLetterText(newCoverLetterText);
   };
 

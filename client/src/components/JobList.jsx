@@ -22,6 +22,7 @@ export default function JobList() {
       jobTitle={jobApp.job_title}
       companyName={jobApp.company_name}
       coverLetterText={jobApp.cover_letter_text}
+      jobDescText={jobApp.description}
     />
   ));
   return (

@@ -8,7 +8,7 @@ export function ResumeProvider(props) {
   const [filename, setFilename] = useState("Choose File");
   const [uploadedFile, setUploadedFile] = useState();
 
-  // user selects file state for setFile & setFilename are updated with file name
+  // user selects file. state for setFile & setFilename are updated with file name
   const onChange = (e) => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
@@ -31,7 +31,7 @@ export function ResumeProvider(props) {
         }
       );
 
-      // returned data is saved as resume & update uploadedFile state
+      // returned data is saved as resume & updates uploadedFile state
       const resume = res.data;
       setUploadedFile(resume.trim());
 

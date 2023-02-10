@@ -1,30 +1,37 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-import { useCoverLetterContext } from 'providers/CoverLetterProvider';
-import { useResumeContext } from 'providers/ResumeProvider';
-import { useAuthContext } from 'providers/AuthProvider';
+import { useCoverLetterContext } from "providers/CoverLetterProvider";
+import { useResumeContext } from "providers/ResumeProvider";
+import { useAuthContext } from "providers/AuthProvider";
+import { useJobDescContext } from "providers/JobDescProvider";
 
 export default function JobListItem(props) {
-  const { coverLetterText } = props;
-  const { handleChange } = useCoverLetterContext();
-  const { setUploadedFile } = useResumeContext();
+  const { coverLetterText, jobTitle, companyName, jobDescText } = props;
   const { user } = useAuthContext();
+  const { setCoverLetterText } = useCoverLetterContext();
+  const { setJobDescText, setJobTitle, setCompanyName } = useJobDescContext();
+  const { setUploadedFile } = useResumeContext();
 
-  useEffect(() => {
-    axios.post(`api/joblist/pullResume`, user).then((res) => {
-      //const data = res.data;
-      setUploadedFile(res.data);
-    });
-  }, []);
+  const showResumeJobDescCoverLetter = () => {
+    setCoverLetterText(coverLetterText);
+    setJobDescText(jobDescText);
+    setCompanyName(companyName);
+    setJobTitle(jobTitle);
 
-  //console.log("job list item props", props);
-  //incomong props = jobTitle and companyName
-
+    axios.post(`api/joblist/pullResume`, user)
+      .then((res) => {
+        console.log("incoming resume res.data", res.data.text);
+        setUploadedFile(res.data.text);
+      });
+  }
   return (
-    <button onClick={() => handleChange(coverLetterText)}>
-      <h3> {props.jobTitle}</h3>
-      <h4> {props.companyName}</h4>
+    <button
+      onClick={showResumeJobDescCoverLetter}
+    >
+    {jobTitle}
+    <br></br>
+    {companyName}
     </button>
   );
 }

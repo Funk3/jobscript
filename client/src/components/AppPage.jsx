@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 //Components
 import JobList from "./JobList";
@@ -13,9 +14,21 @@ import { CustomToneProvider } from "../providers/CustomToneProvider";
 import { ResumeProvider } from "../providers/ResumeProvider";
 import { CoverLetterProvider } from "../providers/CoverLetterProvider";
 import { JobDescProvider } from "../providers/JobDescProvider";
+import { useAuthContext } from 'providers/AuthProvider';
+
 
 export default function AppPage() {
   const [loading, setLoading] = useState(false);
+  const [jobData, setJobData] = useState([]);
+  const { user } = useAuthContext();
+
+
+  const fetchJobData = () => {
+    axios.post(`api/joblist/pullJob`, user).then((res) => {
+      //const data = res.data;
+      setJobData(res.data);
+    });
+  }
 
   return (
     <>
@@ -29,7 +42,7 @@ export default function AppPage() {
           <JobDescProvider>
             <ResumeProvider>
               <main className="cards">
-                <JobList />
+                <JobList fetchJobData={fetchJobData} jobData={jobData} />
                 <div className="center-sections">
                   <div className="center-user-inputs">
                     <InputResume />
@@ -50,7 +63,7 @@ export default function AppPage() {
                   </div>
                 ) : (
                   <div className="rhs-sections">
-                    <CoverLetter />
+                    <CoverLetter fetchJobData={fetchJobData}/>
                   </div>
                 )}
               </main>

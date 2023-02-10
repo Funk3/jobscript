@@ -26,8 +26,7 @@ export default function GenerateCoverLetter(props) {
     axios
       .post('api/ai/openai', promptParams)
       .then((result) => {
-        console.log('Data Sent');
-        setCoverLetterText(result);
+        setCoverLetterText(result.data);
         setLoading(false);
       })
       .catch(function (error) {

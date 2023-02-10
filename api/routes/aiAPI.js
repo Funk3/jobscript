@@ -22,7 +22,7 @@ router.post('/openai', (req, res) => {
       headers: headers,
     })
     .then((result) => {
-      console.log("API response = ", result.data.choices[0].text)
+      console.log("API responded")
       res.send(result.data.choices[0].text);
     })
 })

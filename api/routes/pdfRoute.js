@@ -15,7 +15,6 @@ router.post("/upload", (req, res) => {
   const file = req.files.file;
 
   pdfParse(file).then(result => {
-    console.log(result.text);
     res.send(result.text)
   })
 

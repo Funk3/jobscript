@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useCustomToneContext } from "../../providers/CustomToneProvider";
-import { useJobDescContext } from "../../providers/JobDescProvider";
-import { useResumeContext } from "../../providers/ResumeProvider";
-import { useCoverLetterContext } from "../../providers/CoverLetterProvider";
-import aiRequest from "../../__helpers__/routes/aiapi";
-import createCustomToneAPIQuery from "../../__helpers__/custom_tone";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useCustomToneContext } from '../../providers/CustomToneProvider';
+import { useJobDescContext } from '../../providers/JobDescProvider';
+import { useResumeContext } from '../../providers/ResumeProvider';
+import { useCoverLetterContext } from '../../providers/CoverLetterProvider';
+import createCustomToneAPIQuery from '../../__helpers__/custom_tone';
 
 export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
@@ -17,7 +17,6 @@ export default function GenerateCoverLetter(props) {
   const [errorValidation, setErrorValidation] = useState(false);
 
   const toneAPIString = createCustomToneAPIQuery(customTone);
-  
   const checkValidStates = (fnToExecute) => {
     if (uploadedFile && jobTitle && companyName && jobDescText && customTone) {
       fnToExecute();
@@ -26,18 +25,25 @@ export default function GenerateCoverLetter(props) {
     }
   };
 
-  function handleGenerateCoverLetter() {
+  
+  const handleGenerateCoverLetter = () => {
+    const promptParams = {
+      uploadedFile,
+      jobDescText,
+      toneAPIString,
+    };
     setLoading(true);
-    aiRequest(uploadedFile, jobDescText, toneAPIString)
-      .then(function (response) {
-        setCoverLetterText(response.trim());
+    axios
+      .post('api/ai/openai', promptParams)
+      .then((result) => {
+        setCoverLetterText(result.data);
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
         //set state to error here
       });
-  }
+  };
 
   return (
     <>

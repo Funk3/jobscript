@@ -15,11 +15,12 @@ app.use(bodyParser.json());
 const users = require('./routes/users');
 const pdfRoute = require('./routes/pdfRoute');
 const jobData = require('./routes/jobData');
+const aiAPI = require('./routes/aiAPI');
 
-console.log('connected');
 app.use('/api/users', users);
 app.use('/api/pdf', pdfRoute);
 app.use('/api/joblist', jobData);
+app.use('/api/ai', aiAPI)
 
 app.listen(PORT, () => {
   console.log(`Jobscript Server is listening on port ${PORT}`);

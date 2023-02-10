@@ -52,7 +52,6 @@ const addJobDescriptionByUser = (userID, jobTitle, companyName, jobDescriptionTe
 const getAllJobDescByUser = (user_id) => {
   return db.query('SELECT * FROM job_description WHERE user_id = $1', [user_id])
     .then(result => {
-      console.log("getAllJobDescByUser =", result.rows);
       return result.rows;
     });
 };

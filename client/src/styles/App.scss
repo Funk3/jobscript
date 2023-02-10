@@ -144,6 +144,77 @@ textarea {
   height: 20vh;
 }
 
+/* Resume input field */
+.custom-file {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.custom-file-input {
+  opacity: 0;
+  width: 0px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.custom-file label, .upload {
+  display: block;
+  position: relative;
+  align-items: center;
+  background-color: $main-colour;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
+  border-radius: 10px;
+  width: 140px;
+  height: 25px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 5px;
+}
+
+.upload {
+  height: auto;
+  margin-left: 20px;
+  padding-top: 2px;
+}
+
+.custom-file label:hover, .upload:hover {
+  background-color: #fff;
+}
+
+.custom-file label:active, .upload:active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* Job desc form */
+
+.job-desc {
+  display: flex;
+  flex-direction: row;
+  margin-right: 90px;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+  
+  input {
+    display: block;
+    position: relative;
+    align-items: center;
+    background-color: #dddddd;
+    border: $btn-border;
+    box-shadow: $btn-box-shadow;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+}
+input:focus {
+  outline-width: 0;
+}
+
 /* RHS User Input area */
 
 .rhs-sections {

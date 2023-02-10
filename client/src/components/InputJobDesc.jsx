@@ -15,7 +15,7 @@ export default function InputJobDesc() {
   return (
     <section>
       <h3>2. Copy and Paste Job Details</h3>
-      <form>
+      <form className="job-desc">
         <label>
         <strong>Job Title</strong>
           <br></br>
@@ -40,6 +40,7 @@ export default function InputJobDesc() {
           name="company-name"
         ></input>
         </label>
+        </form>
         <br></br>
         <br></br>
         <label>
@@ -51,9 +52,9 @@ export default function InputJobDesc() {
           placeholder="Copy and paste the job description here"
           rows="5"
           cols="33"
-        ></textarea>
+          ></textarea>
         </label>
-      </form>
+          
     </section>
   );
 }

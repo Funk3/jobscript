@@ -193,7 +193,25 @@ textarea {
 
 /* Job desc form */
 
-
+.job-desc {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  
+  input {
+    display: block;
+    position: relative;
+    align-items: center;
+    background-color: #dddddd;
+    border: $btn-border;
+    box-shadow: $btn-box-shadow;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+}
+input:focus {
+  outline-width: 0;
+}
 
 /* RHS User Input area */
 

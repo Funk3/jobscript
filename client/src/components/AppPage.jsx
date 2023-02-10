@@ -19,25 +19,21 @@ import { useAuthContext } from 'providers/AuthProvider';
 
 export default function AppPage() {
   const [loading, setLoading] = useState(false);
+  
   const [jobData, setJobData] = useState([]);
+
   const { user } = useAuthContext();
-
-
   const fetchJobData = () => {
     axios.post(`api/joblist/pullJob`, user).then((res) => {
-      //const data = res.data;
       setJobData(res.data);
     });
   }
 
+ 
+
   return (
     <>
-      <section>
-        {/* render landing page if user is not logged in */}
-        {/* eg !currentUser && <LandingPage /> */}
-      </section>
-
-      <CoverLetterProvider>
+        <CoverLetterProvider>
         <CustomToneProvider>
           <JobDescProvider>
             <ResumeProvider>

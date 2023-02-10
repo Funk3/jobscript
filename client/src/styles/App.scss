@@ -85,8 +85,31 @@ aside {
   height: auto;
 }
 
+.job-list {
+  display:flex;
+  flex-direction: column;
+}
+
+button.job-list-item{
+  margin-bottom: 1rem;
+  text-align: inherit;
+  cursor: $btn-cursor;
+  border: $btn-border;
+  box-shadow: $btn-box-shadow;
+  border-radius: 10px;
+  padding: 1rem;
+
+}
+
+.create-new-job{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+}
 .new-btn {
-  background-color: $main-colour;
   cursor: $btn-cursor;
   border: $btn-border;
   box-shadow: $btn-box-shadow;
@@ -109,10 +132,7 @@ aside {
 }
 
 .aside-header {
-  border-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  font-size: 2rem;
 }
 
 /* Center User Input area */

@@ -10,7 +10,7 @@ export function CustomToneProvider(props) {
     setCustomTone(newTone);
   };
 
-  const providerData = { customTone, handleClick };
+  const providerData = { customTone, handleClick, setCustomTone };
 
   return (
     <CustomToneContext.Provider value={providerData}>

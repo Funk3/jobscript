@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { getAllJobDescByUser, addJobDescriptionByUser } = require('../db/queries/job_description')
-const { addResumeByUser } = require('../db/queries/resume')
+const { addResumeByUser, getResumeByUser } = require('../db/queries/resume')
 
 router.post('/pullJob', (req, res) => {
   getAllJobDescByUser(req.body.id).then(result => {
+    return res.json(result)
+  })
+})
+
+router.post("/pullResume", (req, res) => {
+  getResumeByUser(req.body.id).then(result => {
     return res.json(result)
   })
 })

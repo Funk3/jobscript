@@ -45,7 +45,7 @@ export function ResumeProvider(props) {
     }
   };
 
-  const providerData = { file, filename, uploadedFile, onChange, onSubmit };
+  const providerData = { file, filename, uploadedFile, onChange, onSubmit, setUploadedFile };
 
   return (
     <ResumeContext.Provider value={providerData}>

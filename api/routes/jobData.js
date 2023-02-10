@@ -17,8 +17,11 @@ router.post("/pullResume", (req, res) => {
 
 router.post('/addJobDesc', (req, res) => {
   const client = req.body
-  addJobDescriptionByUser(client.id, client.jobTitle, client.companyName, client.jobDescText, client.coverLetterText)
-  addResumeByUser(client.id, client.uploadedFile)
+  Promise.all([
+    addJobDescriptionByUser(client.id, client.jobTitle, client.companyName, client.jobDescText, client.coverLetterText),
+    addResumeByUser(client.id, client.uploadedFile)
+  ])
+  .then(all => res.status(201).json({jobDescByUser: all[0], resumeByUser: all[1], message: "job and resume created"}))
 })
 
 module.exports = router

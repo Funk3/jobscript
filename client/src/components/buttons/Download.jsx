@@ -6,6 +6,7 @@ export default function Download() {
   const { coverLetterText } = useCoverLetterContext();
 
   const handleDownload = () => {
+    
     console.log('cover letter', coverLetterText);
   };
 

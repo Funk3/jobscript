@@ -6,8 +6,9 @@ export default function Download() {
   const { coverLetterText } = useCoverLetterContext();
 
   const handleDownload = () => {
-    
     console.log('cover letter', coverLetterText);
+    let blob = new Blob([coverLetterText]);
+    saveAs(blob, 'coverletter');
   };
 
   return <button onClick={handleDownload}>Download</button>;

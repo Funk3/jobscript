@@ -11,6 +11,7 @@ export default function CoverLetter() {
       {coverLetterText && 
         <form>
           <textarea
+            className="rhs-textarea"
             value={coverLetterText}
             onChange={(event) => handleChange(event.target.value)}
             rows="5"

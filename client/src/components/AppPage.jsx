@@ -1,64 +1,63 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 //Components
-import JobList from './JobList';
-import CoverLetter from './CoverLetter';
-import InputResume from './InputResume';
-import InputJobDesc from './InputJobDesc';
-import CustomTone from './CustomTone';
-import GenerateCoverLetter from './buttons/GenerateCoverLetter';
+import JobList from "./JobList";
+import CoverLetter from "./CoverLetter";
+import InputResume from "./InputResume";
+import InputJobDesc from "./InputJobDesc";
+import CustomTone from "./CustomTone";
+import GenerateCoverLetter from "./buttons/GenerateCoverLetter";
 
 //Providers
-import { CustomToneProvider } from '../providers/CustomToneProvider';
-import { ResumeProvider } from '../providers/ResumeProvider';
-import { CoverLetterProvider } from '../providers/CoverLetterProvider';
-import { JobDescProvider } from '../providers/JobDescProvider';
+import { CustomToneProvider } from "../providers/CustomToneProvider";
+import { ResumeProvider } from "../providers/ResumeProvider";
+import { CoverLetterProvider } from "../providers/CoverLetterProvider";
+import { JobDescProvider } from "../providers/JobDescProvider";
 
 export default function AppPage() {
-
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
-    
       <section>
         {/* render landing page if user is not logged in */}
         {/* eg !currentUser && <LandingPage /> */}
       </section>
 
       <CoverLetterProvider>
-          <CustomToneProvider>
-            <JobDescProvider>
-              <ResumeProvider>
-                <main className='cards'>
-                  <JobList />
-                  {
-                    loading
-                    ? <img src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" alt="loading"/> 
-                    : <div className='rhs-sections'>
-                    <div className='rhs-user-inputs'>
-              
-                      <InputResume />
+        <CustomToneProvider>
+          <JobDescProvider>
+            <ResumeProvider>
+              <main className="cards">
+                <JobList />
+                <div className="center-sections">
+                  <div className="center-user-inputs">
+                    <InputResume />
 
-                      <InputJobDesc />
+                    <InputJobDesc />
 
-                      <CustomTone />
-                      
-                    </div>
-
-                    <GenerateCoverLetter setLoading={setLoading}/>
+                    <CustomTone />
+                  </div>
+                </div>
+                {loading ? (
+                  <div className="rhs-sections">
+                    <img
+                      src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif"
+                      alt="loading"
+                    />
+                  </div>
+                ) : (
+                  <div className="rhs-sections">
+                    <GenerateCoverLetter setLoading={setLoading} />
 
                     <CoverLetter />
                   </div>
-                    
-                  }
-                </main>
-              </ResumeProvider>
-            </JobDescProvider>
-          </CustomToneProvider>
+                )}
+              </main>
+            </ResumeProvider>
+          </JobDescProvider>
+        </CustomToneProvider>
       </CoverLetterProvider>
-
-     
     </>
   );
 }

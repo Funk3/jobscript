@@ -9,8 +9,8 @@ router.post('/pullJob', (req, res) => {
 })
 
 router.post('/addJobDesc', (req, res) => {
-  console.log('req', req.body.id)
-  addJobDescriptionByUser(req.body.id).then(result => {
+  const client = req.body
+  addJobDescriptionByUser(client.id, client.jobTitle, client.companyName, client.jobDescText, client.coverLetterText).then(result => {
     console.log("result", result)
   })
 })

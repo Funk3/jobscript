@@ -37,6 +37,7 @@ export default function AppPage() {
                     <InputJobDesc />
 
                     <CustomTone />
+                    <GenerateCoverLetter setLoading={setLoading} />
                   </div>
                 </div>
                 {loading ? (
@@ -48,8 +49,6 @@ export default function AppPage() {
                   </div>
                 ) : (
                   <div className="rhs-sections">
-                    <GenerateCoverLetter setLoading={setLoading} />
-
                     <CoverLetter />
                   </div>
                 )}

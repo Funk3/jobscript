@@ -10,21 +10,13 @@ export default function InputResume() {
       <h3>1. Upload resume PDF </h3>
       <form onSubmit={onSubmit}>
         <div className="custom-file">
-          {!filename ? (
-            <>
             <input
               type="file"
               className="custom-file-input"
               id="customFile"
               onChange={onChange}
             />
-            <label className="custom-file-label" htmlFor="customFile"> Choose file</label>
-            </>
-          ) : (
-            <>
-              {filename}
-            </>
-          )}
+            <label className="custom-file-label" htmlFor="customFile"> {filename}</label>
           <input type="submit" value="Upload" className="upload" />
         </div>
       </form>

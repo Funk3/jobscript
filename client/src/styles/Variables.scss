@@ -1,6 +1,8 @@
 /* Colours */
 $main-colour: #F2F1F0;
 $accent-colour: #1D5450;
+$error-red: #f8d7da;
+$success-green: #d4edda;
 
 /* Button shadow */
 $btn-cursor: pointer;
@@ -8,6 +10,24 @@ $btn-border: 1px solid #4E4F50;
 $btn-box-shadow: #4E4F50 4px 4px 0 0;
 
 /* Button hover */
-  // background-color: #4E4F50;
-  // color: $main-colour;
-  // box-shadow: $accent-colour 4px 4px 0 0;
+
+/* Error message box */
+@mixin error-message {
+  background: $error-red;
+  border-radius: 5px;
+  border-left: red solid 6px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+@mixin confirmation {
+  background: $success-green;
+  border-radius: 5px;
+  border-left: green solid 6px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem;
+}

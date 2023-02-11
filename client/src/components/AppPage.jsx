@@ -12,17 +12,14 @@ import GenerateCoverLetter from "./buttons/GenerateCoverLetter";
 import { CustomToneProvider } from "../providers/CustomToneProvider";
 import { ResumeProvider } from "../providers/ResumeProvider";
 import { CoverLetterProvider } from "../providers/CoverLetterProvider";
-import { JobDescProvider} from "../providers/JobDescProvider";
-
+import { JobDescProvider } from "../providers/JobDescProvider";
 
 export default function AppPage() {
-
-
   const [loading, setLoading] = useState(false);
 
   return (
     <>
-        <CoverLetterProvider>
+      <CoverLetterProvider>
         <CustomToneProvider>
           <JobDescProvider>
             <ResumeProvider>
@@ -37,20 +34,16 @@ export default function AppPage() {
                     <CustomTone />
 
                     <GenerateCoverLetter setLoading={setLoading} />
-                  
                   </div>
                 </div>
                 {loading ? (
                   <div className="rhs-sections">
-                    <h1>Loading...</h1>
-                    <img
-                      src="../../loading.gif"
-                      alt="loading"
-                    />
-                  </div>
+                  <h1>Loading...</h1>
+
+                </div>
                 ) : (
                   <div className="rhs-sections">
-                    <CoverLetter/>
+                    <CoverLetter />
                   </div>
                 )}
               </main>

@@ -1,6 +1,6 @@
 # Jobscript
 
-An app for the people
+Jobscript is a SPA that takes your resume (uploaded as a PDF) and job description and generates a cover letter using the OpenAI api.
 
 # Setup
 
@@ -24,19 +24,18 @@ An app for the people
 - DB_USER: `Your database name`
 - DB_PASS: `Your database password`
 - DB_NAME: `jobscript`
+- OPEN_API_KEY: `your secret token`
 
 3. CD to `api` and type `npm run db:reset` to seed database
+
+- nodemon is used so no need to restart server
 
 ### Run Client
 
 1. cd to `client`
-2. add given OpenAPI key to .env in client/ folder
-3. Type `npm i` for dependencies
-4. Type `npm start`
-
-- nodemon is used so no need to restart server
+2. Type `npm i` for dependencies
+3. Type `npm start`
 
 ## Information
 
 - This project uses react-bootstrap, information can be found [here](https://react-bootstrap.github.io/getting-started/introduction/)
-- React talks to backend with Axios

@@ -2,9 +2,11 @@ import React from "react";
 import Save from "./buttons/Save";
 import Download from "./buttons/Download";
 import { useCoverLetterContext } from "../providers/CoverLetterProvider";
+import { useJobDescContext } from "providers/JobDescProvider";
 
-export default function CoverLetter({fetchJobData}) {
+export default function CoverLetter() {
   const { coverLetterText, handleChange } = useCoverLetterContext();
+
 
   const handleCoverLetterSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ export default function CoverLetter({fetchJobData}) {
             ></textarea>
 
             <section className="manage-cl-buttons">
-              <Save fetchJobData={fetchJobData} />
+              <Save/>
               <button> Copy</button>
               <Download />
             </section>

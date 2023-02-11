@@ -1,9 +1,12 @@
 import React, {useEffect } from "react";
 import JobListItem from "./JobListItem";
 import CreateNewJobApp from "./buttons/CreateNewJobApp";
+import { useJobDescContext } from "providers/JobDescProvider";
 
-export default function JobList({ fetchJobData, jobData }) {
+export default function JobList() {
 
+  const {fetchJobData, jobData} = useJobDescContext();
+  
   useEffect(() => {
     fetchJobData();
   }, []);

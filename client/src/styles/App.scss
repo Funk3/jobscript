@@ -265,13 +265,8 @@ input:focus {
 
 /* Generate button */
 
-.input-validation{
-  background: #f8d7da;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.25rem;
-  padding: 1rem;
+.error-message{
+ @include error-message;
 }
 
 .generate-btn {
@@ -297,6 +292,13 @@ input:focus {
 }
 /* RHS User Input area */
 
+.save-success{
+  @include confirmation;
+}
+
+.save-failure{
+  @include error-message;
+}
 .rhs-sections {
   height: auto;
   width: 35%;

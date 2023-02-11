@@ -2,6 +2,8 @@
 // Also contains logic for fetching job data once cover letter has been added to db.
 
 import { createContext, useState, useContext } from "react";
+import { useAuthContext } from 'providers/AuthProvider';
+import axios from "axios";
 
 export const JobDescContext = createContext();
 
@@ -24,9 +26,29 @@ export function JobDescProvider(props) {
   };
 
 //move fetchJobData logic into here 
+const [jobData, setJobData] = useState([]);
+const { user } = useAuthContext();
 
+const fetchJobData = () => {
+  axios.post(`api/joblist/pullJob`, user).then((res) => {
+    setJobData(res.data);
+  });
+}
 
-  const providerData = { jobTitle, handleChangeJobTitle, companyName, handleChangeCompanyName, jobDescText, handleChangeJobDescText, setJobDescText, setJobTitle, setCompanyName};
+  const providerData = { 
+    jobTitle, 
+    setJobTitle, 
+    handleChangeJobTitle, 
+    companyName, 
+    setCompanyName,
+    handleChangeCompanyName, 
+    jobDescText, 
+    setJobDescText, 
+    handleChangeJobDescText, 
+    jobData,
+    setJobData,
+    fetchJobData
+  };
 
   return (
     <JobDescContext.Provider value={providerData}>

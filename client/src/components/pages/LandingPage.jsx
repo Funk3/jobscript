@@ -21,12 +21,7 @@ export default function LandingPage() {
           <button>Generate Now!</button>
       </section>
 
-      <section className="landing-page-instructional">
-        <div>Other text</div>
-        <div>Engaging Image</div>
-      </section>
-
-      <section className="landing-page-instructional">
+      <section className="landing-bottom">
         <div>Another engaging image</div>
         <div>Fake reviews?</div>
       </section>

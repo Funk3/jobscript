@@ -59,6 +59,7 @@ body {
   width: 100%;
   padding: 20px;
   margin-bottom: 30px;
+  border-bottom: 2px solid black;
 }
 
 .logo {
@@ -349,13 +350,13 @@ input:focus {
 }
 
 .landing-top {
-  height: 45rem;
+  height: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items :center; 
   text-align: center;
-  margin: 10rem 10rem 0 10rem;
+  margin: 10rem 10rem 10rem 10rem;
   padding: 2rem;
 }
 
@@ -376,13 +377,26 @@ input:focus {
 /* Landing page middle */
 
 .landing-mid {
-  height: 50rem;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   font-size: 30px;
+  background-color: rgb(223, 222, 219);
+
+  button {
+    margin-bottom: 6rem;
+  }
+}
+
+.landing-bottom {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Footer */

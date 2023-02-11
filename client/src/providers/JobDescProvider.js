@@ -1,5 +1,5 @@
-// ??job title, company name
-//definitely for description which will form part of query string
+// provider for managing state of jobTitle, companyName and JobDescription.
+// Also contains logic for fetching job data once cover letter has been added to db.
 
 import { createContext, useState, useContext } from "react";
 
@@ -19,10 +19,12 @@ export function JobDescProvider(props) {
   };
 
   const [jobDescText, setJobDescText] = useState("");
-
   const handleChangeJobDescText = (newjobDescText) => {
     setJobDescText(newjobDescText);
   };
+
+//move fetchJobData logic into here 
+
 
   const providerData = { jobTitle, handleChangeJobTitle, companyName, handleChangeCompanyName, jobDescText, handleChangeJobDescText, setJobDescText, setJobTitle, setCompanyName};
 

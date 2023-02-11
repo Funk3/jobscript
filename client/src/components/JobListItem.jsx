@@ -21,13 +21,13 @@ export default function JobListItem(props) {
 
     axios.post(`api/joblist/pullResume`, user)
       .then((res) => {
-        console.log("incoming resume res.data", res.data.text);
         setUploadedFile(res.data.text);
       });
   }
   return (
     <button
       onClick={showResumeJobDescCoverLetter}
+      className="job-list-item"
     >
     {jobTitle}
     <br></br>

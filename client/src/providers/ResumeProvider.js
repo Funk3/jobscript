@@ -35,17 +35,17 @@ export function ResumeProvider(props) {
       const resume = res.data;
       setUploadedFile(resume.trim());
 
-      console.log("File Uploaded");
+      console.log("Resume Uploaded");
     } catch (err) {
       if (err.response.status === 500) {
-        console.log("There was a problem with the server");
+        console.log("Unable to upload resume. There was a problem with the server");
       } else {
-        console.log(err.response.data.msg);
+        console.log("Error uploading resume", err.response.data.msg);
       }
     }
   };
 
-  const providerData = { file, filename, uploadedFile, onChange, onSubmit, setUploadedFile };
+  const providerData = { file, filename, uploadedFile, onChange, onSubmit, setFile, setFilename, setUploadedFile };
 
   return (
     <ResumeContext.Provider value={providerData}>

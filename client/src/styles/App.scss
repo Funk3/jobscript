@@ -324,21 +324,7 @@ input:focus {
 
 /* Landing page */
 
-.landing-top {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline; 
-  text-align: center;
-  margin: 10rem 0 0 0;
-  align-items: baseline;
-  padding: 1rem;
-}
-
-.landing-top-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 30px;
+.landing-page {
 
   button {
     background-color: $main-colour;
@@ -364,12 +350,45 @@ input:focus {
   }
 }
 
+.landing-top {
+  height: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items :baseline; 
+  text-align: center;
+  margin: 10rem 10rem 0 10rem;
+  align-items: baseline;
+  padding: 2rem;
+}
+
+.landing-top-left {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+}
+
 .screen-grab {
-  width: 45rem;
+  width: 50rem;
   height: 25rem;
   border: 2px solid;
-  margin: 0 5rem 0 0;
 }
+
+/* Landing page middle */
+
+.landing-mid {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Footer */
 
 .landing-page-footer {
   margin-top: 10vh;

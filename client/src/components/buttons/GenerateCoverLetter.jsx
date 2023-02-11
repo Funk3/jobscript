@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useCustomToneContext } from "../../providers/CustomToneProvider";
-import { useJobDescContext } from "../../providers/JobDescProvider";
-import { useResumeContext } from "../../providers/ResumeProvider";
-import { useCoverLetterContext } from "../../providers/CoverLetterProvider";
-import createCustomToneAPIQuery from "../../__helpers__/custom_tone";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useCustomToneContext } from '../../providers/CustomToneProvider';
+import { useJobDescContext } from '../../providers/JobDescProvider';
+import { useResumeContext } from '../../providers/ResumeProvider';
+import { useCoverLetterContext } from '../../providers/CoverLetterProvider';
+import createCustomToneAPIQuery from '../../__helpers__/custom_tone';
 
 export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
@@ -12,16 +12,16 @@ export default function GenerateCoverLetter(props) {
   const { uploadedFile } = useResumeContext();
   const { jobTitle, companyName, jobDescText } = useJobDescContext();
   const { customTone } = useCustomToneContext();
-  const { setCoverLetterText } = useCoverLetterContext("");
+  const { setCoverLetterText } = useCoverLetterContext('');
 
   const [errorValidation, setErrorValidation] = useState(false);
 
-  const toneAPIString = createCustomToneAPIQuery(customTone);
+  // const toneAPIString = createCustomToneAPIQuery(customTone);
   const checkValidStates = (fnToExecute) => {
     if (uploadedFile && jobTitle && companyName && jobDescText && customTone) {
       fnToExecute();
     } else {
-      setErrorValidation("All fields must be filled in before submitting.");
+      setErrorValidation('All fields must be filled in before submitting.');
     }
   };
 
@@ -29,11 +29,11 @@ export default function GenerateCoverLetter(props) {
     const promptParams = {
       uploadedFile,
       jobDescText,
-      toneAPIString,
+      customTone,
     };
     setLoading(true);
     axios
-      .post("api/ai/openai", promptParams)
+      .post('api/ai/openai', promptParams)
       .then((result) => {
         setCoverLetterText(result.data);
         setLoading(false);
@@ -47,10 +47,10 @@ export default function GenerateCoverLetter(props) {
   return (
     <>
       <h3>4. You're all set! </h3>
-      {errorValidation && <p className="error-message">{errorValidation}</p>}
+      {errorValidation && <p className='error-message'>{errorValidation}</p>}
       <div>
         <button
-          className="generate-btn"
+          className='generate-btn'
           onClick={() => checkValidStates(handleGenerateCoverLetter)}
         >
           <h2>Generate Cover Letter</h2>

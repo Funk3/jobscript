@@ -12,10 +12,12 @@ import GenerateCoverLetter from "./buttons/GenerateCoverLetter";
 import { CustomToneProvider } from "../providers/CustomToneProvider";
 import { ResumeProvider } from "../providers/ResumeProvider";
 import { CoverLetterProvider } from "../providers/CoverLetterProvider";
-import { JobDescProvider, useJobDescContext } from "../providers/JobDescProvider";
+import { JobDescProvider} from "../providers/JobDescProvider";
 
 
 export default function AppPage() {
+
+
   const [loading, setLoading] = useState(false);
 
   return (
@@ -33,7 +35,9 @@ export default function AppPage() {
                     <InputJobDesc />
 
                     <CustomTone />
+
                     <GenerateCoverLetter setLoading={setLoading} />
+                  
                   </div>
                 </div>
                 {loading ? (

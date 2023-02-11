@@ -8,13 +8,19 @@ export function CoverLetterProvider(props) {
   
   const [coverLetterText, setCoverLetterText] = useState();
 
-  const [coverLetterError, setCoverLetterError] = useState(false);
+  const [generateButtonVisible, setGenerateButtonVisible] = useState(true);
 
   const handleChange = (newCoverLetterText) => {
     setCoverLetterText(newCoverLetterText);
   };
 
-  const providerData = { coverLetterText, handleChange, setCoverLetterText};
+  const providerData = { 
+    coverLetterText, 
+    handleChange, 
+    setCoverLetterText,
+    generateButtonVisible, 
+    setGenerateButtonVisible
+  };
 
   return (
     <CoverLetterContext.Provider value={providerData}>

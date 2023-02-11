@@ -5,7 +5,7 @@ export const ResumeContext = createContext();
 
 export function ResumeProvider(props) {
   const [file, setFile] = useState("");
-  const [filename, setFilename] = useState("Choose File");
+  const [filename, setFilename] = useState();
   const [uploadedFile, setUploadedFile] = useState();
 
   // user selects file. state for setFile & setFilename are updated with file name

@@ -21,7 +21,7 @@ export default function GenerateCoverLetter(props) {
     if (uploadedFile && jobTitle && companyName && jobDescText && customTone) {
       fnToExecute();
     } else {
-      setErrorValidation("! All fields must be filled in.");
+      setErrorValidation("All fields must be filled in before submitting.");
     }
   };
 
@@ -46,7 +46,8 @@ export default function GenerateCoverLetter(props) {
 
   return (
     <>
-      {errorValidation && <p>{errorValidation}</p>}
+      <h3>4. You're all set! </h3>
+      {errorValidation && <p className="input-validation">{errorValidation}</p>}
       <div>
         <button
           className="generate-btn"

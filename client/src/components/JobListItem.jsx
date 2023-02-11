@@ -29,7 +29,7 @@ export default function JobListItem(props) {
       onClick={showResumeJobDescCoverLetter}
       className="job-list-item"
     >
-    {jobTitle}
+    <strong>{jobTitle}</strong>
     <br></br>
     {companyName}
     </button>

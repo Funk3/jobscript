@@ -27,7 +27,6 @@ export default function CustomTone() {
           Professional
         </button>
       </div>
-      <h5> Selected Tone: {customTone}</h5>
     </section>
   );
 }

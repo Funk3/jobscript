@@ -2,7 +2,7 @@ import React from 'react';
 import { saveAs } from 'file-saver';
 import { useCoverLetterContext } from 'providers/CoverLetterProvider';
 
-export default function Download() {
+export default function Download(props) {
   const { coverLetterText } = useCoverLetterContext();
 
   const handleDownload = () => {
@@ -17,5 +17,9 @@ export default function Download() {
     saveAs(blob, `coverletter${date.toLocaleString()}`);
   };
 
-  return <button onClick={handleDownload}>Download</button>;
+  return (
+    <button className='coverletter-btn' onClick={handleDownload}>
+      Download
+    </button>
+  );
 }

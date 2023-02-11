@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 import axios from 'axios';
 
-export default function Save() {
+export default function Save(props) {
   const { user } = useAuthContext();
   const { uploadedFile } = useResumeContext();
   const { jobTitle, companyName, jobDescText, fetchJobData } =
@@ -51,7 +51,9 @@ export default function Save() {
       ) : (
         <p className={saveStateClass}>{saveFailure}</p>
       )}
-      <button onClick={handleSave}>Save</button>
+      <button className='coverletter-btn' onClick={handleSave}>
+        Save
+      </button>
     </>
   );
 }

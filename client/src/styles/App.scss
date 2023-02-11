@@ -99,6 +99,7 @@ button.job-list-item{
   box-shadow: $btn-box-shadow;
   border-radius: 10px;
   padding: 1rem;
+  text-transform: capitalize;
 
 }
 
@@ -147,7 +148,7 @@ button.job-list-item{
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
 }
 
 textarea {
@@ -157,10 +158,9 @@ textarea {
   border: 2px solid transparent;
   outline: none;
   font-family: Inter, sans-serif;
-  font-weight: 500;
   font-size: 16px;
   line-height: 1.4;
-  width: 80%;
+  width: -webkit-fill-available;
   height: 20vh;
 }
 
@@ -169,6 +169,7 @@ textarea {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  align-items: center;
 }
 
 .custom-file-input {
@@ -178,7 +179,7 @@ textarea {
   position: absolute;
 }
 
-.custom-file label,
+.custom-file-label,
 .upload {
   display: block;
   align-items: center;
@@ -194,6 +195,7 @@ textarea {
   font-weight: 600;
   font-size: 18px;
   padding-top: 5px;
+  text-overflow: ellipsis;
 }
 
 .upload {
@@ -217,20 +219,22 @@ textarea {
 
 .job-desc {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-right: 90px;
+  flex-direction: column;
   margin-bottom: 10px;
   justify-content: space-evenly;
+  gap: 1rem;
 
   input {
     display: flex;
     align-items: center;
     background-color: #dddddd;
-    border: $btn-border;
-    box-shadow: $btn-box-shadow;
+    width: -webkit-fill-available;
     border-radius: 5px;
-    font-size: 18px;
+    font-family: Inter, sans-serif;
+    padding: 0.2rem 1rem;
+    font-size: 16px;
+    line-height: 1.4;
+    border: none;
   }
 }
 
@@ -241,6 +245,7 @@ input:focus {
 /* Tone selection */
 .tone-btns {
   display: flex;
+  padding-bottom: 1rem;
 }
 
 .tone-select-btns {
@@ -268,6 +273,15 @@ input:focus {
 }
 
 /* Generate button */
+
+.input-validation{
+  background: #f8d7da;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
 
 .generate-btn {
   background-color: $main-colour;
@@ -301,7 +315,7 @@ input:focus {
   border-radius: 10px;
   border: 2px solid;
   border-color: black;
-  padding: 0 0 0 20px;
+  padding: 10px;
 }
 
 .rhs-textarea {
@@ -314,7 +328,7 @@ input:focus {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.4;
-  width: 90%;
+  width: -webkit-fill-available;
   height: 60vh;
 }
 

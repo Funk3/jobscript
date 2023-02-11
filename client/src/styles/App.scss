@@ -59,6 +59,7 @@ body {
   width: 100%;
   padding: 20px;
   margin-bottom: 30px;
+  border-bottom: 2px solid black;
 }
 
 .logo {
@@ -355,15 +356,15 @@ input:focus {
 }
 
 .landing-top {
+  background-color: rgb(223, 222, 219);
   height: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items :center; 
   text-align: center;
-  margin: 10rem 10rem 0 10rem;
-  align-items: baseline;
-  padding: 2rem;
+  padding: 10rem 8rem 10rem 8rem;
+  margin-top: 5rem;
 }
 
 .landing-top-left {
@@ -372,10 +373,11 @@ input:focus {
   flex-direction: column;
   align-items: center;
   font-size: 30px;
+  padding: 0 4rem 4rem 4rem;
 }
 
 .screen-grab {
-  width: 50rem;
+  width: 45rem;
   height: 25rem;
   border: 2px solid;
 }
@@ -383,13 +385,26 @@ input:focus {
 /* Landing page middle */
 
 .landing-mid {
-  height: 50rem;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   font-size: 30px;
+
+  button {
+    margin-bottom: 6rem;
+  }
+}
+
+.landing-bottom {
+  background-color: rgb(223, 222, 219);
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Footer */
@@ -446,4 +461,13 @@ input:focus {
   font-weight: 500;
   font-size: 1.1rem;
   padding: 0.3rem 0rem;
+}
+
+.login-button:hover {
+  background-color: #fff;
+}
+
+.login-button:active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }

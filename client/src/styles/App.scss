@@ -458,3 +458,12 @@ input:focus {
   font-size: 1.1rem;
   padding: 0.3rem 0rem;
 }
+
+.login-button:hover {
+  background-color: #fff;
+}
+
+.login-button:active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}

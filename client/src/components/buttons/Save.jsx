@@ -13,9 +13,6 @@ export default function Save({ fetchJobData }) {
   const { coverLetterText } = useCoverLetterContext();
 
   const handleSave = () => {
-    console.log("save clicked");
-    //not rerendering page.
-
     const jobData = {
       id: user.id,
       jobTitle,
@@ -27,7 +24,6 @@ export default function Save({ fetchJobData }) {
 
     axios.post('api/joblist/addJobDesc', jobData).then((result) => {
       //Create an alert of save confirmation
-      console.log('Data Sent');
       fetchJobData();
     });
   };

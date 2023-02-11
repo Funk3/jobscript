@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import JobListItem from './JobListItem';
+import React, {useEffect } from "react";
+import JobListItem from "./JobListItem";
+import CreateNewJobApp from "./buttons/CreateNewJobApp";
 
-export default function JobList({fetchJobData, jobData}) {
-
-  //const responseFromAPI = [];
-
+export default function JobList({ fetchJobData, jobData }) {
 
   useEffect(() => {
     fetchJobData();
@@ -18,15 +15,30 @@ export default function JobList({fetchJobData, jobData}) {
       companyName={jobApp.company_name}
       coverLetterText={jobApp.cover_letter_text}
       jobDescText={jobApp.description}
+      
     />
   ));
   return (
     <aside>
-      <header className='aside-header'>
-        <h3>Job List</h3>
-        <button className='new-btn'>+</button>
+      <section>
+        <h3> </h3>
+      </section>
+      <header className="aside-header">
+        Your jobs
+
       </header>
-      <section>{individualJobListItem}</section>
+      <p>View previous resumes, job descriptions and generated cover letters.</p>
+      
+      <section className="job-list">
+
+        <section className="create-new-job"> 
+        Create New
+        <CreateNewJobApp/>
+        </section>
+        <br></br>
+       
+        {individualJobListItem}
+      </section>
     </aside>
   );
 }

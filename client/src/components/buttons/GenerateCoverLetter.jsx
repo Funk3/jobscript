@@ -43,15 +43,11 @@ export default function GenerateCoverLetter(props) {
         //set state to error here
       });
   };
-  //#EBE8E0 ivory #4E4F50 cool grey #2E6467 teal #636059 gunmetal grey #F0F2F3 offwhite
-  //#F0F2F3
-
-  //off white #F2F1F0
 
   return (
     <>
       <h3>4. You're all set! </h3>
-      {errorValidation && <p className="input-validation">{errorValidation}</p>}
+      {errorValidation && <p className="error-message">{errorValidation}</p>}
       <div>
         <button
           className="generate-btn"
@@ -63,4 +59,3 @@ export default function GenerateCoverLetter(props) {
     </>
   );
 }
-11

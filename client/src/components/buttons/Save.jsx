@@ -1,11 +1,11 @@
-import { useAuthContext } from "providers/AuthProvider";
-import { useCoverLetterContext } from "providers/CoverLetterProvider";
-import { useResumeContext } from "providers/ResumeProvider";
-import { useJobDescContext } from "providers/JobDescProvider";
+import { useAuthContext } from 'providers/AuthProvider';
+import { useCoverLetterContext } from 'providers/CoverLetterProvider';
+import { useResumeContext } from 'providers/ResumeProvider';
+import { useJobDescContext } from 'providers/JobDescProvider';
 
-import React, { useState } from "react";
-import classnames from "classnames";
-import axios from "axios";
+import React, { useState } from 'react';
+import classnames from 'classnames';
+import axios from 'axios';
 
 export default function Save() {
   const { user } = useAuthContext();
@@ -16,9 +16,9 @@ export default function Save() {
   const [saveSuccess, setSaveSuccessState] = useState(false);
   const [saveFailure, setSaveFailureState] = useState(false);
 
-  const saveStateClass = classnames("save", {
-    "save-success": saveSuccess,
-    "save-failure": saveFailure,
+  const saveStateClass = classnames('save', {
+    'save-success': saveSuccess,
+    'save-failure': saveFailure,
   });
 
   const handleSave = () => {
@@ -32,12 +32,12 @@ export default function Save() {
     };
 
     axios
-      .post("api/joblist/addJobDesc", jobDataSave)
+      .post('api/joblist/addJobDesc', jobDataSave)
       .then((result) => {
         //to re-render loblist item list with newest addition added to the bottom
         fetchJobData();
-        setSaveSuccessState("Cover Letter saved successfully.");
-      })  
+        setSaveSuccessState('Cover Letter saved successfully.');
+      })
       .catch((error) => {
         setSaveFailureState(
           `Unable to save Cover Letter. \n Error message: ${error}.`
@@ -46,11 +46,11 @@ export default function Save() {
   };
   return (
     <>
-    {saveSuccess ?
-     <p className={saveStateClass}>{saveSuccess}</p>
-    :
-    <p className={saveStateClass}>{saveFailure}</p>
-    }
+      {saveSuccess ? (
+        <p className={saveStateClass}>{saveSuccess}</p>
+      ) : (
+        <p className={saveStateClass}>{saveFailure}</p>
+      )}
       <button onClick={handleSave}>Save</button>
     </>
   );

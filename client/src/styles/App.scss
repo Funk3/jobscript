@@ -264,8 +264,8 @@ input:focus {
 
 /* Generate button */
 
-.error-message{
- @include error-message;
+.error-message {
+  @include error-message;
 }
 
 .generate-btn {
@@ -291,11 +291,15 @@ input:focus {
 }
 /* RHS User Input area */
 
-.save-success{
+.save-success {
   @include confirmation;
 }
 
-.save-failure{
+.copy-success {
+  @include confirmation;
+}
+
+.save-failure {
   @include error-message;
 }
 .rhs-sections {

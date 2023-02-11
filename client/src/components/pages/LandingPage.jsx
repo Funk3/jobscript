@@ -3,13 +3,12 @@ import React from "react";
 export default function LandingPage() {
   return (
     <main>
-      <header className="landing-page-header">Landing page Main banner</header>
-      <section className="landing-page-instructional">
-        <div>
-          <h3>Text describing how to use</h3>
-          <button>Log in!</button>
+      <section className="landing-top">
+        <div className="landing-top-left">
+          <h1>Don't waste time writing cover letters,<br/>Let AI do it for you!</h1>
+          <button>Get Started Now!</button>
         </div>
-        <div>Screen grab/video</div>
+        <div className="screen-grab">Screen grab/video</div>
       </section>
 
       <section className="landing-page-instructional">

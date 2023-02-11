@@ -1,4 +1,4 @@
-@import 'Variables';
+@import "Variables";
 
 /* Whole page */
 html {
@@ -66,7 +66,8 @@ body {
 
 .nav-rhs {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding-right: 20px;
 }
 
@@ -177,7 +178,8 @@ textarea {
   position: absolute;
 }
 
-.custom-file label, .upload {
+.custom-file label,
+.upload {
   display: block;
   align-items: center;
   background-color: $main-colour;
@@ -200,11 +202,13 @@ textarea {
   padding-top: 2px;
 }
 
-.custom-file label:hover, .upload:hover {
+.custom-file label:hover,
+.upload:hover {
   background-color: #fff;
 }
 
-.custom-file label:active, .upload:active {
+.custom-file label:active,
+.upload:active {
   box-shadow: black 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
@@ -218,7 +222,7 @@ textarea {
   margin-right: 90px;
   margin-bottom: 10px;
   justify-content: space-evenly;
-  
+
   input {
     display: flex;
     align-items: center;
@@ -261,7 +265,6 @@ input:focus {
 .tone-select-btns:focus {
   box-shadow: black 2px 2px 0 0;
   transform: translate(2px, 2px);
-  background-color: white;
 }
 
 /* Generate button */
@@ -279,7 +282,14 @@ input:focus {
   margin: 0 50px 0 50px;
 }
 
+.generate-btn:hover {
+  background-color: #fff;
+}
 
+.generate-btn:active {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
 /* RHS User Input area */
 
 .rhs-sections {
@@ -310,17 +320,51 @@ input:focus {
 
 /* Landing page */
 
-.landing-page-header {
-  text-align: center;
-  margin-top: 10rem;
-}
-.landing-page-instructional {
+.landing-top {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: baseline; 
   text-align: center;
-  margin: 2rem 0rem;
+  margin: 10rem 0 0 0;
   align-items: baseline;
+  padding: 1rem;
+}
+
+.landing-top-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+
+  button {
+    background-color: $main-colour;
+    cursor: $btn-cursor;
+    border: 4px solid black;
+    box-shadow: black 5px 5px 0 1px;
+    border-radius: 10px;
+    height: 5rem;
+    width: 15rem;
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    background-color: #fff;
+  }
+  
+  button:active {
+    box-shadow: black 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+}
+
+.screen-grab {
+  width: 45rem;
+  height: 25rem;
+  border: 2px solid;
+  margin: 0 5rem 0 0;
 }
 
 .landing-page-footer {

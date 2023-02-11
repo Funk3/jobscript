@@ -48,6 +48,7 @@ body {
 
 /* Top Nav Bar*/
 .nav-bar {
+  background-color: white;
   position: fixed;
   top: 0;
   display: flex;
@@ -93,10 +94,11 @@ aside {
 
 button.job-list-item{
   margin-bottom: 1rem;
+  background-color: white;
   text-align: inherit;
   cursor: $btn-cursor;
-  border: $btn-border;
-  box-shadow: $btn-box-shadow;
+  border: 1px;
+  box-shadow: $accent-colour 4px 4px 0 0;
   border-radius: 10px;
   padding: 1rem;
   text-transform: capitalize;
@@ -146,13 +148,12 @@ button.job-list-item{
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  border: 2px solid;
-  border-color: black;
+  box-shadow: $accent-colour 6px 6px 0 0;
   padding: 10px 10px 20px 10px;
 }
 
 textarea {
-  background-color: #dddddd;
+  background-color: $main-colour;
   padding: 1em;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -170,6 +171,7 @@ textarea {
   flex-direction: row;
   margin-bottom: 10px;
   align-items: center;
+  gap: 1rem;
 }
 
 .custom-file-input {
@@ -179,29 +181,19 @@ textarea {
   position: absolute;
 }
 
-.custom-file-label,
+.custom-file label,
 .upload {
-  display: block;
-  align-items: center;
   background-color: $main-colour;
   cursor: $btn-cursor;
-  border: $btn-border;
   box-shadow: $btn-box-shadow;
+  border: $btn-border;
   border-radius: 10px;
   width: 140px;
-  height: 25px;
-  display: block;
-  text-align: center;
-  font-weight: 600;
-  font-size: 18px;
-  padding-top: 5px;
-  text-overflow: ellipsis;
-}
-
-.upload {
   height: auto;
-  margin-left: 20px;
-  padding-top: 2px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.3rem 0rem;
 }
 
 .custom-file label:hover,
@@ -227,7 +219,7 @@ textarea {
   input {
     display: flex;
     align-items: center;
-    background-color: #dddddd;
+    background-color: $main-colour;
     width: -webkit-fill-available;
     border-radius: 5px;
     font-family: Inter, sans-serif;
@@ -251,16 +243,15 @@ input:focus {
 .tone-select-btns {
   background-color: $main-colour;
   cursor: $btn-cursor;
-  border: $btn-border;
   box-shadow: $btn-box-shadow;
   border-radius: 10px;
-  height: 30px;
-  display: block;
+  width: 140px;
+  height: auto;
   text-align: center;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 1.1rem;
   margin-right: 20px;
-  padding: 0 18px;
+  padding: 0.3rem 0rem;
 }
 
 .tone-select-btns:hover {
@@ -313,13 +304,12 @@ input:focus {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  border: 2px solid;
-  border-color: black;
+  box-shadow: $accent-colour 6px 6px 0 0;
   padding: 10px;
 }
 
 .rhs-textarea {
-  background-color: #dddddd;
+  background-color: $main-colour;
   padding: 1em;
   border-radius: 10px;
   border: 2px solid transparent;

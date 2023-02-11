@@ -7,7 +7,11 @@ router.post('/openai', (req, res) => {
   const apiKey = process.env.OPENAI_API_KEY;
   const client = req.body
   const params = {
-    prompt: `RESUME = "${client.uploadedFile}". JOB DESCRIPTION = "${client.jobDescText}". Use only the information from the RESUME to write a Cover Letter based on the JOB DESCRIPTION. ${client.toneAPIString}`,
+    prompt: `Write a cover letter using the provided resume and job description below. Use only the education and skills from the resume. If the job description contains requirements, use the education and skills from the resume instead. Write it in a ${client.customTone} tone.
+    
+    resume = ${client.uploadedFile}
+    job description = ${client.jobDescText}`,
+
     model: 'text-davinci-003',
     max_tokens: 2000,
     temperature: 0,

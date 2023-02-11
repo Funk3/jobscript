@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 import { useCoverLetterContext } from 'providers/CoverLetterProvider';
 
-export default function Copy() {
+export default function Copy(props) {
   const { coverLetterText } = useCoverLetterContext();
   const [copySuccess, setCopySuccessState] = useState(false);
   const copyStateClass = classnames('copy', {
@@ -16,7 +16,9 @@ export default function Copy() {
   return (
     <>
       <p className={copyStateClass}>{copySuccess}</p>
-      <button onClick={handleCopy}>Copy</button>
+      <button className='coverletter-btn' onClick={handleCopy}>
+        Copy
+      </button>
     </>
   );
 }

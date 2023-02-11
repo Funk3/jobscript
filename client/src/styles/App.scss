@@ -328,6 +328,21 @@ input:focus {
   height: 60vh;
 }
 
+/* Cover letter buttons */
+
+.coverletter-btn {
+  background-color: $main-colour;
+  cursor: $btn-cursor;
+  box-shadow: $btn-box-shadow;
+  border: $btn-border;
+  border-radius: 10px;
+  width: 140px;
+  height: auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.3rem 0rem;
+}
 /* Landing page */
 
 .landing-page {
@@ -361,7 +376,7 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items :center; 
+  align-items: center;
   text-align: center;
   padding: 10rem 8rem 10rem 8rem;
   margin-top: 5rem;

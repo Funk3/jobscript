@@ -350,14 +350,15 @@ input:focus {
 }
 
 .landing-top {
+  background-color: rgb(223, 222, 219);
   height: 35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items :center; 
   text-align: center;
-  margin: 10rem 10rem 10rem 10rem;
-  padding: 2rem;
+  padding: 10rem 8rem 10rem 8rem;
+  margin-top: 5rem;
 }
 
 .landing-top-left {
@@ -366,6 +367,7 @@ input:focus {
   flex-direction: column;
   align-items: center;
   font-size: 30px;
+  padding: 0 4rem 4rem 4rem;
 }
 
 .screen-grab {
@@ -384,7 +386,6 @@ input:focus {
   align-items: center;
   text-align: center;
   font-size: 30px;
-  background-color: rgb(223, 222, 219);
 
   button {
     margin-bottom: 6rem;

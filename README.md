@@ -39,3 +39,4 @@ Jobscript is a SPA that takes your resume (uploaded as a PDF) and job descriptio
 ## Information
 
 - This project uses react-bootstrap, information can be found [here](https://react-bootstrap.github.io/getting-started/introduction/)
+- Favicon icon attribution : <a href="https://www.flaticon.com/free-icons/letter" title="letter icons">Letter icons created by Freepik - Flaticon</a>

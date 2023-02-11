@@ -34,7 +34,6 @@ export default function Save() {
     axios
       .post("api/joblist/addJobDesc", jobDataSave)
       .then((result) => {
-        console.log("save result=", result);
         //to re-render loblist item list with newest addition added to the bottom
         fetchJobData();
         setSaveSuccessState("Cover Letter saved successfully.");

@@ -351,14 +351,13 @@ input:focus {
 }
 
 .landing-top {
-  height: 35rem;
+  height: 45rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items :baseline; 
+  align-items :center; 
   text-align: center;
   margin: 10rem 10rem 0 10rem;
-  align-items: baseline;
   padding: 2rem;
 }
 
@@ -371,7 +370,7 @@ input:focus {
 }
 
 .screen-grab {
-  width: 50rem;
+  width: 45rem;
   height: 25rem;
   border: 2px solid;
 }

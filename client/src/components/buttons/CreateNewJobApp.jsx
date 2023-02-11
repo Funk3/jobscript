@@ -6,10 +6,10 @@ import React from "react";
 
 export default function CreateNewJobApp() {
 
-  const {setFile, setFilename, setUploadedFile} = useResumeContext();
+  const {setFilename, setUploadedFile} = useResumeContext();
   const {setJobTitle, setCompanyName,setJobDescText} = useJobDescContext();
   const {setCustomTone} = useCustomToneContext();
-  const {setCoverLetterText} = useCoverLetterContext();
+  const {setCoverLetterText, setGenerateButtonVisible} = useCoverLetterContext();
 
   const handleAddNewJobClick = () => {
     //reset resume, job title, company name, desc, tone, coverletter states to default
@@ -20,6 +20,8 @@ export default function CreateNewJobApp() {
     setJobDescText("");
     setCustomTone("");
     setCoverLetterText("");
+    //make generate cover letter button visible again
+    setGenerateButtonVisible(true);
   }
 
   return(

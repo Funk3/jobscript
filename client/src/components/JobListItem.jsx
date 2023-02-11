@@ -9,7 +9,7 @@ import { useJobDescContext } from "providers/JobDescProvider";
 export default function JobListItem(props) {
   const { coverLetterText, jobTitle, companyName, jobDescText } = props;
   const { user } = useAuthContext();
-  const { setCoverLetterText } = useCoverLetterContext();
+  const { setCoverLetterText, setGenerateButtonVisible } = useCoverLetterContext();
   const { setJobDescText, setJobTitle, setCompanyName } = useJobDescContext();
   const { setUploadedFile } = useResumeContext();
 
@@ -18,6 +18,8 @@ export default function JobListItem(props) {
     setJobDescText(jobDescText);
     setCompanyName(companyName);
     setJobTitle(jobTitle);
+    //hide generate cover letter button
+    setGenerateButtonVisible(false);
 
     axios.post(`api/joblist/pullResume`, user)
       .then((res) => {

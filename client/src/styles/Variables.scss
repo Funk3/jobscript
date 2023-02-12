@@ -3,11 +3,12 @@ $main-colour: #F2F1F0;
 $accent-colour: #1D5450;
 $error-red: #f8d7da;
 $success-green: #d4edda;
+$grey:#4E4F50;
 
 /* Button shadow */
 $btn-cursor: pointer;
-$btn-border: 1px solid #4E4F50;
-$btn-box-shadow: #4E4F50 4px 4px 0 0;
+$btn-border: 1px solid $grey;
+$btn-box-shadow: $grey 4px 4px 0 0;
 
 /* Button hover */
 
@@ -16,9 +17,9 @@ $btn-box-shadow: #4E4F50 4px 4px 0 0;
   background: $error-red;
   border-radius: 5px;
   border-left: red solid 6px;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }
 
@@ -26,8 +27,8 @@ $btn-box-shadow: #4E4F50 4px 4px 0 0;
   background: $success-green;
   border-radius: 5px;
   border-left: green solid 6px;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }

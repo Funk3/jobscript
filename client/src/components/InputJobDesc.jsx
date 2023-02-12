@@ -42,7 +42,7 @@ export default function InputJobDesc() {
           Job Description
           <textarea
             onChange={(event) => handleChangeJobDescText(event.target.value)}
-            defaultValue={jobDescText}
+            value={jobDescText}
             placeholder="Copy paste the Job Description"
           ></textarea>
         </label>

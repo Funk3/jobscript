@@ -77,7 +77,25 @@ HTML, PHP, CSS, and JavaScript in professional: 2 years (required)
 Language:
 
 English (required)
-Work Location: One location', 'cover letter for user 1 job desc 1'),
+Work Location: One location', 'Dear Hiring Manager,
+
+I am writing to express my interest in the Web Developer position at Be the Change Group. As a highly motivated Junior Full Stack Web Developer with a passion for creating dynamic and visually appealing web applications, I believe that I would be a valuable addition to your team.
+
+I am proficient in HTML, CSS, JavaScript, React, Node.js, and MongoDB and have a strong ability to problem-solve and continuously expand my technical knowledge. My education in Computer Science from the University of California, Los Angeles (UCLA) and my experience as a Junior Full Stack Web Developer at ABC Company and as a Full Stack Web Developer intern at XYZ Company have provided me with a solid foundation in web development.
+
+I am particularly interested in this position as I am passionate about making an impact through coding and your companys mission to address health equity issues and improve social determinants of health aligns with my own values. I also appreciate the emphasis that Be the Change Group places on growth, mentorship, purpose, friendship, and fun in its work culture.
+
+I have attached my resume and portfolio to this cover letter for your review. In my portfolio, you will find examples of my previous projects, including a Recipe Book web application, a Personal Portfolio website, a Todo List application, an e-commerce site, a Weather App, and a Task Manager web application.
+
+I am confident that my skills, education, and experience make me a strong candidate for this position. I would welcome the opportunity to contribute to your team and further develop my skills. Please do not hesitate to contact me for any further information or to arrange an interview.
+
+Thank you for considering my application. I look forward to hearing from you soon.
+
+Sincerely,
+Kirsten Johnson'),
+
+
+
 (1, 'AlphaPay', 'Front-End Web Developer', 'Full Job Description
 About Us
 
@@ -128,7 +146,25 @@ Vision care
 Schedule:
 
 8 hour shift
-', 'cover letter for user 1 job desc 2'),
+', 'Dear Hiring Manager,
+
+I am writing to express my interest in the Front-End Web Developer position at AlphaPay. As a Junior Full Stack Web Developer with a Bachelor of Science in Computer Science from UCLA, I am confident that my technical skills, project experience, and passion for creating dynamic web applications make me a great fit for this role.
+
+I am highly proficient in HTML, CSS, JavaScript, React, Node.js, and MongoDB, and have demonstrated my abilities through a range of projects, including a Recipe Book web application, a Personal Portfolio website, a Todo List application, an e-commerce site, a weather app, and a task management web application. My strong problem-solving skills and willingness to continuously learn and expand my technical knowledge will also allow me to contribute effectively to your team.
+
+I have also had experience working as a Junior Full Stack Web Developer at ABC Company and as an intern Full Stack Web Developer at XYZ Company, where I collaborated with teams of developers to build and maintain web applications, resolved bugs in existing applications, and assisted with the integration of REST APIs.
+
+I am excited about the opportunity to join AlphaPay and develop responsive and functional web applications that interact with cloud services. I am also looking forward to collaborating with UX/UI designers and team members to provide new features and support existing ones. I am confident that my experience with JavaScript and JS libraries, as well as my ability to learn new technologies, will enable me to deliver high-quality work within tight deadlines.
+
+Thank you for considering my application. I look forward to the opportunity to further discuss my qualifications and enthusiasm for this role.
+
+Sincerely,
+Kirsten Johnson
+(555) 555-5555
+kirsten.johnson@email.com'),
+
+
+
 (2, 'James Evans and Associates, Ltd.', 'Junior Web Developer', 'Full Job Description
 James Evans and Associates, Ltd. is a Victoria-based company that has been doing business in Canada and the United States for over 40 years. We have an excellent, well-established reputation in the Canadian and US pension industry. JEA offers SaaS and on-premises pension system administration solutions, along with pension system consulting services to a variety of clients with a diversity of needs. With over 40 years of history, JEA has proven we are both adaptable and reliable - and that, above all, we strive to form true partnerships with our clients, ensuring we develop, implement and support the best in class pension solutions for their organizations and members.
 
@@ -211,7 +247,25 @@ Experience:
 product development: 2 years (preferred)
 Work Location: One location
 
-','cover letter for user 2 job desc 3'),
+','Dear Hiring Manager,
+
+I am writing to express my interest in the Junior Full Stack Developer position at James Evans and Associates, Ltd. I am confident that my skills, education, and passion for web development make me an excellent fit for your company.
+
+As a recent graduate with a Bachelor of Science in Computer Science from New York University, I have honed my skills in front-end development using React, HTML, CSS, and JavaScript, and back-end development using Node.js, Express, and MongoDB. I am a fast learner and committed to continuously improving my skills, as evidenced by my experience with web development tools such as Git, GitHub, AWS, and Firebase. I also have experience with Agile methodologies and project management tools, such as Asana and Trello.
+
+I am particularly impressed by James Evans and Associates’ reputation for providing quality pension system administration solutions and consulting services to its clients. I am eager to bring my passion for web development and my desire to form true partnerships with clients to your team.
+
+In my previous role as a Web Development Intern at XYZ Inc, I was able to contribute to the development of various full-stack web applications and work closely with a team of senior developers. I acquired hands-on experience with web development tools, learned new technologies, and improved my coding skills.
+
+My projects, including Budget Tracker, Fitness App, Book Club, Travel Blog, Recipe App, and Task Manager, demonstrate my ability to design, develop, and test features, APIs, and integrations for web-based applications. I am a team player who is able to collaborate with others and interact with stakeholders, and I have strong analytical and problem-solving skills.
+
+Thank you for considering my application. I am excited about the opportunity to join James Evans and Associates and become part of your team. I look forward to the opportunity to further discuss my qualifications with you.
+
+Sincerely,
+
+Zak Smith
+Phone: (555) 555-5555
+Email: zak.smith@email.com'),
 
 
 (2, 'RIMEX', 'Web Developer', 'Full Job Description
@@ -253,7 +307,28 @@ Extended health coverage
 Dental & Vision care
 Travel Medical insurance
 Employee assistance program
-Life Insurance / Accidental Death', 'cover letter for user 2 job desc 4'),
+Life Insurance / Accidental Death', 'Dear Hiring Manager,
+
+I am writing to express my interest in the Front End Web Developer position at RIMEX. I am a motivated Junior Full Stack Web Developer with a passion for creating user-friendly and efficient web applications. I am excited about the opportunity to join a team that values quality and has a focus on providing the best products and services to customers.
+
+I am a recent graduate of New York University with a Bachelor of Science in Computer Science. During my studies, I developed my skills in front-end and back-end technologies, including React, Node.js, and Express. I have hands-on experience with web development tools such as Git, GitHub, AWS, and Firebase, and I have a strong understanding of Agile methodologies, as well as project management tools like Asana and Trello.
+
+I have also completed several projects that demonstrate my skills and passion for web development. For example, I developed a Budget Tracker, a full-stack fitness application, a web-based platform for book lovers, a travel blog, a recipe app, and a task management system. These projects have provided me with experience in user authentication, data management, and real-time updates, and I have used a variety of technologies, such as MongoDB and Chart.js, to bring my projects to life.
+
+In my previous role as a Web Development Intern at XYZ Inc, I had the opportunity to contribute to the development of various full-stack web applications. I worked closely with the team on projects and acquired hands-on experience with web development tools like Git and GitHub. I also improved my coding skills and learned new technologies under the guidance of senior developers.
+
+I am confident that my education and experience make me a strong fit for this role. I am familiar with HTML5, CSS3, and JavaScript, and I am proficient in core JavaScript and libraries like jQuery. I have experience integrating web applications with backend services and APIs and have worked with visual artists to integrate graphical and visual elements. I am also able to optimize website elements for use on mobile platforms and have a working knowledge of Git.
+
+I am a citizen of Canada currently residing in Canada and am able to speak, read, and write in English. I am eager to join a team that values growth and has a strong company culture, and I am especially excited about the advancement opportunities, RRSP program, and performance incentive program at RIMEX.
+
+Thank you for considering my application. I look forward to the opportunity to discuss my qualifications further.
+
+Sincerely,
+
+Zak Smith
+Phone: (555) 555-5555
+Email: zak.smith@email.com
+Location: New York, NY'),
 
 
 
@@ -338,7 +413,22 @@ Why are you interested in this position?
 Experience:
 
 web developer: 2 years (preferred)
-Work Location: One location', 'cover letter for user 3 job desc 5'),
+Work Location: One location', 'Dear Hiring Manager,
+
+I am writing to express my interest in the Web Developer position at FORM. As a Junior Full Stack Web Developer with a passion for creating dynamic and engaging web applications, I am confident in my ability to contribute to your team and make a positive impact on the company.
+
+With a solid understanding of full-stack development concepts and proficiency in React, Node.js, and MongoDB, I am equipped with the technical skills necessary to succeed in this role. My experience as a Web Development Intern at DEF Inc. and my projects, including Todo List, E-commerce Site, Recipe Book, Task Manager, Social Media, and Weather App, have honed my ability to work independently and as part of a team to achieve common goals.
+
+I am excited about the opportunity to join a close-knit team that is redefining the sport of swimming and be part of an amazing and diverse group of people who love to work and have fun together. Your mission to break down the barriers between what swimming is and what it could be aligns with my desire to make a positive impact on a company.
+
+As a quick learner, I am eager to continue growing my skills and gain new experiences at FORM. I am confident that my education, including my Bachelor of Science in Computer Science from the University of Southern California, and my technical skills will make me a valuable asset to your team.
+
+Thank you for considering my application. I look forward to the opportunity to discuss my qualifications further.
+
+Sincerely,
+Ryan Green
+(555) 555-5555
+ryan.green@email.com'),
 
 
 
@@ -403,4 +493,20 @@ Plexxis is committed to the principles of diversity and inclusion, encouraging a
 
 Please Note: If you are offered a position at Plexxis Software, you may be required to agree to a background check.
 
-PLEXXIS IS AN EQUAL OPPORTUNITY EMPLOYER','cover letter for user 3 job desc 6');
+PLEXXIS IS AN EQUAL OPPORTUNITY EMPLOYER','Dear Hiring Manager,
+
+I am excited to apply for the Jr. Full Stack JavaScript Developer position at Plexxis Software. As a highly motivated Junior Full Stack Web Developer with a strong passion for creating dynamic and engaging web applications, I am confident that I have the skills and experience necessary to make a positive contribution to your team.
+
+I have a Bachelor of Science in Computer Science from the University of Southern California and am proficient in React, Node.js, and MongoDB, with a solid understanding of full-stack development concepts. I have hands-on experience with Agile methodologies, Trello, Jira, Git, GitHub, Heroku, and Netlify, and have worked on various projects including a Todo List, E-commerce Site, Recipe Book, Task Manager, Social Media, and Weather App.
+
+During my internship at DEF Inc, I assisted in the development of full-stack web applications using React, Node.js, and MongoDB and contributed to the design and implementation of new features and functionality. I also had the opportunity to collaborate with the team on project planning, coding, and testing, which allowed me to improve my coding skills and learn new technologies under the guidance of senior developers.
+
+I am a quick learner who can work independently and as part of a team to achieve common goals. I am driven, focused, and supportive, and I love coding and enjoy a good challenge. I have a passion for development and have demonstrated this through my personal projects.
+
+I am eager to join the Plexxis web development team and make meaningful contributions to a product that people rely on in their day-to-day business operations. I am also excited about the opportunity to work with a small, tight-knit group of hard-working, dedicated, and fun individuals in a rapidly growing, high energy company with an entrepreneurial spirit.
+
+Thank you for considering my application. I look forward to the opportunity to discuss my qualifications further and demonstrate how I can add value to your team.
+
+Sincerely,
+
+Ryan Green');

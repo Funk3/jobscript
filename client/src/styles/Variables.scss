@@ -17,9 +17,9 @@ $btn-box-shadow: $grey 4px 4px 0 0;
   background: $error-red;
   border-radius: 5px;
   border-left: red solid 6px;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }
 
@@ -27,8 +27,8 @@ $btn-box-shadow: $grey 4px 4px 0 0;
   background: $success-green;
   border-radius: 5px;
   border-left: green solid 6px;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }

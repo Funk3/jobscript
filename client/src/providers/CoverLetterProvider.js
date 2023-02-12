@@ -10,6 +10,8 @@ export function CoverLetterProvider(props) {
 
   const [generateButtonVisible, setGenerateButtonVisible] = useState(true);
 
+ const [inputValidationError, setInputValidationError] = useState(false);
+
   const handleChange = (newCoverLetterText) => {
     setCoverLetterText(newCoverLetterText);
   };
@@ -19,7 +21,9 @@ export function CoverLetterProvider(props) {
     handleChange, 
     setCoverLetterText,
     generateButtonVisible, 
-    setGenerateButtonVisible
+    setGenerateButtonVisible,
+    inputValidationError, 
+    setInputValidationError
   };
 
   return (

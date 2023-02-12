@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 //Components
 import JobList from "./JobList";
-import CoverLetter from "./CoverLetter";
+import CoverLetter from "./CoverLetter/CoverLetter";
 import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
@@ -13,6 +13,7 @@ import { CustomToneProvider } from "../providers/CustomToneProvider";
 import { ResumeProvider } from "../providers/ResumeProvider";
 import { CoverLetterProvider } from "../providers/CoverLetterProvider";
 import { JobDescProvider } from "../providers/JobDescProvider";
+import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
 
 export default function AppPage() {
   const [loading, setLoading] = useState(false);
@@ -23,6 +24,8 @@ export default function AppPage() {
         <CustomToneProvider>
           <JobDescProvider>
             <ResumeProvider>
+              <ManageCoverLetterProvider>
+
               <main className="cards">
                 <JobList />
                 <div className="center-sections">
@@ -47,6 +50,7 @@ export default function AppPage() {
                   </div>
                 )}
               </main>
+              </ManageCoverLetterProvider>
             </ResumeProvider>
           </JobDescProvider>
         </CustomToneProvider>

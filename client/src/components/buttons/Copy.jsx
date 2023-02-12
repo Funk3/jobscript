@@ -10,6 +10,7 @@ export default function Copy() {
   return (
     <>
       <button className='coverletter-btn' onClick={handleCopy}>
+      <i class="fa-regular fa-copy"></i>
         Copy
       </button>
     </>

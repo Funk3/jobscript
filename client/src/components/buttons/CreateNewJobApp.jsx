@@ -14,7 +14,7 @@ export default function CreateNewJobApp() {
     setGenerateButtonVisible,
     setInputValidationError,
   } = useCoverLetterContext();
-  
+
   const { setSaveSuccessState, setSaveFailureState, setCopySuccessState } =
     useManageCoverLetterContext();
 
@@ -37,7 +37,7 @@ export default function CreateNewJobApp() {
 
   return (
     <button onClick={handleAddNewJobClick} className="new-btn">
-      +
+      <i class="fa-solid fa-plus fa-lg"></i>
     </button>
   );
 }

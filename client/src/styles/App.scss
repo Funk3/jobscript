@@ -58,7 +58,6 @@ body {
   height: 75px;
   width: 100%;
   padding: 20px;
-  margin-bottom: 30px;
   border-bottom: 1.8px solid $grey;
 }
 
@@ -68,14 +67,12 @@ body {
 
 .nav-rhs {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  padding-right: 20px;
+  margin-right: 20px;
+  gap: 0.7rem;
 }
 
-.crr-user {
-  margin-right: 10px;
-}
 
 /* Job List and Job List Item */
 aside {
@@ -106,6 +103,33 @@ button.job-list-item {
   font-size: 1rem;
 }
 
+.jl-details-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .fa-heart{
+    align-self: end;
+   color: $accent-colour;
+    }
+
+    :hover{
+      color: #A83F39;
+    }
+}
+
+
+
+.jl-title-name{
+  display: flex;
+  flex-direction: column;
+}
+
+.jl-jobtitle{
+  font-weight: bold;
+}
+
+
 .create-new-job {
   display: flex;
   flex-direction: row;
@@ -120,8 +144,6 @@ button.job-list-item {
   box-shadow: $btn-box-shadow;
   height: 40px;
   width: 40px;
-  font-weight: 400;
-  font-size: 25px;
   margin-right: 20px;
   margin-top: 8px;
   border-radius: 50%;
@@ -247,6 +269,7 @@ input:focus {
   cursor: $btn-cursor;
   box-shadow: $btn-box-shadow;
   border-radius: 10px;
+  border: $btn-border;
   width: 140px;
   height: auto;
   text-align: center;
@@ -332,11 +355,17 @@ input:focus {
 
 /* Cover letter buttons */
 
+.manage-cl-buttons{
+  display: flex;
+  flex-direction: row;
+}
 .coverletter-btn {
-  background-color: $main-colour;
-  cursor: $btn-cursor;
-  box-shadow: $btn-box-shadow;
-  border: $btn-border;
+  display: flex;
+  flex-direction: row;
+  background-color: #F2F1F0;
+  cursor: pointer;
+  box-shadow: #4e4f50 4px 4px 0 0;
+  border: 1px solid #4E4F50;
   border-radius: 10px;
   width: 140px;
   height: auto;
@@ -344,6 +373,9 @@ input:focus {
   font-weight: 500;
   font-size: 1.1rem;
   padding: 0.3rem 0rem;
+  margin-right: 20px;
+  justify-content: center;
+  gap: 0.7rem;
 }
 /* Landing page */
 

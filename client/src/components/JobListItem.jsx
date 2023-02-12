@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+
+import classnames from "classnames";
 
 import { useCoverLetterContext } from "providers/CoverLetterProvider";
 import { useResumeContext } from "providers/ResumeProvider";
@@ -7,15 +9,18 @@ import { useAuthContext } from "providers/AuthProvider";
 import { useJobDescContext } from "providers/JobDescProvider";
 import { useManageCoverLetterContext } from "providers/ManageCoverLetterProvider";
 
-
 export default function JobListItem(props) {
   const { coverLetterText, jobTitle, companyName, jobDescText } = props;
   const { user } = useAuthContext();
-  const { setCoverLetterText, setGenerateButtonVisible, setInputValidationError, } = useCoverLetterContext();
+  const {
+    setCoverLetterText,
+    setGenerateButtonVisible,
+    setInputValidationError,
+  } = useCoverLetterContext();
   const { setJobDescText, setJobTitle, setCompanyName } = useJobDescContext();
   const { setUploadedFile } = useResumeContext();
-  const {setSaveSuccessState, setSaveFailureState, setCopySuccessState} = useManageCoverLetterContext();
-
+  const { setSaveSuccessState, setSaveFailureState, setCopySuccessState } =
+    useManageCoverLetterContext();
 
   const showResumeJobDescCoverLetter = () => {
     setCoverLetterText(coverLetterText);
@@ -30,19 +35,35 @@ export default function JobListItem(props) {
     setCopySuccessState(false);
     setInputValidationError(false);
 
-    axios.post(`api/joblist/pullResume`, user)
-      .then((res) => {
-        setUploadedFile(res.data.text);
-      });
+    axios.post(`api/joblist/pullResume`, user).then((res) => {
+      setUploadedFile(res.data.text);
+    });
   }
+
+  //Favourite
+  const [isFavourite, setFavourite] = useState(false);
+  const handleFavourite = () => {
+    setFavourite(current => !current);  
+  };
+  const favouriteClass = classnames({
+    'fa-solid fa-heart': isFavourite,
+    'fa-regular fa-heart': !isFavourite,
+  });
+
+
   return (
-    <button
-      onClick={showResumeJobDescCoverLetter}
-      className="job-list-item"
-    >
-    <strong>{jobTitle}</strong>
-    <br></br>
-    {companyName}
+    <button onClick={showResumeJobDescCoverLetter} className="job-list-item">
+      
+      <div className="jl-details-container">
+        <div className="jl-title-name">
+          <div className="jl-jobtitle">
+          {jobTitle}
+          </div>
+          {companyName}
+        </div>
+
+        <i onClick={handleFavourite} className={favouriteClass}></i>
+      </div>
     </button>
   );
 }

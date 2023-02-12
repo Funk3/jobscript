@@ -1,11 +1,5 @@
-import { useAuthContext } from 'providers/AuthProvider';
-import { useCoverLetterContext } from 'providers/CoverLetterProvider';
-import { useResumeContext } from 'providers/ResumeProvider';
-import { useJobDescContext } from 'providers/JobDescProvider';
+import React from 'react';
 
-import React, { useState } from 'react';
-import classnames from 'classnames';
-import axios from 'axios';
 import { useManageCoverLetterContext } from 'providers/ManageCoverLetterProvider';
 
 export default function Save() {
@@ -15,7 +9,8 @@ export default function Save() {
   return (
     <>
       <button className='coverletter-btn' onClick={handleSave}>
-        Save
+      <i class="fa-solid fa-floppy-disk"></i>
+         Save
       </button>
     </>
   );

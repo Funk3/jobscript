@@ -5,23 +5,28 @@ import Copy from "../buttons/Copy";
 import { useManageCoverLetterContext } from "providers/ManageCoverLetterProvider";
 
 export default function ManageCoverLetter() {
-
-  const {saveSuccess, saveFailure, saveStateClass, copyStateClass, copySuccess} = useManageCoverLetterContext();
+  const {
+    saveSuccess,
+    saveFailure,
+    saveStateClass,
+    copyStateClass,
+    copySuccess,
+  } = useManageCoverLetterContext();
 
   return (
-    <section className="manage-cl-buttons">
-
-          {saveSuccess ? (
+    <>
+      {saveSuccess ? (
         <p className={saveStateClass}>{saveSuccess}</p>
       ) : (
         <p className={saveStateClass}>{saveFailure}</p>
       )}
 
       {copySuccess && <p className={copyStateClass}>{copySuccess}</p>}
-
-      <Save />
-      <Copy />
-      <Download />
-    </section>
+      <section className="manage-cl-buttons">
+        <Save />
+        <Copy />
+        <Download />
+      </section>
+    </>
   );
 }

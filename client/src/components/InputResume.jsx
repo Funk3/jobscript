@@ -21,6 +21,7 @@ export default function InputResume() {
             {" "}
             {filename}
           </label>
+          <i className="fa-solid fa-arrow-right fa-lg"></i>
           <input type="submit" value="Upload" className="upload" />
         </div>
       </form>

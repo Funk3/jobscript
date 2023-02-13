@@ -1,4 +1,3 @@
-import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
 import React from "react";
 
 import { useCoverLetterContext } from "../../providers/CoverLetterProvider";

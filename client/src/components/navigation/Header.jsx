@@ -22,7 +22,8 @@ export default function Header() {
         {user && (
           <>
             <div className="nav-rhs">
-              <p className="crr-user">Currently logged in as:{user.email}</p>
+            <i className="fa-solid fa-user fa-lg"></i>
+            <p className="crr-user">Logged in as : {user.email}</p>
               <LogoutButton />
             </div>
           </>

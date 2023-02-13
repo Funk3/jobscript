@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { useCoverLetterContext } from 'providers/CoverLetterProvider';
+import { useManageCoverLetterContext } from 'providers/ManageCoverLetterProvider';
 
-export default function Copy(props) {
-  const { coverLetterText } = useCoverLetterContext();
-  const [copySuccess, setCopySuccessState] = useState(false);
-  const copyStateClass = classnames('copy', {
-    'copy-success': copySuccess,
-  });
-  const handleCopy = () => {
-    navigator.clipboard.writeText(coverLetterText);
-    setCopySuccessState('Cover Letter copied to clipboard.');
-  };
+export default function Copy() {
+  const { handleCopy} = useManageCoverLetterContext();
+
 
   return (
     <>
-      <p className={copyStateClass}>{copySuccess}</p>
       <button className='coverletter-btn' onClick={handleCopy}>
+      <i class="fa-regular fa-copy"></i>
         Copy
       </button>
     </>

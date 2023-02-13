@@ -19,6 +19,7 @@ export default function Download(props) {
 
   return (
     <button className='coverletter-btn' onClick={handleDownload}>
+      <i class="fa-solid fa-download"></i>
       Download
     </button>
   );

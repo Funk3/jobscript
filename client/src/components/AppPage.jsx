@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 //Components
 import JobList from "./JobList";
-import CoverLetter from "./CoverLetter/CoverLetter";
+import CoverLetter from "./coverletter/CoverLetter";
 import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
@@ -16,7 +16,7 @@ import { JobDescProvider } from "../providers/JobDescProvider";
 import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
 
 export default function AppPage() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
@@ -25,31 +25,30 @@ export default function AppPage() {
           <JobDescProvider>
             <ResumeProvider>
               <ManageCoverLetterProvider>
+                <main className="cards">
+                  <JobList />
+                  <div className="center-sections">
+                    <div className="center-user-inputs">
+                      <InputResume />
 
-              <main className="cards">
-                <JobList />
-                <div className="center-sections">
-                  <div className="center-user-inputs">
-                    <InputResume />
+                      <InputJobDesc />
 
-                    <InputJobDesc />
+                      <CustomTone />
 
-                    <CustomTone />
-
-                    <GenerateCoverLetter setLoading={setLoading} />
+                      <GenerateCoverLetter setLoading={setLoading} />
+                    </div>
                   </div>
-                </div>
-                {loading ? (
-                  <div className="rhs-sections">
-                  <h1>Loading...</h1>
-
-                </div>
-                ) : (
-                  <div className="rhs-sections">
-                    <CoverLetter />
-                  </div>
-                )}
-              </main>
+                  {loading ? (
+                    <div className="rhs-sections">
+                    <h3>Loading...</h3>
+                    <img src="../../loading.gif" alt="loading"/>
+                    </div>
+                  ) : (
+                    <div className="rhs-sections">
+                      <CoverLetter />
+                    </div>
+                  )}
+                </main>
               </ManageCoverLetterProvider>
             </ResumeProvider>
           </JobDescProvider>

@@ -29,6 +29,9 @@ router.post('/openai', (req, res) => {
       console.log("API responded")
       res.send(result.data.choices[0].text);
     })
+    .catch((err) => {
+      console.log("Api Call Error", err.response)
+    })
 })
 
 module.exports = router;

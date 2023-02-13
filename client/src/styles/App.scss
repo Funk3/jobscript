@@ -59,6 +59,7 @@ body {
   height: 75px;
   width: 100%;
   padding: 15px;
+  z-index: 6;
 }
 
 .logo {
@@ -100,6 +101,13 @@ button.job-list-item {
   padding: 1rem;
   text-transform: capitalize;
   font-size: 1rem;
+}
+
+button.job-list-item:focus {
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+  background-color: #fff;
+  color: $accent-colour
 }
 
 .jl-details-container{
@@ -228,6 +236,14 @@ textarea {
 .upload:active {
   box-shadow: black 2px 2px 0 0;
   transform: translate(2px, 2px);
+}
+
+.custom-file label:focus,
+.upload:focus {
+  display: inline;
+  box-shadow: black 2px 2px 0 0;
+  transform: translate(2px, 2px);
+  background-color: #fff
 }
 
 /* Job desc form */

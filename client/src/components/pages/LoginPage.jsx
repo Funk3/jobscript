@@ -14,6 +14,7 @@ export default function LoginPage() {
   return (
     <div className='login'>
       <form className='loginform' onSubmit={onSubmit}>
+      <h2>Login</h2>
         <p>
           <input
             type='text'

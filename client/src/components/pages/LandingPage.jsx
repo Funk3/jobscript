@@ -22,10 +22,10 @@ export default function LandingPage() {
           <button>Generate Now!</button>
       </section>
 
-      <section className="landing-bottom">
+      {/* <section className="landing-bottom">
         <div>Another engaging image</div>
         <div>Fake reviews?</div>
-      </section>
+      </section> */}
 
     </main>
   );

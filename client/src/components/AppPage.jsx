@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 //Components
 import JobList from "./JobList";
-import CoverLetter from "./coverletter/CoverLetter";
+import CoverLetter from "./CoverLetter/CoverLetter";
 import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 //Components
 import JobList from "./JobList";
-import CoverLetter from "./coverletter/CoverLetter";
+import CoverLetter from "./cover_letter/CoverLetter";
 import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
@@ -16,7 +16,7 @@ import { JobDescProvider } from "../providers/JobDescProvider";
 import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
 
 export default function AppPage() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>

@@ -15,7 +15,7 @@ export default function LandingPage() {
 
       <section className="landing-mid">
         <div>
-          <h1>Generate Your Cover Letter In Seconds</h1>
+          <h1>Generate A Personalized Cover Letter In Seconds</h1>
           <h3>It only takes three easy steps!</h3>
           </div>
         <div className="screen-grab">Screen grab/video</div>

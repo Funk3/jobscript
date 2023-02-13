@@ -18,14 +18,16 @@ body {
   margin-right: 30px;
   margin-top: 140px;
   display: flex;
+  flex-direction: row;
   flex: wrap;
   justify-content: space-between;
 }
 
+
 .log-btn {
   background-color: $main-colour;
   cursor: $btn-cursor;
-  border: $btn-border;
+  border: none;
   box-shadow: $btn-box-shadow;
   border-radius: 10px;
   height: 40px;
@@ -48,17 +50,15 @@ body {
 
 /* Top Nav Bar*/
 .nav-bar {
-  background-color: white;
   position: fixed;
   top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: $main-colour;
+  background-color: $yellow;
   height: 75px;
   width: 100%;
-  padding: 20px;
-  border-bottom: 1.8px solid $grey;
+  padding: 15px;
 }
 
 .logo {
@@ -81,7 +81,6 @@ aside {
   padding: 10px;
   float: left;
   width: 20%;
-  padding-left: 40px;
   height: auto;
 }
 
@@ -113,7 +112,7 @@ button.job-list-item {
    color: $accent-colour;
     }
 
-    :hover{
+    .fa-heart:hover{
       color: #A83F39;
     }
 }
@@ -159,7 +158,7 @@ button.job-list-item {
 }
 
 .aside-header {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 /* Center User Input area */
@@ -462,7 +461,7 @@ input:focus {
 .landing-page-footer {
   color: white;
   font-size: 20px;
-  background-color: black;
+  background-color: $grey;
   margin-top: 10vh;
   position: relative;
   bottom: 0;

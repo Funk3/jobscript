@@ -10,7 +10,11 @@ export default function LandingPage() {
           <p>Did you know 48% of giant tech companies require cover letters?</p>
           <button>Get Started Now!</button>
         </div>
-        <div className="screen-grab">Screen grab/video</div>
+        <div className="screen-grab">
+          <img
+          className="screenshot" 
+          src="../app-screenshot.jpg"/>
+        </div>
       </section>
 
       <section className="landing-mid">

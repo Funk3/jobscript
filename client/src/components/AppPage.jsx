@@ -16,6 +16,7 @@ import { JobDescProvider } from "../providers/JobDescProvider";
 import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
 
 export default function AppPage() {
+
   const [loading, setLoading] = useState(false);
 
   return (

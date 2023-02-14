@@ -1,33 +1,33 @@
 import { createContext, useState, useContext } from "react";
 
+
 export const CoverLetterContext = createContext();
 
 export function CoverLetterProvider(props) {
-
   //call openAI request here and get result back. Set useState(default to response from API)
   
   const [coverLetterText, setCoverLetterText] = useState();
 
   const [generateButtonVisible, setGenerateButtonVisible] = useState(true);
 
- const [inputValidationError, setInputValidationError] = useState(false);
- 
- const [apiErrorResponse, setApiErrorResponse] = useState(false);
+  const [inputValidationError, setInputValidationError] = useState(false);
 
+  const [apiErrorResponse, setApiErrorResponse] = useState(false);
 
+  //For any text manually edited in the cover letter text area
   const handleChange = (newCoverLetterText) => {
     setCoverLetterText(newCoverLetterText);
   };
 
-  const providerData = { 
-    coverLetterText, 
-    handleChange, 
+  const providerData = {
+    coverLetterText,
+    handleChange,
     setCoverLetterText,
-    generateButtonVisible, 
+    generateButtonVisible,
     setGenerateButtonVisible,
-    inputValidationError, 
+    inputValidationError,
     setInputValidationError,
-    apiErrorResponse, 
+    apiErrorResponse,
     setApiErrorResponse
   };
 

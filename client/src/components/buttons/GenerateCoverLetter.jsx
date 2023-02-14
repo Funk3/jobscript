@@ -1,4 +1,4 @@
-import React from 'react';
+
 import axios from 'axios';
 import { useCustomToneContext } from '../../providers/CustomToneProvider';
 import { useJobDescContext } from '../../providers/JobDescProvider';
@@ -7,6 +7,7 @@ import { useCoverLetterContext } from '../../providers/CoverLetterProvider';
 
 export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
+
   const { uploadedFile } = useResumeContext();
   const { jobTitle, companyName, jobDescText } = useJobDescContext();
   const { customTone } = useCustomToneContext();
@@ -44,7 +45,6 @@ export default function GenerateCoverLetter(props) {
         setGenerateButtonVisible(true);
         setApiErrorResponse(error.message);
         console.log("front end error", error.message);
-        //set state to error here
       });
   };
 

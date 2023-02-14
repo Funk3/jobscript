@@ -2,7 +2,7 @@ import React from 'react';
 import { saveAs } from 'file-saver';
 import { useCoverLetterContext } from 'providers/CoverLetterProvider';
 
-export default function Download(props) {
+export default function Download() {
   const { coverLetterText } = useCoverLetterContext();
 
   const handleDownload = () => {
@@ -19,7 +19,7 @@ export default function Download(props) {
 
   return (
     <button className='coverletter-btn' onClick={handleDownload}>
-      <i class="fa-solid fa-download"></i>
+      <i className="fa-solid fa-download"></i>
       Download
     </button>
   );

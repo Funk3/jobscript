@@ -7,7 +7,7 @@ router.use(fileUpload());
 
 
 router.post("/upload", (req, res) => {
-  console.log("inside upload route")
+  //console.log("inside upload route")
   if (req.files === null) {
     return res.status(400).json({ msg: "No file uploaded" });
   }

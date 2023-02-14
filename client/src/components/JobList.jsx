@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import {useEffect } from "react";
 import JobListItem from "./JobListItem";
 import CreateNewJobApp from "./buttons/CreateNewJobApp";
 import { useJobDescContext } from "providers/JobDescProvider";

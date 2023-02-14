@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { useCustomToneContext } from '../../providers/CustomToneProvider';
 import { useJobDescContext } from '../../providers/JobDescProvider';
 import { useResumeContext } from '../../providers/ResumeProvider';
 import { useCoverLetterContext } from '../../providers/CoverLetterProvider';
-import createCustomToneAPIQuery from '../../__helpers__/custom_tone';
 
 export default function GenerateCoverLetter(props) {
   const { setLoading } = props;
   const { uploadedFile } = useResumeContext();
   const { jobTitle, companyName, jobDescText } = useJobDescContext();
   const { customTone } = useCustomToneContext();
-  const { setCoverLetterText, setGenerateButtonVisible, generateButtonVisible, inputValidationError, setInputValidationError} = useCoverLetterContext();
+  const { setCoverLetterText, setGenerateButtonVisible, generateButtonVisible, inputValidationError, setInputValidationError, apiErrorResponse, setApiErrorResponse} = useCoverLetterContext();
 
   // const toneAPIString = createCustomToneAPIQuery(customTone);
 
@@ -37,9 +36,14 @@ export default function GenerateCoverLetter(props) {
       .then((result) => {
         setCoverLetterText(result.data);
         setLoading(false);
+        setApiErrorResponse(false);
+        console.log("successful api response");
       })
       .catch(function (error) {
-        console.log(error);
+        setLoading(false);
+        setGenerateButtonVisible(true);
+        setApiErrorResponse(error.message);
+        console.log("front end error", error.message);
         //set state to error here
       });
   };
@@ -50,6 +54,7 @@ export default function GenerateCoverLetter(props) {
         <>
           <h3>4. You're all set! </h3>
           {inputValidationError && <p className="error-message">{inputValidationError}</p>}
+          {apiErrorResponse && <p className="error-message">Hmm.. there seems to be a problem with the AI response : {apiErrorResponse}</p>}
            <div>
             <button
               className="generate-btn"

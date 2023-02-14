@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useResumeContext } from "../providers/ResumeProvider";
 
 export default function InputResume() {

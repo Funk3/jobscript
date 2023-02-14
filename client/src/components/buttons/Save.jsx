@@ -9,7 +9,7 @@ export default function Save() {
   return (
     <>
       <button className='coverletter-btn' onClick={handleSave}>
-      <i class="fa-solid fa-floppy-disk"></i>
+      <i className="fa-solid fa-floppy-disk"></i>
          Save
       </button>
     </>

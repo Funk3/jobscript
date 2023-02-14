@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useJobDescContext } from "../providers/JobDescProvider";
 
 export default function InputJobDesc() {

@@ -17,14 +17,14 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="landing-mid">
+      {/* <section className="landing-mid">
         <div>
           <h1>Generate A Personalized Cover Letter In Seconds</h1>
           <h3>It only takes three easy steps!</h3>
           </div>
         <div className="screen-grab">Screen grab/video</div>
           <button>Generate Now!</button>
-      </section>
+      </section> */}
 
       {/* <section className="landing-bottom">
         <div>Another engaging image</div>

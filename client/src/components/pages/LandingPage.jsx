@@ -13,7 +13,8 @@ export default function LandingPage() {
         <div className="screen-grab">
           <img
           className="screenshot" 
-          src="../app-screenshot.jpg"/>
+          src="../app-gif.gif"
+          alt="app-gif"/>
         </div>
       </section>
 

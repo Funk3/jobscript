@@ -145,6 +145,7 @@ button.job-list-item:focus {
   font-weight: 600;
   font-size: 18px;
 }
+
 .new-btn {
   cursor: $btn-cursor;
   border: $btn-border;
@@ -467,6 +468,7 @@ input:focus {
 
   button {
     margin-bottom: 6rem;
+    background-color: rgb(223, 222, 219);
   }
 }
 

@@ -14,6 +14,11 @@ export function ResumeProvider(props) {
     setFilename(e.target.files[0].name);
   };
 
+  // user paste resume
+  const pastedResume = (e) => {
+    setUploadedFile(e.target.value)
+  };
+
   // user submits then axios post req is sent to backend
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +58,8 @@ export function ResumeProvider(props) {
     onSubmit, 
     setFile, 
     setFilename, 
-    setUploadedFile 
+    setUploadedFile,
+    pastedResume
   };
 
   return (

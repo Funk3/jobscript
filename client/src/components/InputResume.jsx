@@ -3,7 +3,7 @@ import React from "react";
 import { useResumeContext } from "../providers/ResumeProvider";
 
 export default function InputResume() {
-  const { filename, uploadedFile, onChange, onSubmit } =
+  const { filename, uploadedFile, onChange, onSubmit, pastedResume } =
     useResumeContext();
 
   return (
@@ -37,6 +37,7 @@ export default function InputResume() {
             id="pasted-resume"
             defaultValue=""
             placeholder="Or Copy and paste the contents of your resume here"
+            onChange={pastedResume}
           ></textarea>
         )}
       </div>

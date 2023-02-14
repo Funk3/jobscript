@@ -1,11 +1,8 @@
-import React from "react";
+
 import { useCustomToneContext } from "../providers/CustomToneProvider";
 
-//import { CustomToneContext } from "../providers/CustomToneProvider";
-
 export default function CustomTone() {
-  //const { customTone, handleClick } = useContext(CustomToneContext)
-  const { customTone, handleClick } = useCustomToneContext();
+  const { handleClick } = useCustomToneContext();
 
   return (
     <section className="custom-tone">

@@ -12,7 +12,7 @@ const addResumeByUser = (userID, resumeText) => {
 return db.query(`INSERT INTO resume (user_id, text) VALUES ($1, $2) RETURNING * `,
 [userID, resumeText])
 .then(result => {
-  console.log("addResumeByUser =", result.rows[0]);
+  //console.log("addResumeByUser =", result.rows[0]);
   return result.rows[0];
 })
 }
@@ -28,7 +28,7 @@ const getResumeByUser = userID => {
   //Maybe SELECT text FROM resume instead?
   return db.query( 'SELECT * FROM resume WHERE user_id = $1', [userID])
   .then(response => {
-    console.log("getResumeByUser =", response.rows[0]);
+    //console.log("getResumeByUser =", response.rows[0]);
     return response.rows[0];
   })
 }

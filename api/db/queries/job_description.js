@@ -67,7 +67,7 @@ const getAllJobDescByUser = (user_id) => {
 const getJobDescByJobDescID = (jobDescID) => {
   return db.query('SELECT * FROM job_description WHERE id = $1', [jobDescID])
     .then(result => {
-      console.log("getJobDescByJobDescID =", result.rows[0]);
+      //console.log("getJobDescByJobDescID =", result.rows[0]);
       return result.rows[0];
     });
 

@@ -2,6 +2,20 @@
 
 Jobscript is a SPA that takes your resume (uploaded as a PDF) and job description and generates a cover letter using the OpenAI api.
 
+# Screenshots
+
+### Landing Page
+
+![Landing Page](https://github.com/Funk3/jobscript/blob/main/screenshots/landingPage.png)
+
+### Empty Main Page
+
+![Empty Main Page](https://github.com/Funk3/jobscript/blob/main/screenshots/emptyForm.png)
+
+### Generated Cover Letter Page
+
+![Generated Cover Letter Page](https://github.com/Funk3/jobscript/blob/main/screenshots/filledForm.png)
+
 # Setup
 
 ### Version Control

@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./providers/AuthProvider";
-import { LoginButtonProvider } from "providers/LoginButtonProvider";
 
 //Strict mode will help identify bugs/warnings in development stage. Remove for deployment as it can affect performance KH 02/04/23
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 //Components
 import JobList from "./JobList";
@@ -7,55 +7,31 @@ import InputResume from "./InputResume";
 import InputJobDesc from "./InputJobDesc";
 import CustomTone from "./CustomTone";
 import GenerateCoverLetter from "./buttons/GenerateCoverLetter";
+import Loading from "./Loading";
 
 //Providers
-import { CustomToneProvider } from "../providers/CustomToneProvider";
-import { ResumeProvider } from "../providers/ResumeProvider";
-import { CoverLetterProvider } from "../providers/CoverLetterProvider";
-import { JobDescProvider } from "../providers/JobDescProvider";
-import { ManageCoverLetterProvider } from "providers/ManageCoverLetterProvider";
+import AppPageProvider from "providers/AppPageProvider";
 
 export default function AppPage() {
-
   const [loading, setLoading] = useState(false);
 
   return (
     <>
-      <CoverLetterProvider>
-        <CustomToneProvider>
-          <JobDescProvider>
-            <ResumeProvider>
-              <ManageCoverLetterProvider>
-                <main className="cards">
-                  <JobList />
-                  <div className="center-sections">
-                    <div className="center-user-inputs">
-                      <InputResume />
+      <AppPageProvider>
+        <main className="cards">
+          <JobList />
+          <div className="center-sections">
+            <InputResume />
 
-                      <InputJobDesc />
+            <InputJobDesc />
 
-                      <CustomTone />
+            <CustomTone />
 
-                      <GenerateCoverLetter setLoading={setLoading} />
-                    </div>
-                  </div>
-                  {loading ? (
-                    <div className="rhs-sections">
-                    <h3>Loading...</h3>
-                    <p>This can take up to a minute to generate.</p>
-                    <img src="../../loading.gif" alt="loading"/>
-                    </div>
-                  ) : (
-                    <div className="rhs-sections">
-                      <CoverLetter />
-                    </div>
-                  )}
-                </main>
-              </ManageCoverLetterProvider>
-            </ResumeProvider>
-          </JobDescProvider>
-        </CustomToneProvider>
-      </CoverLetterProvider>
+            <GenerateCoverLetter setLoading={setLoading} />
+          </div>
+          {loading ? <Loading /> : <CoverLetter />}
+        </main>
+      </AppPageProvider>
     </>
   );
 }

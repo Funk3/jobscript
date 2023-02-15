@@ -1,4 +1,3 @@
-import React from "react";
 import { useAuthContext } from "providers/AuthProvider";
 import LogoutButton from "components/buttons/LogoutButton";
 import LoginButton from "components/buttons/LoginButton";

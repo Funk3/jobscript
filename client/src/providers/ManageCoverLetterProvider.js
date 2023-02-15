@@ -1,4 +1,6 @@
-import React, { useState, useContext, createContext } from "react";
+//Tracks state of options when editing the cover letter , eg Save, Copy, Download.
+
+import { useState, useContext, createContext } from "react";
 
 import { useAuthContext } from 'providers/AuthProvider';
 import { useCoverLetterContext } from 'providers/CoverLetterProvider';

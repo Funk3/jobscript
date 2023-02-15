@@ -1,3 +1,5 @@
+//Handles and sets state based on the Tone selected
+
 import { createContext, useContext, useState } from "react";
 
 export const CustomToneContext = createContext();

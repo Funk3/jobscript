@@ -1,4 +1,6 @@
-// to be able to access user_id in database queries
+//Making user id accessible for sql queries.
+//Tracks if login/logout has been clicked
+
 import axios from 'axios';
 import { createContext, useContext, useState } from "react";
 
@@ -23,7 +25,7 @@ export function AuthProvider(props) {
   ///To track login/logout button clicks
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleLoginLogoutClick = (event) => {
+  const handleLoginLogoutClick = () => {
     setIsClicked((current) => !current);
   };
 

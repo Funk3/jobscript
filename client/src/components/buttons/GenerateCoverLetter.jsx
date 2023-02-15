@@ -14,7 +14,11 @@ export default function GenerateCoverLetter(props) {
   const { setCoverLetterText, setGenerateButtonVisible, generateButtonVisible, inputValidationError, setInputValidationError, apiErrorResponse, setApiErrorResponse} = useCoverLetterContext();
 
   // const toneAPIString = createCustomToneAPIQuery(customTone);
-
+/**
+ * Pre-cursor to sending request to API. Checks all of the input fields are valid. Sets error message if not.
+ * Toggles the visibility of the generate button and any previous error messages.
+ * @param {*} fnToExecute executes this function only if the states are valid.
+ */
   const checkValidStates = (fnToExecute) => {
     if (uploadedFile && jobTitle && companyName && jobDescText && customTone) {
       fnToExecute();
@@ -25,6 +29,10 @@ export default function GenerateCoverLetter(props) {
     }
   };
 
+  /**
+   * On the basis that all states are valid, sends the state data to the API.
+   * Toggles loading status, generate button visibility and API error message depending on the response.
+   */
   const handleGenerateCoverLetter = () => {
     const promptParams = {
       uploadedFile,

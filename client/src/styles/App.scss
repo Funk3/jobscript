@@ -334,6 +334,14 @@ input:focus {
 }
 /* RHS User Input area */
 
+.disclaimer{
+  border-radius: 5px;
+  border-left: $accent-colour solid 5px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 15px;
+  padding-left: 0.8rem;
+}
 .save-success {
   @include confirmation;
 }

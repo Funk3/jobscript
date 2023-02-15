@@ -1,10 +1,13 @@
+//Handles cover letter text received from API and sets the state
+//Tracks visibility of Generate button
+//Error handling
+
 import { createContext, useState, useContext } from "react";
 
 
 export const CoverLetterContext = createContext();
 
 export function CoverLetterProvider(props) {
-  //call openAI request here and get result back. Set useState(default to response from API)
   
   const [coverLetterText, setCoverLetterText] = useState();
 

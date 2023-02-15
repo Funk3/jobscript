@@ -1,4 +1,4 @@
-// provider for managing state of jobTitle, companyName and JobDescription.
+// Manages state of jobTitle, companyName and JobDescription.
 // Also contains logic for fetching job data once cover letter has been added to db.
 
 import { createContext, useState, useContext } from "react";
@@ -25,7 +25,7 @@ export function JobDescProvider(props) {
     setJobDescText(newjobDescText);
   };
 
-//move fetchJobData logic into here 
+//fetchJobData logic
 const [jobData, setJobData] = useState([]);
 const { user } = useAuthContext();
 
@@ -47,7 +47,7 @@ const fetchJobData = () => {
     handleChangeJobDescText, 
     jobData,
     setJobData,
-    fetchJobData
+    fetchJobData,
   };
 
   return (

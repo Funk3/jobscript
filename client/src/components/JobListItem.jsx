@@ -10,8 +10,7 @@ import { useManageCoverLetterContext } from "providers/ManageCoverLetterProvider
 import useFavourite from "__helpers__/hooks/useFavourite";
 
 export default function JobListItem(props) {
-
-  const { handleFavourite, favouriteClass} = useFavourite();
+  const { handleFavourite, favouriteClass } = useFavourite();
 
   const { coverLetterText, jobTitle, companyName, jobDescText } = props;
   const { user } = useAuthContext();
@@ -20,7 +19,7 @@ export default function JobListItem(props) {
     setGenerateButtonVisible,
     setInputValidationError,
   } = useCoverLetterContext();
-  const { setJobDescText, setJobTitle, setCompanyName } = useJobDescContext();
+  const { setJobDescText, setCompanyName, setJobTitle } = useJobDescContext();
   const { setUploadedFile } = useResumeContext();
   const { setSaveSuccessState, setSaveFailureState, setCopySuccessState } =
     useManageCoverLetterContext();
@@ -41,16 +40,13 @@ export default function JobListItem(props) {
     axios.post(`api/joblist/pullResume`, user).then((res) => {
       setUploadedFile(res.data.text);
     });
-  }
+  };
 
   return (
     <button onClick={showResumeJobDescCoverLetter} className="job-list-item">
-      
       <div className="jl-details-container">
         <div className="jl-title-name">
-          <div className="jl-jobtitle">
-          {jobTitle}
-          </div>
+          <div className="jl-jobtitle">{jobTitle}</div>
           {companyName}
         </div>
 

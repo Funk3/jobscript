@@ -7,10 +7,12 @@ export default function JobList() {
 
   const {fetchJobData, jobData} = useJobDescContext();
   
-  useEffect(() => {
+  //Re-renders job List Item to include newest addition after user clicks save
+    useEffect(() => {
     fetchJobData();
   }, []);
 
+  //Creates a component for each instance of a job application to render the list
   const individualJobListItem = jobData.map((jobApp) => (
     <JobListItem
       key={jobApp.id}
@@ -23,12 +25,8 @@ export default function JobList() {
   ));
   return (
     <aside>
-      <section>
-        <h3> </h3>
-      </section>
       <header className="aside-header">
         Your jobs
-
       </header>
       <p>View previous resumes, job descriptions and generated cover letters.</p>
       
